@@ -8,8 +8,16 @@
       
       
       
+        <link rel="canonical" href="https://docs.hpc.ugent.be/Linux/troubleshooting/">
+      
+      
+        <link rel="prev" href="../xdmod/">
+      
+      
+        <link rel="next" href="../sites/hpc_policies/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -17,13 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -36,10 +44,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -47,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,7 +87,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VSC User Documentation - Gent (Linux)" class="md-header__button md-logo" aria-label="VSC User Documentation - Gent (Linux)" data-md-component="logo">
       
@@ -100,6 +117,26 @@
       </div>
     </div>
     
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -116,7 +153,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -130,13 +171,52 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
     
+    
+      <div class="md-header__source">
+        <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+      </div>
     
   </nav>
   
@@ -171,7 +251,61 @@
     VSC User Documentation - Gent (Linux)
   </label>
   
+    <div class="md-nav__source">
+      <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
     
       
       
@@ -183,6 +317,21 @@
     <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         Introduction to HPC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
       </a>
     </li>
   
@@ -301,6 +450,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../interactive_debug/" class="md-nav__link">
+        Interactive and debug cluster
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xdmod/" class="md-nav__link">
         XDMoD portal
       </a>
@@ -319,7 +483,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -348,6 +512,40 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#job_does_not_run_faster" class="md-nav__link">
+    Why does my job not run faster when using more nodes and/or cores?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why does my job not run faster when using more nodes and/or cores?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-multiple-cores" class="md-nav__link">
+    Using multiple cores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-multiple-nodes" class="md-nav__link">
+    Using multiple nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-know-if-my-software-can-run-in-parallel" class="md-nav__link">
+    How do I know if my software can run in parallel?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#walltime-issues" class="md-nav__link">
@@ -426,9 +624,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#illegal-instruction-error" class="md-nav__link">
+    Illegal instruction error
+  </a>
+  
+    <nav class="md-nav" aria-label="Illegal instruction error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#running-software-that-is-incompatible-with-host" class="md-nav__link">
     Running software that is incompatible with host
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-job-submissions-on-a-non-default-cluster" class="md-nav__link">
+    Multi-job submissions on a non-default cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -462,39 +680,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        Frequently Asked Questions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Advanced topics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Advanced topics
         </label>
@@ -618,8 +824,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpu_gent/" class="md-nav__link">
-        HPC-UGent GPU clusters
+      <a href="../gpu/" class="md-nav__link">
+        GPU clusters
       </a>
     </li>
   
@@ -632,22 +838,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive_gent/" class="md-nav__link">
-        HPC-UGent interactive and debug cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crontab_gent/" class="md-nav__link">
+      <a href="../crontab/" class="md-nav__link">
         Cron scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teaching_training/" class="md-nav__link">
+        Teaching and training
       </a>
     </li>
   
@@ -673,22 +879,190 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Linux tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Linux tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/navigating/" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/manipulating_files_and_directories/" class="md-nav__link">
+        Manipulating files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/uploading_files/" class="md-nav__link">
+        Uploading files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/beyond_the_basics/" class="md-nav__link">
+        Beyond the basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/common_pitfalls/" class="md-nav__link">
+        Common pitfalls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/hpc_infrastructure/" class="md-nav__link">
+        More on the HPC infrastructure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           Software-specific Best Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Software-specific Best Practices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Software-specific Best Practices
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        AlphaFold
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -760,14 +1134,53 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../scoop/" class="md-nav__link">
-        SCOOP
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
       </a>
     </li>
   
@@ -793,18 +1206,21 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_19" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
           Appendices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Appendices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Appendices
         </label>
@@ -885,6 +1301,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#job_does_not_run_faster" class="md-nav__link">
+    Why does my job not run faster when using more nodes and/or cores?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why does my job not run faster when using more nodes and/or cores?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-multiple-cores" class="md-nav__link">
+    Using multiple cores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-multiple-nodes" class="md-nav__link">
+    Using multiple nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-know-if-my-software-can-run-in-parallel" class="md-nav__link">
+    How do I know if my software can run in parallel?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#walltime-issues" class="md-nav__link">
     Walltime issues
   </a>
@@ -961,9 +1411,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#illegal-instruction-error" class="md-nav__link">
+    Illegal instruction error
+  </a>
+  
+    <nav class="md-nav" aria-label="Illegal instruction error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#running-software-that-is-incompatible-with-host" class="md-nav__link">
     Running software that is incompatible with host
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-job-submissions-on-a-non-default-cluster" class="md-nav__link">
+    Multi-job submissions on a non-default cluster
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -975,23 +1445,114 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+
+                  
+
+  
+  
 
 
 <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h1>
+<h2 id="job_does_not_run_faster">Why does my job not run faster when using more nodes and/or cores?<a class="headerlink" href="#job_does_not_run_faster" title="Permanent link">#</a></h2>
+<p>Requesting more resources for your job, more specifically using multiple cores and/or nodes, 
+does not automatically imply that your job will run faster. 
+There are various factors that determine to what extent these extra resources can be used and how efficiently they can be used. 
+More information on this in the subsections below.</p>
+<h3 id="using-multiple-cores">Using multiple cores<a class="headerlink" href="#using-multiple-cores" title="Permanent link">#</a></h3>
+<p>When you want to speed up your jobs by requesting multiple cores, you also need to use software that is actually capable of 
+using them (and use them efficiently, ideally).
+Unless particular a parallel programming paradigm like <a href="https://www.openmp.org/about/openmp-faq/#WhatIs">OpenMP</a> threading 
+(shared memory) or <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a> (distributed memory) is used, 
+software will run sequentially (on a single core).</p>
+<p>To use multiple cores, the software needs to be able to create, manage, and synchronize multiple threads or processes. 
+More on how to implement parallelization for you exact programming language can be found online.
+Note that when using software that only uses <em>threads</em> to use multiple cores, there is no point in asking for multiple <em>nodes</em>, 
+since with a multi-threading (shared memory) approach you can only use the resources (cores, memory) of a <em>single</em> node.</p>
+<p>Even if your software is able to use multiple cores, maybe there is no point in going beyond a single core or a handful of cores, 
+for example because the workload you are running is too small or does not parallelize well.
+You can test this by increasing the amount of cores step-wise, and look at the speedup you gain. For example, 
+test with 2, 4, 16, a quarter of, half of, and all available cores.</p>
+<p>Other reasons why using more cores may not lead to a (significant) speedup include:</p>
+<ul>
+<li>
+<p><strong>Overhead:</strong> When you use multi-threading (OpenMP) or multi-processing (MPI), 
+you should <em>not</em> expect that doubling the amount of cores will result in a 2x speedup. 
+This is due to the fact that time is needed to create, manage and synchronize the threads/processes.
+When this "bookkeeping" overhead exceeds the time gained by parallelization, you will not observe any speedup (or even see slower runs).
+For example, this can happen when you split you program in too many (tiny) tasks to run in parallel - 
+creating a thread/process for each task may even take longer than actually running the task itself.</p>
+</li>
+<li>
+<p><strong><a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl's Law</a></strong> is often used in parallel computing to predict the maximum achievable (theoretical) speedup when using multiple cores. 
+It states that "<em>the overall performance improvement gained by optimizing a single part of a system is limited by the fraction of time that the improved part is actually used</em>". 
+For example, if a program needs 20 hours to complete using a single core, but a one-hour portion of the program can not be parallelized, 
+only the remaining 19 hours of execution time can be sped up using parallelization. 
+Regardless of how many cores are devoted to a parallelized execution of this program, the minimum execution time is always more than 1 hour. 
+So when you reach this theoretical limit, using more cores will not help at all to speed up the computational workload.</p>
+</li>
+<li>
+<p><strong>Resource contention:</strong> When two or more threads/processes want to access the same resource, they need to wait on each other - this is called resource contention. 
+As a result, 1 thread/process will need to wait until the other one is is finished using that resource. 
+When each thread uses the same resource, it will definitely run slower than if it doesn't need to wait for other threads to finish.</p>
+</li>
+<li>
+<p><strong>Software limitations:</strong> It is possible that the software you are using is just not really optimized for parallelization. 
+An example of a software that is not really optimized for multi-threading is Python (although this has improved over the years).
+This is due to the fact that in Python threads are implemented in a way that multiple threads can not run at the same time, due to the <a href="https://en.wikipedia.org/wiki/Global_interpreter_lock">global interpreter lock (GIL)</a>. 
+Instead of using multi-threading in Python to speedup a CPU bound program, you should use multi-processing instead, 
+which uses multiple processes (multiple instances of the same program) instead of multiple threads in a single program instance.
+Using multiple processes can speed up your CPU bound programs a lot more <em>in Python</em> than threads can do, even though they are much less efficient to create.
+In other programming languages (which don't have a GIL), you would probably still want to use threads.</p>
+</li>
+<li>
+<p><strong><a href="https://www.admin-magazine.com/HPC/Articles/Processor-Affinity-for-OpenMP-and-MPI">Affinity and core pinning</a></strong>: 
+Even when the software you are using is able to efficiently use multiple cores, you may not see any speedup (or even a significant slowdown).
+This could be due to threads or processes that are not pinned to specific cores and keep hopping around between cores, 
+or because the pinning is done incorrectly and several threads/processes are being pinned to the same core(s), and thus keep "fighting" each other.</p>
+</li>
+<li>
+<p><strong>Lack of sufficient memory</strong>: When there is not enough memory available, or not enough memory bandwidth, 
+it is likely that you will not see a significant speedup when using more cores (since each thread or process most likely requires additional memory).</p>
+</li>
+</ul>
+<p>More info on running multi-core workloads on the HPC-UGent infrastructure can be found <a href="../multi_core_jobs/">here</a>.</p>
+<h3 id="using-multiple-nodes">Using multiple nodes<a class="headerlink" href="#using-multiple-nodes" title="Permanent link">#</a></h3>
+<p>When trying to use multiple (worker)nodes to improve the performance of your workloads, you may not see (significant) speedup.</p>
+<p>Parallelizing code across nodes is fundamentally different from leveraging multiple cores via multi-threading within a single node.
+The scalability achieved through multi-threading does not extend seamlessly to distributing computations across multiple nodes.
+This means that just changing <code>#PBS -l nodes=1:ppn=10</code> to <code>#PBS -l nodes=2:ppn=10</code> may only increase the waiting time to get your job running (because twice as many resources are requested), and will not improve the execution time.</p>
+<p>Actually using additional nodes is not as straightforward as merely asking for multiple nodes when submitting your job. The resources on these additional nodes often need to discovered, managed, and synchronized. This introduces complexities in distributing work effectively across the nodes. Luckily, there exist some libraries that do this for you.</p>
+<p>Using the resources of multiple nodes is often done using an <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">Message Passing Interface (MPI)</a> library.
+MPI allows nodes to communicate and coordinate, but it also introduces additional complexity.</p>
+<p>An example of how you can make beneficial use of multiple nodes can be found <a href="../multi_core_jobs/#parallel-computing-with-mpi">here</a>.</p>
+<p>You can also use MPI in Python, some useful packages that are also available on the HPC are:</p>
+<ul>
+<li><a href="https://mpi4py.readthedocs.io/en/stable/mpi4py.html">mpi4py</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_55_0/doc/html/mpi/python.html">Boost.MPI</a></li>
+</ul>
+<p>We advise to maximize core utilization before considering using multiple nodes.
+Our <a href="https://www.ugent.be/hpc/en/infrastructure">infrastructure</a> has clusters with a lot of cores per node so we suggest that you first try to use all the cores on 1 node before you expand to more nodes.
+In addition, when running MPI software we strongly advise to use our <a href="../mympirun/">mympirun</a> tool.</p>
+<h3 id="how-do-i-know-if-my-software-can-run-in-parallel">How do I know if my software can run in parallel?<a class="headerlink" href="#how-do-i-know-if-my-software-can-run-in-parallel" title="Permanent link">#</a></h3>
+<p>If you are not sure if the software you are using can efficiently use multiple cores or run across multiple nodes, 
+you should check its documentation for instructions on how to run in parallel, 
+or check for options that control how many threads/cores/nodes can be used.</p>
+<p>If you can not find any information along those lines, the software you are using can probably only use a single core 
+and thus requesting multiple cores and/or nodes will only result in wasted sources.</p>
 <h2 id="walltime-issues">Walltime issues<a class="headerlink" href="#walltime-issues" title="Permanent link">#</a></h2>
 <p>If you get from your job output an error message similar to this:</p>
 <pre><code>=>> PBS: job killed: walltime <i>&lt;value in seconds&gt; exceeded limit  &lt;value in seconds&gt;</i>
 </code></pre>
 
 <p>This occurs when your job did not complete within the requested
-<abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>. See
+walltime. See
 section on <a href="../fine_tuning_job_specifications/#specifying-walltime">Specifying Walltime</a> for more information
-about how to request the <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>. It is recommended to use
-<em>checkpointing</em> if the job requires <strong>72 hours</strong> of <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> or more to be executed.</p>
+about how to request the walltime. It is recommended to use
+<em>checkpointing</em> if the job requires <strong>72 hours</strong> of walltime or more to be executed.</p>
 <!-- FIXME: Refer to Checkpointing section. -->
 
 <h2 id="out-of-quota-issues">Out of quota issues<a class="headerlink" href="#out-of-quota-issues" title="Permanent link">#</a></h2>
@@ -1006,9 +1567,9 @@ section on <a href="../running_jobs_with_input_output_data/#pre-defined-user-dir
 and how to use the storage endpoints in an efficient way.</p>
 <!-- FIXME: Add how to request quota section -->
 
-<h2 id="sec:connecting-issues">Issues connecting to <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr><a class="headerlink" href="#sec:connecting-issues" title="Permanent link">#</a></h2>
-<p>If you are confused about the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> public/private key pair concept, maybe
-the key/lock analogy in <a href="../account/#how-do-ssh-keys-work">How do <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> keys work?</a> can help.</p>
+<h2 id="sec:connecting-issues">Issues connecting to login node<a class="headerlink" href="#sec:connecting-issues" title="Permanent link">#</a></h2>
+<p>If you are confused about the SSH public/private key pair concept, maybe
+the key/lock analogy in <a href="../account/#how-do-ssh-keys-work">How do SSH keys work?</a> can help.</p>
 <p>If you have errors that look like:</p>
 <pre><code>vsc40000@login.hpc.ugent.be: Permission denied
 </code></pre>
@@ -1028,12 +1589,12 @@ things to do that should help:</p>
     for more information.</p>
 </li>
 <li>
-<p>Your <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> private key may not be in the default location
+<p>Your SSH private key may not be in the default location
     (<code>$HOME/.ssh/id_rsa</code>). There are several ways to deal with this
     (using one of these is sufficient):</p>
 <ol>
 <li>Use the <code>ssh -i</code> (see section <a href="../connecting/#connect">Connect</a>) <em>OR;</em></li>
-<li>Use <code>ssh-add</code> (see section <a href="../account/#using-an-ssh-agent-optional">Using an <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> agent</a>) <em>OR;</em></li>
+<li>Use <code>ssh-add</code> (see section <a href="../account/#using-an-ssh-agent-optional">Using an SSH agent</a>) <em>OR;</em></li>
 <li>Specify the location of the key in <code>$HOME/.ssh/config</code>. You will
             need to replace the VSC login id in the <code>User</code> field with your own:
             <pre><code>                Host hpcugent
@@ -1051,13 +1612,13 @@ things to do that should help:</p>
     <a href="https://account.vscentrum.be/">https://account.vscentrum.be/</a>.</p>
 </li>
 <li>
-<p>You previously connected to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> from another machine, but now have
+<p>You previously connected to the HPC from another machine, but now have
     another machine? Please follow the procedure for adding additional
-    keys in section <a href="../account/#adding-multiple-ssh-public-keys-optional">Adding multiple <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> public keys</a>. You may need to wait for
-    15-20 minutes until the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> public key(s) you added become active.</p>
+    keys in section <a href="../account/#adding-multiple-ssh-public-keys-optional">Adding multiple SSH public keys</a>. You may need to wait for
+    15-20 minutes until the SSH public key(s) you added become active.</p>
 </li>
 <li>
-<p>When using an <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> key
+<p>When using an SSH key
 in a non-default location, make sure you supply the path of the
 private key (and not the path of the public key) to <code>ssh</code>.
 <code>id_rsa.pub</code> is the usual filename of the public key, <code>id_rsa</code> is
@@ -1070,7 +1631,7 @@ section <a href="../connecting/#connect">Connect</a>)</p>
     you added on <a href="https://account.vscentrum.be/">https://account.vscentrum.be/</a>.</p>
 </li>
 <li>
-<p>Please do not use someone else's private keys. You must never <abbr title="A share is a remote, mountable file system. Users can mount and access a share on several hosts at a time.">share</abbr>
+<p>Please do not use someone else's private keys. You must never share
     your private key, they're called <em>private</em> for a good reason.</p>
 </li>
 </ol>
@@ -1113,7 +1674,7 @@ to.</p>
 
 <p>If the command is not shown, take the file from the "Offending ECDSA key in",
 and the host name from "ECDSA host key for" lines.</p>
-<p>After you've done that, you'll need to connect to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> again. See <a href="./#warning-message-when-first-connecting-to-new-host">Warning message when first connecting to new host</a> to verify the fingerprints.</p>
+<p>After you've done that, you'll need to connect to the HPC again. See <a href="./#warning-message-when-first-connecting-to-new-host">Warning message when first connecting to new host</a> to verify the fingerprints.</p>
 <h2 id="doswindows-text-format">DOS/Windows text format<a class="headerlink" href="#doswindows-text-format" title="Permanent link">#</a></h2>
 <p>If you get errors like:</p>
 <pre><code><b>qsub fibo.pbs</b>
@@ -1125,7 +1686,7 @@ qsub: script is written in DOS/Windows text format
 </code></pre>
 
 <p>It's probably because you transferred the files from a Windows computer.
-See the <a href="https://hpcugent.github.io/vsc_user_docs/linux-tutorial/uploading_files/#dos2unix">section about <code>dos2unix</code> in <abbr title="An operating system, similar to UNIX.">Linux</abbr> tutorial</a> to fix this error.</p>
+See the <a href="https://hpcugent.github.io/vsc_user_docs/linux-tutorial/uploading_files/#dos2unix">section about <code>dos2unix</code> in Linux tutorial</a> to fix this error.</p>
 <h2 id="warning-message-when-first-connecting-to-new-host">Warning message when first connecting to new host<a class="headerlink" href="#warning-message-when-first-connecting-to-new-host" title="Permanent link">#</a></h2>
 <pre><code><b>ssh vsc40000@login.hpc.ugent.be</b>
 The authenticity of host login.hpc.ugent.be (&lt;IP-adress&gt;) can't be established. 
@@ -1142,27 +1703,27 @@ ECDSA key fingerprint is e6:d2:9c:d8:e7:59:45:03:4a:1f:dc:96:62:29:9c:5f
 ECDSA key fingerprint is SHA256:C8TVx0w8UjGgCQfCmEUaOPxJGNMqv2PXLyBNODe5eOQ
 ED25519 key fingerprint is 19:28:76:94:52:9d:ff:7d:fb:8b:27:b6:d7:69:42:eb
 ED25519 key fingerprint is SHA256:8AJg3lPN27y6i+um7rFx3xoy42U8ZgqNe4LsEycHILA
-</pre>
-<p></code></p>
+</code></pre>
+
 <p>If it does, type <strong><em>yes</em></strong>. If it doesn't, please contact support: hpc@ugent.be.</p>
 <h2 id="memory-limits">Memory limits<a class="headerlink" href="#memory-limits" title="Permanent link">#</a></h2>
-<p>To avoid jobs allocating too much <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr>, there are <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> limits in
-place by default. It is possible to specify higher <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> limits if your
+<p>To avoid jobs allocating too much memory, there are memory limits in
+place by default. It is possible to specify higher memory limits if your
 jobs require this.</p>
-<h3 id="how-will-i-know-if-memory-limits-are-the-cause-of-my-problem">How will I know if <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> limits are the cause of my problem?<a class="headerlink" href="#how-will-i-know-if-memory-limits-are-the-cause-of-my-problem" title="Permanent link">#</a></h3>
-<p>If your program fails with a <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr>-related issue, there is a good
-chance it failed because of the <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> limits and you should increase
-the <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> limits for your job.</p>
+<h3 id="how-will-i-know-if-memory-limits-are-the-cause-of-my-problem">How will I know if memory limits are the cause of my problem?<a class="headerlink" href="#how-will-i-know-if-memory-limits-are-the-cause-of-my-problem" title="Permanent link">#</a></h3>
+<p>If your program fails with a memory-related issue, there is a good
+chance it failed because of the memory limits and you should increase
+the memory limits for your job.</p>
 <p>Examples of these error messages are: <code>malloc failed</code>, <code>Out of memory</code>,
 <code>Could not allocate memory</code> or in Java:
 <code>Could not reserve enough space for object heap</code>. Your program can also
 run into a <code>Segmentation fault</code> (or <code>segfault</code>) or crash due to bus
 errors.</p>
-<p>You can check the amount of virtual <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> (in Kb) that is available to
+<p>You can check the amount of virtual memory (in Kb) that is available to
 you via the <code>ulimit -v</code> command <em>in your job script</em>.</p>
-<h3 id="how-do-i-specify-the-amount-of-memory-i-need">How do I specify the amount of <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> I need?<a class="headerlink" href="#how-do-i-specify-the-amount-of-memory-i-need" title="Permanent link">#</a></h3>
-<p>See <a href="./running_batch_jobs/#generic-resource-requirements">Generic resource requirements</a> to set <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> and other requirements, see <a href="./fine_tuning_job_specifications/#specifying-memory-requirements">Specifying <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> requirements</a> to finetune the amount of
-<abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> you request.</p>
+<h3 id="how-do-i-specify-the-amount-of-memory-i-need">How do I specify the amount of memory I need?<a class="headerlink" href="#how-do-i-specify-the-amount-of-memory-i-need" title="Permanent link">#</a></h3>
+<p>See <a href="../running_batch_jobs/#generic-resource-requirements">Generic resource requirements</a> to set memory and other requirements, see <a href="../fine_tuning_job_specifications/#specifying-memory-requirements">Specifying memory requirements</a> to finetune the amount of
+memory you request.</p>
 <!-- % See issue #248 to fix Java. This is software specific.
 % See issue #196 to fix MATLAB. This is software specific. -->
 
@@ -1187,121 +1748,172 @@ While processing the following module(s):
 
 <p>This resulted in an error because we tried to load two different
 versions of the <code>intel</code> module.</p>
-<p>To fix this, check if there are other versions of the <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr> you want to load
+<p>To fix this, check if there are other versions of the modules you want to load
 that have the same version of common dependencies. You can list all versions of
 a module with <code>module avail</code>: for <code>HMMER</code>, this command is <code>module avail HMMER</code>.</p>
 <p>Another common error is:</p>
-<pre><code>$ <b>module load cluster/skitty</b>
+<pre><code>$ <b>module load cluster/donphan</b>
 Lmod has detected the following error: A different version of the 'cluster' module is already loaded (see output of 'ml').
 
 If you don't understand the warning or error, contact the helpdesk at hpc@ugent.be
 </code></pre>
 
 <p>This is because there can only be one <code>cluster</code> module active at a time.
-The correct command is <code>module swap cluster/skitty</code>. See also <a href="./running_batch_jobs/#specifying-the-cluster-on-which-to-run">Specifying the <abbr title="A group of compute nodes.">cluster</abbr> on which to run</a>.</p>
-<h2 id="running-software-that-is-incompatible-with-host">Running software that is incompatible with host<a class="headerlink" href="#running-software-that-is-incompatible-with-host" title="Permanent link">#</a></h2>
-<p>When running software provided through <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr> (see <a href="./running_batch_jobs/#modules">Modules</a>), you may run into
+The correct command is <code>module swap cluster/donphan</code>. See also <a href="../running_batch_jobs/#specifying-the-cluster-on-which-to-run">Specifying the cluster on which to run</a>.</p>
+<h2 id="illegal-instruction-error"><code>Illegal instruction</code> error<a class="headerlink" href="#illegal-instruction-error" title="Permanent link">#</a></h2>
+<h3 id="running-software-that-is-incompatible-with-host">Running software that is incompatible with host<a class="headerlink" href="#running-software-that-is-incompatible-with-host" title="Permanent link">#</a></h3>
+<p>When running software provided through modules (see <a href="../running_batch_jobs/#modules">Modules</a>), you may run into
 errors like:</p>
-<pre><code>$ <b>module swap cluster/kirlia</b>
-The following have been reloaded with a version change: 
-    1) cluster/victini => cluster/kirlia
+<pre><code>$ <b>module swap cluster/donphan</b>
+The following have been reloaded with a version change:
+  1) cluster/doduo => cluster/donphan         3) env/software/doduo => env/software/donphan
+  2) env/slurm/doduo => env/slurm/donphan     4) env/vsc/doduo => env/vsc/donphan
 
-$ <b>module load Python/2.7.14-intel-2018a</b>
+$ <b>module load Python/3.10.8-GCCcore-12.2.0</b>
 $ <b>python</b>
-
 Please verify that both the operating system and the processor support
 Intel(R) MOVBE, F16C, FMA, BMI, LZCNT and AVX2 instructions.
 </code></pre>
 
 <p>or errors like:</p>
-<pre><code>$ <b>module swap cluster/doduo</b>
-
-The following have been reloaded with a version change: 
-    1) cluster/victini => cluster/doduo
-
-$ <b>module load Python/2.7.14-foss-2018a</b>
-$ <b>python</b>
+<pre><code>$ <b>python</b>
 Illegal instruction
 </code></pre>
 
-<p>When we swap to a different <abbr title="A group of compute nodes.">cluster</abbr>, the available <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr> change so
-they work for that <abbr title="A group of compute nodes.">cluster</abbr>. That means that if the <abbr title="A group of compute nodes.">cluster</abbr> and the login
-nodes have a different <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> architecture, software loaded using <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr>
+<p>When we swap to a different cluster, the available modules change so
+they work for that cluster. That means that if the cluster and the login
+nodes have a different CPU architecture, software loaded using modules
 might not work.</p>
 <p>If you want to test software on the login nodes, make sure the
-<code>cluster/victini</code> module is loaded (with <code>module swap cluster/victini</code>, see <a href="./running_batch_jobs/#specifying-the-cluster-on-which-to-run">Specifying the <abbr title="A group of compute nodes.">cluster</abbr> on which to run</a>), since
-the login nodes and have the same <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> architecture.</p>
-<p>If <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr> are already loaded, and then we swap to a different <abbr title="A group of compute nodes.">cluster</abbr>,
-all our <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr> will get reloaded. This means that all current <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr>
+<code>cluster/doduo</code> module is loaded (with <code>module swap cluster/doduo</code>, see <a href="../running_batch_jobs/#specifying-the-cluster-on-which-to-run">Specifying the cluster on which to run</a>), since
+the login nodes and have the same CPU architecture.</p>
+<p>If modules are already loaded, and then we swap to a different cluster,
+all our modules will get reloaded. This means that all current modules
 will be unloaded and then loaded again, so they'll work on the newly
-loaded <abbr title="A group of compute nodes.">cluster</abbr>. Here's an example of how that would look like:</p>
-<pre><code>$ <b>module load Python/2.7.14-intel-2018a</b>
-$ <b>module swap cluster/swalot</b>
+loaded cluster. Here's an example of how that would look like:</p>
+<pre><code>$ <b>module load Python/3.10.8-GCCcore-12.2.0</b>
+$ <b>module swap cluster/donphan</b>
 
 Due to MODULEPATH changes, the following have been reloaded:
-  1) GCCcore/6.4.0                   5) Tcl/8.6.8-GCCcore-6.4.0           9) iccifort/2018.1.163-GCC-6.4.0-2.28    13) impi/2018.1.163-iccifort-2018.1.163-GCC-6.4.0-2.28    17) ncurses/6.0-GCCcore-6.4.0
-  2) GMP/6.1.2-GCCcore-6.4.0         6) binutils/2.28-GCCcore-6.4.0      10) ifort/2018.1.163-GCC-6.4.0-2.28       14) intel/2018a                                           18) zlib/1.2.11-GCCcore-6.4.0
-  3) Python/2.7.14-intel-2018a       7) bzip2/1.0.6-GCCcore-6.4.0        11) iimpi/2018a                           15) libffi/3.2.1-GCCcore-6.4.0
-  4) SQLite/3.21.0-GCCcore-6.4.0     8) icc/2018.1.163-GCC-6.4.0-2.28    12) imkl/2018.1.163-iimpi-2018a           16) libreadline/7.0-GCCcore-6.4.0
+  1) GCCcore/12.2.0                   8) binutils/2.39-GCCcore-12.2.0
+  2) GMP/6.2.1-GCCcore-12.2.0         9) bzip2/1.0.8-GCCcore-12.2.0
+  3) OpenSSL/1.1                     10) libffi/3.4.4-GCCcore-12.2.0
+  4) Python/3.10.8-GCCcore-12.2.0    11) libreadline/8.2-GCCcore-12.2.0
+  5) SQLite/3.39.4-GCCcore-12.2.0    12) ncurses/6.3-GCCcore-12.2.0
+  6) Tcl/8.6.12-GCCcore-12.2.0       13) zlib/1.2.12-GCCcore-12.2.0
+  7) XZ/5.2.7-GCCcore-12.2.0
 
 The following have been reloaded with a version change:
-  1) cluster/victini => cluster/swalot
+  1) cluster/doduo => cluster/donphan         3) env/software/doduo => env/software/donphan
+  2) env/slurm/doduo => env/slurm/donphan     4) env/vsc/doduo => env/vsc/donphan
 </code></pre>
 
 <p>This might result in the same problems as mentioned above. When swapping
-to a different <abbr title="A group of compute nodes.">cluster</abbr>, you can run <code>module purge</code> to unload all <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr>
-to avoid problems (see <a href="./running_batch_jobs/#purging-all-modules">Purging all <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr></a>).</p>
+to a different cluster, you can run <code>module purge</code> to unload all modules
+to avoid problems (see <a href="../running_batch_jobs/#purging-all-modules">Purging all modules</a>).</p>
+<h3 id="multi-job-submissions-on-a-non-default-cluster">Multi-job submissions on a non-default cluster<a class="headerlink" href="#multi-job-submissions-on-a-non-default-cluster" title="Permanent link">#</a></h3>
+<p>When using a tool that is made available via modules to submit jobs, for example <a href="../multi_job_submission/">Worker</a>,
+you may run into the following error when targeting a non-default cluster:</p>
+<pre><code>$ <b> wsub</b>
+/apps/gent/.../.../software/worker/.../bin/wsub: line 27: 2152510 <b>Illegal instruction</b>     (core dumped) ${PERL} ${DIR}/../lib/wsub.pl "$@"
+</code></pre>
 
-              
-            </article>
-            
-          </div>
+<p>When executing the <code>module swap cluster</code> command, you are not only changing your session environment to submit
+to that specific cluster, but also to use the part of the central software stack that is specific to that cluster.
+In the case of the Worker example above, the latter implies that you are running the <code>wsub</code> command
+on top of a Perl installation that is optimized specifically for the CPUs of the workernodes of that cluster,
+which may not be compatible with the CPUs of the login nodes, triggering the <code>Illegal instruction</code> error.</p>
+<p>The cluster modules are split up into several <code>env/*</code> "submodules" to help deal with this problem.
+For example, by using <code>module swap env/slurm/donphan</code> instead of <code>module swap cluster/donphan</code> (starting from the default environment, the <code>doduo</code> cluster), you can update your environment to submit jobs to <code>donphan</code>, while still using the software installations that are specific to the <code>doduo</code> cluster (which are compatible with the login nodes since the <code>doduo</code> cluster workernodes have the same CPUs).
+The same goes for the other clusters as well of course.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To submit a Worker job to a specific cluster, like the <a href="../interactive_debug/"><code>donphan</code> interactive cluster</a> for instance, use:
+<pre><code>$ <b>module swap env/slurm/donphan</b> </code></pre>
+instead of
+<pre><code>$ <b>module swap cluster/donphan</b> </code></pre></p>
+</div>
+<p>We recommend using a <code>module swap cluster</code> command after submitting the jobs.</p>
+<p>This to "reset" your environment to a sane state, since only having a different <code>env/slurm</code> module loaded can also lead to some surprises if you're not paying close attention.</p>
+
+
+
+
+
+                
+<script>
+ if (!! localStorage.getItem('select_OS')) {
+    const classes = ["headerlink", "md-nav__link"]
+    for (i in classes) {
+        var anchors = Array.from(document.getElementsByClassName(classes[i]))
+        anchors.forEach(
+            function (anch) {
+                const href = anch.href;
+                if (!!anch.href) {
+                    // Remove OS part and search query in permalinks if it exists. Useful when copying the urls.
+                    anch.href = anch.href.replace(/\/(Linux|macOS|Windows)\//i, "/").replace(/\?[^#]*/,"")
+                }
+                anch.addEventListener("click",(event) => {
+                    // Redirect to real original target. (with OS,and search query)
+                    event.target.href = href;
+                })
+            })
+    }
+}
+</script>
+
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../xdmod/" class="md-footer__link md-footer__link--prev" aria-label="Previous: XDMoD portal" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../xdmod/" class="md-footer__link md-footer__link--prev" aria-label="Previous: XDMoD portal" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              XDMoD portal
+              <div class="md-ellipsis">
+                XDMoD portal
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../sites/hpc_policies/" class="md-footer__link md-footer__link--next" aria-label="Next: HPC Policies" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../sites/hpc_policies/" class="md-footer__link md-footer__link--next" aria-label="Next: HPC Policies" rel="next">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              HPC Policies
+              <div class="md-ellipsis">
+                HPC Policies
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1315,6 +1927,32 @@ to avoid problems (see <a href="./running_batch_jobs/#purging-all-modules">Purgi
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/HPCUGent" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@HPCUGent" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1323,10 +1961,17 @@ to avoid problems (see <a href="./running_batch_jobs/#purging-all-modules">Purgi
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "navigation.footer", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="../available_software/javascripts/populate_overview.js"></script>
       
     
   </body>

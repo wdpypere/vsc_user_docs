@@ -8,8 +8,16 @@
       
       
       
+        <link rel="canonical" href="https://docs.hpc.ugent.be/macOS/VNC/">
+      
+      
+        <link rel="prev" href="../best_practices/">
+      
+      
+        <link rel="next" href="../x2go/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -17,13 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -36,10 +44,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -47,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,7 +87,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VSC User Documentation - Gent (macOS)" class="md-header__button md-logo" aria-label="VSC User Documentation - Gent (macOS)" data-md-component="logo">
       
@@ -100,6 +117,26 @@
       </div>
     </div>
     
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -116,7 +153,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -130,13 +171,52 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
     
+    
+      <div class="md-header__source">
+        <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+      </div>
     
   </nav>
   
@@ -171,7 +251,61 @@
     VSC User Documentation - Gent (macOS)
   </label>
   
+    <div class="md-nav__source">
+      <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
     
       
       
@@ -183,6 +317,21 @@
     <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         Introduction to HPC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
       </a>
     </li>
   
@@ -301,6 +450,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../interactive_debug/" class="md-nav__link">
+        Interactive and debug cluster
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xdmod/" class="md-nav__link">
         XDMoD portal
       </a>
@@ -344,21 +508,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        Frequently Asked Questions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -368,18 +517,19 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Advanced topics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Advanced topics
         </label>
@@ -478,7 +628,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -606,8 +756,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpu_gent/" class="md-nav__link">
-        HPC-UGent GPU clusters
+      <a href="../gpu/" class="md-nav__link">
+        GPU clusters
       </a>
     </li>
   
@@ -620,22 +770,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive_gent/" class="md-nav__link">
-        HPC-UGent interactive and debug cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crontab_gent/" class="md-nav__link">
+      <a href="../crontab/" class="md-nav__link">
         Cron scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teaching_training/" class="md-nav__link">
+        Teaching and training
       </a>
     </li>
   
@@ -661,22 +811,190 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Linux tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Linux tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/navigating/" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/manipulating_files_and_directories/" class="md-nav__link">
+        Manipulating files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/uploading_files/" class="md-nav__link">
+        Uploading files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/beyond_the_basics/" class="md-nav__link">
+        Beyond the basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/common_pitfalls/" class="md-nav__link">
+        Common pitfalls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/hpc_infrastructure/" class="md-nav__link">
+        More on the HPC infrastructure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           Software-specific Best Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Software-specific Best Practices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Software-specific Best Practices
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        AlphaFold
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -748,14 +1066,53 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../scoop/" class="md-nav__link">
-        SCOOP
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
       </a>
     </li>
   
@@ -781,18 +1138,21 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_19" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
           Appendices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Appendices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Appendices
         </label>
@@ -949,21 +1309,26 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+
+                  
+
+  
+  
 
 
 <h1 id="graphical-applications-with-vnc">Graphical applications with VNC<a class="headerlink" href="#graphical-applications-with-vnc" title="Permanent link">#</a></h1>
 <p><strong>VNC is still available at UGent site but we encourage our users to replace VNC by X2Go client</strong>.
 Please see <a href="../x2go/#graphical-applications-with-x2go">Graphical applications with X2Go</a> for more information.</p>
 <p>Virtual Network Computing is a graphical desktop sharing system that
-enables you to interact with graphical software running on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>
+enables you to interact with graphical software running on the HPC
 infrastructure from your own computer.</p>
-<p><strong>Please carefully follow the instructions below, since the procedure to connect to a VNC server running on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure is not trivial, due to security constraints.</strong></p>
+<p><strong>Please carefully follow the instructions below, since the procedure to connect to a VNC server running on the HPC infrastructure is not trivial, due to security constraints.</strong></p>
 <h2 id="starting-a-vnc-server">Starting a VNC server<a class="headerlink" href="#starting-a-vnc-server" title="Permanent link">#</a></h2>
-<p>First login on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> (see <a href="../connecting/#first-time-connection-to-the-hpc-infrastructure">First time connection to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure</a>, then start <code>vncserver</code> with:</p>
+<p>First login on the login node (see <a href="../connecting/#first-time-connection-to-the-hpc-infrastructure">First time connection to the HPC infrastructure</a>, then start <code>vncserver</code> with:</p>
 <pre><code>$ <b>vncserver -geometry 1920x1080 -localhost</b>
 You will require a password to access your desktops.
 
@@ -989,7 +1354,7 @@ logout and go home without a problem (like the terminal equivalent
 <code>screen</code> or <code>tmux</code>). This also means you don't have to start <code>vncserver</code>
 each time you want to connect.</p>
 <h2 id="list-running-vnc-servers">List running VNC servers<a class="headerlink" href="#list-running-vnc-servers" title="Permanent link">#</a></h2>
-<p>You can get a list of running VNC servers on a <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> with</p>
+<p>You can get a list of running VNC servers on a node with</p>
 <pre><code>$ <b>vncserver -list</b>
 TigerVNC server sessions:
 
@@ -997,10 +1362,10 @@ X DISPLAY # PROCESS ID
 :6          30713
 </code></pre>
 
-<p>This only displays the running VNC servers on <strong>the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> you run the command on</strong>.</p>
+<p>This only displays the running VNC servers on <strong>the login node you run the command on</strong>.</p>
 <p>To see what login nodes you are running a VNC server on, you can run the
 <code>ls .vnc/*.pid</code> command in your home directory: the files shown have the
-hostname of the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> in the filename:</p>
+hostname of the login node in the filename:</p>
 <pre><code>$ <b>cd $HOME</b>
 $ <b>ls .vnc/*.pid</b>
 .vnc/gligar07.gastly.os:6.pid
@@ -1011,53 +1376,53 @@ $ <b>ls .vnc/*.pid</b>
 another one running <code>gligar08.gastly.os</code> on port 5908 (see also <a href="./#determining-the-sourcedestination-port">Determining the source/destination port</a>).</p>
 <h2 id="connecting-to-a-vnc-server">Connecting to a VNC server<a class="headerlink" href="#connecting-to-a-vnc-server" title="Permanent link">#</a></h2>
 <p>The VNC server runs on a (in the example above, on <code>gligar07.gastly.os</code>).</p>
-<p>In order to access your VNC server, you will need to set up an <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr>
-tunnel from your workstation to this <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> (see <a href="./#setting-up-the-ssh-tunnels">Setting up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel(s)</a>).</p>
+<p>In order to access your VNC server, you will need to set up an SSH
+tunnel from your workstation to this login node (see <a href="./#setting-up-the-ssh-tunnels">Setting up the SSH tunnel(s)</a>).</p>
 <p>Login nodes are rebooted from time to time. You can check that the VNC
-server is still running in the same <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> by executing <code>vncserver -list</code>
+server is still running in the same node by executing <code>vncserver -list</code>
 (see also 
 <a href="./#list-running-vnc-servers">List running VNC servers</a>). If you get an empty list, it means that there is no VNC
-server running on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>.</p>
-<p><strong>To set up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel required to connect to your VNC server, you will need to port forward the VNC port to your workstation.</strong></p>
+server running on the login node.</p>
+<p><strong>To set up the SSH tunnel required to connect to your VNC server, you will need to port forward the VNC port to your workstation.</strong></p>
 <p>The <em>host</em> is <code>localhost</code>, which means "your own computer": we set up an
-<abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel that connects the VNC port on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> to the same port
+SSH tunnel that connects the VNC port on the login node to the same port
 on your local computer.</p>
 <h3 id="determining-the-sourcedestination-port">Determining the source/destination port<a class="headerlink" href="#determining-the-sourcedestination-port" title="Permanent link">#</a></h3>
 <p>The <em>destination port</em> is the port on which the VNC server is running
-(on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>), which is <strong>the sum of <code>5900</code> and the partial port number</strong> we noted down earlier (<code>6</code>); in the
+(on the login node), which is <strong>the sum of <code>5900</code> and the partial port number</strong> we noted down earlier (<code>6</code>); in the
 running example, that is <code>5906</code>.</p>
 <p>The <em>source port</em> is the port you will be connecting to with your VNC
 client on your workstation. Although you can use any (free) port for
 this, we strongly recommend to use the <strong>same value as the destination port</strong>.</p>
 <p>So, in our running example, both the source and destination ports are
 <code>5906</code>.</p>
-<h3 id="picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr><a class="headerlink" href="#picking-an-intermediate-port-to-connect-to-the-right-login-node" title="Permanent link">#</a></h3>
-<p>In general, you have no control over which <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> you will be on
-when setting up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel from your workstation to <code>login.hpc.ugent.be</code> (see <a href="./#setting-up-the-ssh-tunnels">Setting up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel(s)</a>).</p>
-<p>If the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> you end up on is a different one than the one where
+<h3 id="picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right login node<a class="headerlink" href="#picking-an-intermediate-port-to-connect-to-the-right-login-node" title="Permanent link">#</a></h3>
+<p>In general, you have no control over which login node you will be on
+when setting up the SSH tunnel from your workstation to <code>login.hpc.ugent.be</code> (see <a href="./#setting-up-the-ssh-tunnels">Setting up the SSH tunnel(s)</a>).</p>
+<p>If the login node you end up on is a different one than the one where
 your VNC server is running (i.e., <code>gligar08.gastly.os</code> rather than <code>gligar07.gastly.os</code> in our running
-example), you need to create a <strong><em>second</em> <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel</strong> on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> you are connected to,
-in order to "patch through" to the correct port on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>
+example), you need to create a <strong><em>second</em> SSH tunnel</strong> on the login node you are connected to,
+in order to "patch through" to the correct port on the login node
 where your VNC server is running.</p>
 <p>In the remainder of these instructions, we will assume that we are
-indeed connected to a different <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>. Following these instructions
+indeed connected to a different login node. Following these instructions
 should always work, even if you happen to be connected to the correct
-<abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>.</p>
-<p>To set up the second <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel, you need to <strong>pick an (unused) port on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> you are connected to</strong>, which will be used as an
+login node.</p>
+<p>To set up the second SSH tunnel, you need to <strong>pick an (unused) port on the login node you are connected to</strong>, which will be used as an
 <em>intermediate</em> port.</p>
 <p>Now we have a chicken-egg situation: you need to pick a port before
-setting up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel from your workstation to <code>gligar07.gastly.os</code>, but only after
-starting the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel will you be able to determine whether the port
+setting up the SSH tunnel from your workstation to <code>gligar07.gastly.os</code>, but only after
+starting the SSH tunnel will you be able to determine whether the port
 you picked is actually free or not...</p>
 <p>In practice, if you <strong>pick a <em>random</em> number between $10000$ and $30000$</strong>, you have a good chance that the port will not be
 used yet.</p>
 <p>We will proceed with $12345$ as intermediate port, but <strong>you should pick another value that other people are not likely to pick</strong>. If you need
-some inspiration, run the following command on a <abbr title="An operating system, similar to UNIX.">Linux</abbr> server (for
-example on a <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>): <code>echo $RANDOM</code> (but do not use a value lower
+some inspiration, run the following command on a Linux server (for
+example on a login node): <code>echo $RANDOM</code> (but do not use a value lower
 than $1025$).</p>
-<h3 id="setting-up-the-ssh-tunnels">Setting up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel(s)<a class="headerlink" href="#setting-up-the-ssh-tunnels" title="Permanent link">#</a></h3>
-<h4 id="setting-up-the-first-ssh-tunnel-from-your-workstation-to-loginhpcugentbe">Setting up the first <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel from your workstation to login.hpc.ugent.be<a class="headerlink" href="#setting-up-the-first-ssh-tunnel-from-your-workstation-to-loginhpcugentbe" title="Permanent link">#</a></h4>
-<p>First, we will set up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel from our workstation to .</p>
+<h3 id="setting-up-the-ssh-tunnels">Setting up the SSH tunnel(s)<a class="headerlink" href="#setting-up-the-ssh-tunnels" title="Permanent link">#</a></h3>
+<h4 id="setting-up-the-first-ssh-tunnel-from-your-workstation-to-loginhpcugentbe">Setting up the first SSH tunnel from your workstation to login.hpc.ugent.be<a class="headerlink" href="#setting-up-the-first-ssh-tunnel-from-your-workstation-to-loginhpcugentbe" title="Permanent link">#</a></h4>
+<p>First, we will set up the SSH tunnel from our workstation to .</p>
 <p>Use the settings specified in the sections above:</p>
 <ul>
 <li>
@@ -1067,20 +1432,20 @@ than $1025$).</p>
 <p><em>destination host</em>: <code>localhost</code>;</p>
 </li>
 <li>
-<p><em>destination port</em>: use the intermediate port you picked (see <a href="./#picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr></a>)</p>
+<p><em>destination port</em>: use the intermediate port you picked (see <a href="./#picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right login node</a>)</p>
 </li>
 </ul>
-<p>Execute the following command to set up the <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel.</p>
+<p>Execute the following command to set up the SSH tunnel.</p>
 <pre><code>$ <b>ssh -L 5906:localhost:12345  vsc40000@login.hpc.ugent.be</b>
 </code></pre>
 
 <p><strong>Replace the source port <code>5906</code>, destination port <code>12345</code> and user ID vsc40000 with your own!</strong></p>
 <p>With this, we have forwarded port <code>5906</code> on our workstation to port
-<code>12345</code> on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> we are connected to.</p>
-<p><strong>Again, do <em>not</em> use <code>12345</code> as destination port, as this port will most likely be used by somebody else already; replace it with a port number you picked yourself, which is unlikely to be used already (see <a href="./#picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr></a>).</strong></p>
+<code>12345</code> on the login node we are connected to.</p>
+<p><strong>Again, do <em>not</em> use <code>12345</code> as destination port, as this port will most likely be used by somebody else already; replace it with a port number you picked yourself, which is unlikely to be used already (see <a href="./#picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right login node</a>).</strong></p>
 <h4 id="checking-whether-the-intermediate-port-is-available">Checking whether the intermediate port is available<a class="headerlink" href="#checking-whether-the-intermediate-port-is-available" title="Permanent link">#</a></h4>
 <p>Before continuing, it's good to check whether the intermediate port that
-you have picked is actually still available (see <a href="./#picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr></a>).</p>
+you have picked is actually still available (see <a href="./#picking-an-intermediate-port-to-connect-to-the-right-login-node">Picking an intermediate port to connect to the right login node</a>).</p>
 <p>You can check using the following command (**do not forget to replace <code>12345</code> the value you picked for your intermediate port):</p>
 <pre><code>$ <b>netstat -an | grep -i listen | grep tcp | grep 12345</b>
 $
@@ -1089,17 +1454,17 @@ $
 <p>If you see no matching lines, then the port you picked is still
 available, and you can continue.</p>
 <p>If you see one or more matching lines as shown below,
-<strong>you must disconnect the first <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel, pick a different intermediate port, and set up the first <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel again using the new value</strong>.</p>
+<strong>you must disconnect the first SSH tunnel, pick a different intermediate port, and set up the first SSH tunnel again using the new value</strong>.</p>
 <pre><code>$ <b>netstat -an | grep -i listen | grep tcp | grep 12345</b>
 tcp        0      0 0.0.0.0:12345           0.0.0.0:*               LISTEN
 tcp6       0      0 :::12345                :::*                    LISTEN
 $
 </code></pre>
 
-<h4 id="setting-up-the-second-ssh-tunnel-to-the-correct-login-node">Setting up the second <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel to the correct <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr><a class="headerlink" href="#setting-up-the-second-ssh-tunnel-to-the-correct-login-node" title="Permanent link">#</a></h4>
-<p>In the session on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> you created by setting up an <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel
-from your workstation to <code>login.hpc.ugent.be</code>, you now need to set up the second <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr>
-tunnel to "patch through" to the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> where your VNC server is
+<h4 id="setting-up-the-second-ssh-tunnel-to-the-correct-login-node">Setting up the second SSH tunnel to the correct login node<a class="headerlink" href="#setting-up-the-second-ssh-tunnel-to-the-correct-login-node" title="Permanent link">#</a></h4>
+<p>In the session on the login node you created by setting up an SSH tunnel
+from your workstation to <code>login.hpc.ugent.be</code>, you now need to set up the second SSH
+tunnel to "patch through" to the login node where your VNC server is
 running (<code>gligar07.gastly.os</code> in our running example, see <a href="./#starting-a-vnc-server">Starting a VNC server</a>).</p>
 <p>To do this, run the following command:</p>
 <pre><code>$ <b>ssh -L 12345:localhost:5906 gligar07.gastly.os</b>
@@ -1107,17 +1472,17 @@ $ <b>hostname</b>
 gligar07.gastly.os
 </code></pre>
 
-<p>With this, we are forwarding port <code>12345</code> on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> we are
+<p>With this, we are forwarding port <code>12345</code> on the login node we are
 connected to (which is referred to as <code>localhost</code>) through to port
-<code>5906</code> on our target <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> (<code>gligar07.gastly.os</code>).</p>
-<p>Combined with the first <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel, port <code>5906</code> on our workstation is
-now connected to port <code>5906</code> on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> where our VNC server is
-running (via the intermediate port <code>12345</code> on the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> we ended up
-one with the first <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> tunnel).</p>
+<code>5906</code> on our target login node (<code>gligar07.gastly.os</code>).</p>
+<p>Combined with the first SSH tunnel, port <code>5906</code> on our workstation is
+now connected to port <code>5906</code> on the login node where our VNC server is
+running (via the intermediate port <code>12345</code> on the login node we ended up
+one with the first SSH tunnel).</p>
 <p>**Do not forget to change the intermediate port (<code>12345</code>), destination port (<code>5906</code>),
-and hostname of the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr> (<code>gligar07.gastly.os</code>) in the command shown above!</p>
+and hostname of the login node (<code>gligar07.gastly.os</code>) in the command shown above!</p>
 <p>As shown above, you can check again using the <code>hostname</code> command whether
-you are indeed connected to the right <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>. If so, you can go
+you are indeed connected to the right login node. If so, you can go
 ahead and connect to your VNC server (see <a href="./#connecting-using-a-vnc-client">Connecting using a VNC client</a>).</p>
 <h3 id="connecting-using-a-vnc-client">Connecting using a VNC client<a class="headerlink" href="#connecting-using-a-vnc-client" title="Permanent link">#</a></h3>
 <p>You can download a free VNC client from
@@ -1150,56 +1515,84 @@ can get it with <code>vncserver -list</code> (see <a href="./#list-running-vnc-s
 removing the <code>.vnc/passwd</code> file (with <code>rm .vnc/passwd</code>) and then
 starting the VNC server again (see <a href="./#starting-a-vnc-server">Starting a VNC server</a>).</p>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+<script>
+ if (!! localStorage.getItem('select_OS')) {
+    const classes = ["headerlink", "md-nav__link"]
+    for (i in classes) {
+        var anchors = Array.from(document.getElementsByClassName(classes[i]))
+        anchors.forEach(
+            function (anch) {
+                const href = anch.href;
+                if (!!anch.href) {
+                    // Remove OS part and search query in permalinks if it exists. Useful when copying the urls.
+                    anch.href = anch.href.replace(/\/(Linux|macOS|Windows)\//i, "/").replace(/\?[^#]*/,"")
+                }
+                anch.addEventListener("click",(event) => {
+                    // Redirect to real original target. (with OS,and search query)
+                    event.target.href = href;
+                })
+            })
+    }
+}
+</script>
+
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../best_practices/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Best Practices" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../best_practices/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Best Practices" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              Best Practices
+              <div class="md-ellipsis">
+                Best Practices
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../x2go/" class="md-footer__link md-footer__link--next" aria-label="Next: Graphical applications with X2Go" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../x2go/" class="md-footer__link md-footer__link--next" aria-label="Next: Graphical applications with X2Go" rel="next">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Graphical applications with X2Go
+              <div class="md-ellipsis">
+                Graphical applications with X2Go
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1213,6 +1606,32 @@ starting the VNC server again (see <a href="./#starting-a-vnc-server">Starting a
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/HPCUGent" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@HPCUGent" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1221,10 +1640,17 @@ starting the VNC server again (see <a href="./#starting-a-vnc-server">Starting a
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "navigation.footer", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="../available_software/javascripts/populate_overview.js"></script>
       
     
   </body>

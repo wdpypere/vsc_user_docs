@@ -8,8 +8,16 @@
       
       
       
+        <link rel="canonical" href="https://docs.hpc.ugent.be/Windows/introduction/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../getting_started/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -17,13 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -36,10 +44,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -47,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,7 +87,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VSC User Documentation - Gent (Windows)" class="md-header__button md-logo" aria-label="VSC User Documentation - Gent (Windows)" data-md-component="logo">
       
@@ -100,6 +117,26 @@
       </div>
     </div>
     
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -116,7 +153,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -130,13 +171,52 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
     
+    
+      <div class="md-header__source">
+        <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+      </div>
     
   </nav>
   
@@ -171,7 +251,61 @@
     VSC User Documentation - Gent (Windows)
   </label>
   
+    <div class="md-nav__source">
+      <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
     
       
       
@@ -184,7 +318,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -222,8 +356,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-the-ugent-hpc" class="md-nav__link">
-    What is the UGent-HPC?
+  <a href="#what-is-the-hpc-ugent-infrastructure" class="md-nav__link">
+    What is the HPC-UGent infrastructure?
   </a>
   
 </li>
@@ -301,6 +435,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
     </li>
   
 
@@ -418,6 +567,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../interactive_debug/" class="md-nav__link">
+        Interactive and debug cluster
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xdmod/" class="md-nav__link">
         XDMoD portal
       </a>
@@ -462,39 +626,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        Frequently Asked Questions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Advanced topics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Advanced topics
         </label>
@@ -618,8 +770,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpu_gent/" class="md-nav__link">
-        HPC-UGent GPU clusters
+      <a href="../gpu/" class="md-nav__link">
+        GPU clusters
       </a>
     </li>
   
@@ -632,22 +784,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive_gent/" class="md-nav__link">
-        HPC-UGent interactive and debug cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crontab_gent/" class="md-nav__link">
+      <a href="../crontab/" class="md-nav__link">
         Cron scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teaching_training/" class="md-nav__link">
+        Teaching and training
       </a>
     </li>
   
@@ -673,22 +825,190 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Linux tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Linux tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/navigating/" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/manipulating_files_and_directories/" class="md-nav__link">
+        Manipulating files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/uploading_files/" class="md-nav__link">
+        Uploading files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/beyond_the_basics/" class="md-nav__link">
+        Beyond the basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/common_pitfalls/" class="md-nav__link">
+        Common pitfalls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/hpc_infrastructure/" class="md-nav__link">
+        More on the HPC infrastructure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           Software-specific Best Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Software-specific Best Practices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Software-specific Best Practices
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        AlphaFold
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -760,14 +1080,53 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../scoop/" class="md-nav__link">
-        SCOOP
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
       </a>
     </li>
   
@@ -793,18 +1152,21 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_19" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
           Appendices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Appendices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Appendices
         </label>
@@ -892,8 +1254,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-the-ugent-hpc" class="md-nav__link">
-    What is the UGent-HPC?
+  <a href="#what-is-the-hpc-ugent-infrastructure" class="md-nav__link">
+    What is the HPC-UGent infrastructure?
   </a>
   
 </li>
@@ -975,27 +1337,32 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
 
+                  
 
-<h1 id="introduction-to-hpc">Introduction to <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr><a class="headerlink" href="#introduction-to-hpc" title="Permanent link">#</a></h1>
-<h2 id="what-is-hpc">What is <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>?<a class="headerlink" href="#what-is-hpc" title="Permanent link">#</a></h2>
-<p>"<strong>High Performance Computing</strong>" (<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>) is computing on a "<em>Supercomputer</em>", a computer with at the
+  
+  
+
+
+<h1 id="introduction-to-hpc">Introduction to HPC<a class="headerlink" href="#introduction-to-hpc" title="Permanent link">#</a></h1>
+<h2 id="what-is-hpc">What is HPC?<a class="headerlink" href="#what-is-hpc" title="Permanent link">#</a></h2>
+<p>"<strong>High Performance Computing</strong>" (HPC) is computing on a "<em>Supercomputer</em>", a computer with at the
 frontline of contemporary processing capacity -- particularly speed of
-calculation and available <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr>.</p>
+calculation and available memory.</p>
 <p>While the supercomputers in the early days (around 1970) used only a few
 processors, in the 1990s machines with thousands of processors began to
 appear and, by the end of the 20th century, massively parallel
 supercomputers with tens of thousands of "off-the-shelf" processors were
 the norm. A large number of dedicated processors are placed in close
-proximity to each other in a computer <abbr title="A group of compute nodes.">cluster</abbr>.</p>
-<p>A <strong>computer <abbr title="A group of compute nodes.">cluster</abbr></strong> consists of a set of loosely or tightly connected computers that work
+proximity to each other in a computer cluster.</p>
+<p>A <strong>computer cluster</strong> consists of a set of loosely or tightly connected computers that work
 together so that in many respects they can be viewed as a single system.</p>
-<p>The components of a <abbr title="A group of compute nodes.">cluster</abbr> are usually connected to each other through
-fast local area networks ("<abbr title="Local Area Network">LAN</abbr>") with each <em><abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr></em> (computer used as a
+<p>The components of a cluster are usually connected to each other through
+fast local area networks ("LAN") with each <em>node</em> (computer used as a
 server) running its own instance of an operating system. Computer
 clusters emerged as a result of convergence of a number of computing
 trends including the availability of low cost microprocessors,
@@ -1014,9 +1381,9 @@ compounds, biological macromolecules, polymers, and crystals), and
 physical simulations (such as simulations of the early moments of the
 universe, airplane and spacecraft aerodynamics, the detonation of
 nuclear weapons, and nuclear fusion). <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<h2 id="what-is-the-ugent-hpc">What is the UGent-<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>?<a class="headerlink" href="#what-is-the-ugent-hpc" title="Permanent link">#</a></h2>
-<p>The <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> is a collection of computers with AMD and/or Intel CPUs, running a
-<abbr title="An operating system, similar to UNIX.">Linux</abbr> operating system, shaped like pizza boxes and stored above and
+<h2 id="what-is-the-hpc-ugent-infrastructure">What is the HPC-UGent infrastructure?<a class="headerlink" href="#what-is-the-hpc-ugent-infrastructure" title="Permanent link">#</a></h2>
+<p>The HPC is a collection of computers with AMD and/or Intel CPUs, running a
+Linux operating system, shaped like pizza boxes and stored above and
 next to each other in racks, interconnected with copper and fiber
 cables. Their number crunching power is (presently) measured in hundreds
 of billions of floating point operations (gigaflops) and even in
@@ -1024,15 +1391,15 @@ teraflops.</p>
 <p><img alt="" src="../img/ch1-cables1.png" width="245px" />
 <img alt="" src="../img/ch1-cables2.png" width="245px" />
 <img alt="" src="../img/ch1-cables3.png" width="245px" /></p>
-<p>The UGent-<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> relies on parallel-processing technology to offer UGent researchers an
+<p>The HPC-UGent infrastructure relies on parallel-processing technology to offer UGent researchers an
 extremely fast solution for all their data processing needs.</p>
-<p>The <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> currently consists of:</p>
+<p>The HPC currently consists of:</p>
 <p>a set of different compute clusters. For an up to date list of all
 clusters and their hardware, see <a href="https://vscdocumentation.readthedocs.io/en/latest/gent/tier2_hardware.html">https://vscdocumentation.readthedocs.io/en/latest/gent/tier2_hardware.html</a>.</p>
 <p><strong>Job management</strong> and <strong>job scheduling</strong> are performed by Slurm with a Torque frontend. We advise users to
 adhere to Torque commands mentioned in this document.</p>
-<h2 id="what-the-hpc-infrastucture-is-not">What the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastucture is <em>not</em><a class="headerlink" href="#what-the-hpc-infrastucture-is-not" title="Permanent link">#</a></h2>
-<p>The <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure is <em>not</em> a magic computer that automatically:</p>
+<h2 id="what-the-hpc-infrastucture-is-not">What the HPC infrastucture is <em>not</em><a class="headerlink" href="#what-the-hpc-infrastucture-is-not" title="Permanent link">#</a></h2>
+<p>The HPC infrastructure is <em>not</em> a magic computer that automatically:</p>
 <ol>
 <li>
 <p>runs your PC-applications much faster for bigger problems;</p>
@@ -1053,31 +1420,31 @@ adhere to Torque commands mentioned in this document.</p>
 <p>allows you to play games even faster.</p>
 </li>
 </ol>
-<p>The <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> does not replace your desktop computer.</p>
-<h2 id="is-the-hpc-a-solution-for-my-computational-needs">Is the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> a solution for my computational needs?<a class="headerlink" href="#is-the-hpc-a-solution-for-my-computational-needs" title="Permanent link">#</a></h2>
+<p>The HPC does not replace your desktop computer.</p>
+<h2 id="is-the-hpc-a-solution-for-my-computational-needs">Is the HPC a solution for my computational needs?<a class="headerlink" href="#is-the-hpc-a-solution-for-my-computational-needs" title="Permanent link">#</a></h2>
 <h3 id="batch-or-interactive-mode">Batch or interactive mode?<a class="headerlink" href="#batch-or-interactive-mode" title="Permanent link">#</a></h3>
-<p>Typically, the strength of a <abbr title="A computer with an extremely high processing capacity or processing power.">supercomputer</abbr> comes from its ability to run
+<p>Typically, the strength of a supercomputer comes from its ability to run
 a huge number of programs (i.e., executables) in parallel without any
 user interaction in real time. This is what is called "running in batch
 mode".</p>
-<p>It is also possible to run programs at the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>, which require user
+<p>It is also possible to run programs at the HPC, which require user
 interaction. (pushing buttons, entering input data, etc.). Although
-technically possible, the use of the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> might not always be the best and
+technically possible, the use of the HPC might not always be the best and
 smartest option to run those interactive programs. Each time some user
 interaction is needed, the computer will wait for user input. The
-available computer resources (<abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>, storage, network, etc.) might not be
-optimally used in those cases. A more in-depth analysis with the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> staff
-can unveil whether the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> is the desired solution to run interactive
+available computer resources (CPU, storage, network, etc.) might not be
+optimally used in those cases. A more in-depth analysis with the HPC staff
+can unveil whether the HPC is the desired solution to run interactive
 programs. Interactive mode is typically only useful for creating quick
 visualisations of your data without having to copy your data to your
 desktop and back.</p>
 <h3 id="what-are-cores-processors-and-nodes">What are cores, processors and nodes?<a class="headerlink" href="#what-are-cores-processors-and-nodes" title="Permanent link">#</a></h3>
-<p>In this manual, the terms <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>, <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> and <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> will be frequently
+<p>In this manual, the terms core, processor and node will be frequently
 used, so it's useful to understand what they are.</p>
 <p>Modern servers, also referred to as <em>(worker)nodes</em> in the context of
-<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>, include one or more sockets, each housing a multi-<em><abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr></em>
-<em><abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr></em> (next to <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr>, disk(s), network cards, ...). A modern
-<em><abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr></em> consists of multiple CPUs or <em>cores</em> that are used to
+HPC, include one or more sockets, each housing a multi-<em>core</em>
+<em>processor</em> (next to memory, disk(s), network cards, ...). A modern
+<em>processor</em> consists of multiple CPUs or <em>cores</em> that are used to
 execute <em>computations</em>.</p>
 <h3 id="parallel-or-sequential-programs">Parallel or sequential programs?<a class="headerlink" href="#parallel-or-sequential-programs" title="Permanent link">#</a></h3>
 <h4 id="parallel-programs">Parallel programs<a class="headerlink" href="#parallel-programs" title="Permanent link">#</a></h4>
@@ -1091,14 +1458,14 @@ multiple processing elements within a single machine, while clusters use
 multiple computers to work on the same task. Parallel computing has
 become the dominant computer architecture, mainly in the form of
 multicore processors.</p>
-<p>The two parallel programming paradigms most used in <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> are:</p>
+<p>The two parallel programming paradigms most used in HPC are:</p>
 <ul>
 <li>
-<p>OpenMP for shared <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> systems (multithreading): on multiple cores
-    of a single <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr></p>
+<p>OpenMP for shared memory systems (multithreading): on multiple cores
+    of a single node</p>
 </li>
 <li>
-<p><abbr title="MPI stands for Message-Passing Interface. It supports a parallel programming method designed for distributed memory systems, but can also be used well on shared memory systems.">MPI</abbr> for distributed <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> systems (multiprocessing): on multiple
+<p>MPI for distributed memory systems (multiprocessing): on multiple
     nodes</p>
 </li>
 </ul>
@@ -1109,46 +1476,46 @@ between the different subtasks are typically some of the greatest
 obstacles to getting good parallel program performance.</p>
 <h4 id="sequential-programs">Sequential programs<a class="headerlink" href="#sequential-programs" title="Permanent link">#</a></h4>
 <p>Sequential software does not do calculations in parallel, i.e., it only
-uses <em>one single <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr> of a single workernode</em>. <strong>It does not become faster by just throwing more cores at it</strong>: it can only use one
-<abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>.</p>
-<p>It is perfectly possible to also run purely <strong>sequential programs</strong> on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.</p>
+uses <em>one single core of a single workernode</em>. <strong>It does not become faster by just throwing more cores at it</strong>: it can only use one
+core.</p>
+<p>It is perfectly possible to also run purely <strong>sequential programs</strong> on the HPC.</p>
 <p>Running your sequential programs on the most modern and fastest
-computers in the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> can save you a lot of time. But it also might be
+computers in the HPC can save you a lot of time. But it also might be
 possible to run multiple instances of your program (e.g., with different
-input parameters) on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>, in order to solve one overall problem (e.g.,
+input parameters) on the HPC, in order to solve one overall problem (e.g.,
 to perform a parameter sweep). This is another form of running your
 sequential programs in parallel.</p>
 <h3 id="what-programming-languages-can-i-use">What programming languages can I use?<a class="headerlink" href="#what-programming-languages-can-i-use" title="Permanent link">#</a></h3>
 <p>You can use <em>any</em> programming language, <em>any</em> software package and <em>any</em>
-library provided it has a version that runs on <abbr title="An operating system, similar to UNIX.">Linux</abbr>, specifically, on
-the version of <abbr title="An operating system, similar to UNIX.">Linux</abbr> that is installed on the compute nodes, RHEL 8.6 (kirlia, doduo, accelgor, slaking, joltik, skitty, victini, swalot).</p>
-<p>For the most common <strong>programming languages</strong>, a compiler is available on RHEL 8.6 (kirlia, doduo, accelgor, slaking, joltik, skitty, victini, swalot). Supported and common
-programming languages on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> are C/C++, FORTRAN, Java, Perl, Python,
+library provided it has a version that runs on Linux, specifically, on
+the version of Linux that is installed on the compute nodes, RHEL 8.6 (doduo, accelgor, skitty, swalot, donphan) and RHEL 8.8 (gallade, joltik, victini).</p>
+<p>For the most common <strong>programming languages</strong>, a compiler is available on RHEL 8.6 (doduo, accelgor, skitty, swalot, donphan) and RHEL 8.8 (gallade, joltik, victini). Supported and common
+programming languages on the HPC are C/C++, FORTRAN, Java, Perl, Python,
 MATLAB, R, etc.</p>
 <p>Supported and commonly used compilers are GCC and Intel.</p>
-<p>Additional software can be installed "<em>on demand</em>". Please contact the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>
-staff to see whether the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> can handle your specific requirements.</p>
+<p>Additional software can be installed "<em>on demand</em>". Please contact the HPC
+staff to see whether the HPC can handle your specific requirements.</p>
 <h3 id="what-operating-systems-can-i-use">What operating systems can I use?<a class="headerlink" href="#what-operating-systems-can-i-use" title="Permanent link">#</a></h3>
-<p>All nodes in the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> <abbr title="A group of compute nodes.">cluster</abbr> run under RHEL 8.6 (kirlia, doduo, accelgor, slaking, joltik, skitty, victini, swalot), which is a specific version of Red Hat Enterprise <abbr title="An operating system, similar to UNIX.">Linux</abbr>.
-This means that all programs (executables) should be compiled for RHEL 8.6 (kirlia, doduo, accelgor, slaking, joltik, skitty, victini, swalot).</p>
-<p>Users can connect from any computer in the UGent network to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>, regardless
+<p>All nodes in the HPC cluster run under RHEL 8.6 (doduo, accelgor, skitty, swalot, donphan) and RHEL 8.8 (gallade, joltik, victini), which is a specific version of Red Hat Enterprise Linux.
+This means that all programs (executables) should be compiled for RHEL 8.6 (doduo, accelgor, skitty, swalot, donphan) and RHEL 8.8 (gallade, joltik, victini).</p>
+<p>Users can connect from any computer in the UGent network to the HPC, regardless
 of the Operating System that they are using on their personal computer.
 Users can use any of the common Operating Systems (such as Windows,
-macOS or any version of <abbr title="An operating system, similar to UNIX.">Linux</abbr>/Unix/BSD) and run and control their
-programs on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.</p>
-<p>A user does not need to have prior knowledge about <abbr title="An operating system, similar to UNIX.">Linux</abbr>; all of the
+macOS or any version of Linux/Unix/BSD) and run and control their
+programs on the HPC.</p>
+<p>A user does not need to have prior knowledge about Linux; all of the
 required knowledge is explained in this tutorial.</p>
 <h3 id="what-does-a-typical-workflow-look-like">What does a typical workflow look like?<a class="headerlink" href="#what-does-a-typical-workflow-look-like" title="Permanent link">#</a></h3>
 <p>A typical workflow looks like:</p>
 <ol>
 <li>
-<p>Connect to the login nodes with <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> (see <a href="../connecting/#first-time-connection-to-the-hpc-infrastructure">First Time connection to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure</a>)</p>
+<p>Connect to the login nodes with SSH (see <a href="../connecting/#first-time-connection-to-the-hpc-infrastructure">First Time connection to the HPC infrastructure</a>)</p>
 </li>
 <li>
-<p>Transfer your files to the <abbr title="A group of compute nodes.">cluster</abbr> (see <a href="../connecting/#transfer-files-tofrom-the-hpc">Transfer Files to/from the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr></a>)</p>
+<p>Transfer your files to the cluster (see <a href="../connecting/#transfer-files-tofrom-the-hpc">Transfer Files to/from the HPC</a>)</p>
 </li>
 <li>
-<p>Optional: compile your code and test it (for compiling, see <a href="">Compiling and testing your software on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr></a>)</p>
+<p>Optional: compile your code and test it (for compiling, see <a href="">Compiling and testing your software on the HPC</a>)</p>
 </li>
 <li>
 <p>Create a job script and submit your job (see <a href="">Running batch jobs</a>)</p>
@@ -1157,7 +1524,7 @@ required knowledge is explained in this tutorial.</p>
 <p>Get some coffee and be patient:</p>
 <ol>
 <li>
-<p>Your job gets into the <abbr title="PBS/TORQUE queues, or &quot;classes&quot; as Moab refers to them, represent groups of computing resources with specific parameters. A queue with a 12-hour runtime or &quot;walltime&quot; would allow jobs requesting 12 hours or less to use this queue.">queue</abbr></p>
+<p>Your job gets into the queue</p>
 </li>
 <li>
 <p>Your job gets executed</p>
@@ -1168,16 +1535,16 @@ required knowledge is explained in this tutorial.</p>
 </ol>
 </li>
 <li>
-<p>Study the results generated by your jobs, either on the <abbr title="A group of compute nodes.">cluster</abbr> or
+<p>Study the results generated by your jobs, either on the cluster or
     after downloading them locally.</p>
 </li>
 </ol>
 <h3 id="what-is-the-next-step">What is the next step?<a class="headerlink" href="#what-is-the-next-step" title="Permanent link">#</a></h3>
-<p>When you think that the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> is a useful tool to support your computational
-needs, we encourage you to acquire a VSC-account (as explained in <a href="../account">Getting a <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> Account</a>),
-read <a href="../connecting">Connecting to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure</a>, "Setting up the environment", and explore
-chapters <a href="">Running interactive jobs</a> to <a href="">Fine-tuning Job Specifications</a> which will help you to transfer and run your programs on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> <abbr title="A group of compute nodes.">cluster</abbr>.</p>
-<p>Do not hesitate to contact the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> staff for any help.</p>
+<p>When you think that the HPC is a useful tool to support your computational
+needs, we encourage you to acquire a VSC-account (as explained in <a href="../account">Getting a HPC Account</a>),
+read <a href="../connecting">Connecting to the HPC infrastructure</a>, "Setting up the environment", and explore
+chapters <a href="">Running interactive jobs</a> to <a href="">Fine-tuning Job Specifications</a> which will help you to transfer and run your programs on the HPC cluster.</p>
+<p>Do not hesitate to contact the HPC staff for any help.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1187,41 +1554,84 @@ chapters <a href="">Running interactive jobs</a> to <a href="">Fine-tuning Job
 </ol>
 </div>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+<script>
+ if (!! localStorage.getItem('select_OS')) {
+    const classes = ["headerlink", "md-nav__link"]
+    for (i in classes) {
+        var anchors = Array.from(document.getElementsByClassName(classes[i]))
+        anchors.forEach(
+            function (anch) {
+                const href = anch.href;
+                if (!!anch.href) {
+                    // Remove OS part and search query in permalinks if it exists. Useful when copying the urls.
+                    anch.href = anch.href.replace(/\/(Linux|macOS|Windows)\//i, "/").replace(/\?[^#]*/,"")
+                }
+                anch.addEventListener("click",(event) => {
+                    // Redirect to real original target. (with OS,and search query)
+                    event.target.href = href;
+                })
+            })
+    }
+}
+</script>
+
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
-      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../account/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting an HPC Account" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Welcome
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../getting_started/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started" rel="next">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Getting an HPC Account
+              <div class="md-ellipsis">
+                Getting Started
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1235,6 +1645,32 @@ chapters <a href="">Running interactive jobs</a> to <a href="">Fine-tuning Job
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/HPCUGent" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@HPCUGent" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1243,10 +1679,17 @@ chapters <a href="">Running interactive jobs</a> to <a href="">Fine-tuning Job
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "navigation.footer", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="../available_software/javascripts/populate_overview.js"></script>
       
     
   </body>

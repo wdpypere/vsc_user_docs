@@ -8,8 +8,16 @@
       
       
       
+        <link rel="canonical" href="https://docs.hpc.ugent.be/Linux/connecting/">
+      
+      
+        <link rel="prev" href="../account/">
+      
+      
+        <link rel="next" href="../running_batch_jobs/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -17,13 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -36,10 +44,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -47,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,7 +87,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VSC User Documentation - Gent (Linux)" class="md-header__button md-logo" aria-label="VSC User Documentation - Gent (Linux)" data-md-component="logo">
       
@@ -100,6 +117,26 @@
       </div>
     </div>
     
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -116,7 +153,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -130,13 +171,52 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
     
+    
+      <div class="md-header__source">
+        <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+      </div>
     
   </nav>
   
@@ -171,7 +251,61 @@
     VSC User Documentation - Gent (Linux)
   </label>
   
+    <div class="md-nav__source">
+      <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
     
       
       
@@ -183,6 +317,21 @@
     <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         Introduction to HPC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
       </a>
     </li>
   
@@ -214,7 +363,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -312,6 +461,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#changing-login-nodes" class="md-nav__link">
+    Changing login nodes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -403,6 +559,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../interactive_debug/" class="md-nav__link">
+        Interactive and debug cluster
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xdmod/" class="md-nav__link">
         XDMoD portal
       </a>
@@ -447,39 +618,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        Frequently Asked Questions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Advanced topics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Advanced topics
         </label>
@@ -603,8 +762,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpu_gent/" class="md-nav__link">
-        HPC-UGent GPU clusters
+      <a href="../gpu/" class="md-nav__link">
+        GPU clusters
       </a>
     </li>
   
@@ -617,22 +776,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive_gent/" class="md-nav__link">
-        HPC-UGent interactive and debug cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crontab_gent/" class="md-nav__link">
+      <a href="../crontab/" class="md-nav__link">
         Cron scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teaching_training/" class="md-nav__link">
+        Teaching and training
       </a>
     </li>
   
@@ -658,22 +817,190 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Linux tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Linux tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/navigating/" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/manipulating_files_and_directories/" class="md-nav__link">
+        Manipulating files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/uploading_files/" class="md-nav__link">
+        Uploading files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/beyond_the_basics/" class="md-nav__link">
+        Beyond the basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/common_pitfalls/" class="md-nav__link">
+        Common pitfalls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/hpc_infrastructure/" class="md-nav__link">
+        More on the HPC infrastructure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           Software-specific Best Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Software-specific Best Practices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Software-specific Best Practices
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        AlphaFold
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -745,14 +1072,53 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../scoop/" class="md-nav__link">
-        SCOOP
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
       </a>
     </li>
   
@@ -778,18 +1144,21 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_19" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
           Appendices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Appendices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Appendices
         </label>
@@ -937,6 +1306,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#changing-login-nodes" class="md-nav__link">
+    Changing login nodes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -945,25 +1321,30 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
 
+                  
 
-<h1 id="connecting-to-the-hpc-infrastructure">Connecting to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure<a class="headerlink" href="#connecting-to-the-hpc-infrastructure" title="Permanent link">#</a></h1>
-<p>Before you can really start using the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> clusters, there are several things
+  
+  
+
+
+<h1 id="connecting-to-the-hpc-infrastructure">Connecting to the HPC infrastructure<a class="headerlink" href="#connecting-to-the-hpc-infrastructure" title="Permanent link">#</a></h1>
+<p>Before you can really start using the HPC clusters, there are several things
 you need to do or know:</p>
 <ol>
 <li>
-<p>You need to <strong>log on to the <abbr title="A group of compute nodes.">cluster</abbr></strong> using an <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> client to one of
-    the login nodes. This will give you command-line access. The
-    software you'll need to use on your client system depends on its
-    operating system.</p>
+<p>You need to <strong>log on to the cluster</strong> using an SSH client to one of
+    the login nodes or by using the <a href="../web_portal/">HPC web portal</a>.
+    This will give you command-line access. 
+    A standard web browser like Firefox or Chrome for the web portal will suffice. </p>
 </li>
 <li>
 <p>Before you can do some work, you'll have to <strong>transfer the files</strong>
-    that you need from your desktop computer to the <abbr title="A group of compute nodes.">cluster</abbr>. At the end
+    that you need from your desktop computer to the cluster. At the end
     of a job, you might want to transfer some files back.</p>
 </li>
 <li>
@@ -975,14 +1356,14 @@ you need to do or know:</p>
 <p>Often several versions of <strong>software packages and libraries</strong> are
     installed, so you need to select the ones you need. To manage
     different versions efficiently, the VSC clusters use so-called
-    <strong><abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr></strong>, so you will need to select and load the <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr> that
+    <strong>modules</strong>, so you will need to select and load the modules that
     you need.</p>
 </li>
 </ol>
 <h2 id="connection-restrictions">Connection restrictions<a class="headerlink" href="#connection-restrictions" title="Permanent link">#</a></h2>
 <p>Since March 20th 2020, restrictions are in place that limit from where
-you can connect to the VSC <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure, in response to security
-incidents involving several European <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> centres.</p>
+you can connect to the VSC HPC infrastructure, in response to security
+incidents involving several European HPC centres.</p>
 <p>VSC login nodes are only directly accessible from within university
 networks, and from (most) Belgian commercial internet providers.</p>
 <p>All other IP domains are blocked by default. If you are connecting from
@@ -993,43 +1374,44 @@ options to get access to VSC login nodes:</p>
 <p>Use an VPN connection to connect to UGent the network (recommended). See <a href="https://helpdesk.ugent.be/vpn/en/">https://helpdesk.ugent.be/vpn/en/</a> for more information. </p>
 </li>
 <li>
-<p>Register your IP address by accessing
-    <a href="https://firewall.hpc.kuleuven.be">https://firewall.hpc.kuleuven.be</a> (same URL regardless of the
-    university you're affiliated with) and log in with your UGent account.</p>
+<p>Whitelist your IP address automatically by accessing
+    <a href="https://firewall.vscentrum.be">https://firewall.vscentrum.be</a> and log in with your UGent account.</p>
 <ul>
 <li>
-<p>While this web connection is active new <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> sessions can be
+<p>While this web connection is active new SSH sessions can be
     started.</p>
 </li>
 <li>
-<p>Active <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> sessions will remain active even when this web page
+<p>Active SSH sessions will remain active even when this web page
     is closed.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Contact your <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> support team (via hpc@ugent.be) and ask them to whitelist your
+<p>Contact your HPC support team (via hpc@ugent.be) and ask them to whitelist your
     IP range (e.g., for industry access, automated processes).</p>
 </li>
 </ul>
-<p>Trying to establish an <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> connection from an IP address that does not
+<p>Trying to establish an SSH connection from an IP address that does not
 adhere to these restrictions will result in an immediate failure to
 connect, with an error message like:</p>
 <pre><code>ssh_exchange_identification: read: Connection reset by peer
 </code></pre>
 
-<h2 id="first-time-connection-to-the-hpc-infrastructure">First Time connection to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure<a class="headerlink" href="#first-time-connection-to-the-hpc-infrastructure" title="Permanent link">#</a></h2>
-<p>If you have any issues connecting to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> after you've followed these
-steps, see <a href="../troubleshooting/#issues-connecting-to-login-node">Issues connecting to <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr></a> to troubleshoot.</p>
+<h2 id="first-time-connection-to-the-hpc-infrastructure">First Time connection to the HPC infrastructure<a class="headerlink" href="#first-time-connection-to-the-hpc-infrastructure" title="Permanent link">#</a></h2>
+<p>The remaining content in this chapter is primarily focused for people utilizing a terminal with SSH.
+If you are instead using the web portal, the corresponding chapter might be more helpful: <a href="../web_portal/">Using the HPC-UGent web portal</a>.</p>
+<p>If you have any issues connecting to the HPC after you've followed these
+steps, see <a href="../troubleshooting/#issues-connecting-to-login-node">Issues connecting to login node</a> to troubleshoot.</p>
 <h3 id="connect">Connect<a class="headerlink" href="#connect" title="Permanent link">#</a></h3>
-<p>Open up a terminal and enter the following command to connect to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.</p>
+<p>Open up a terminal and enter the following command to connect to the HPC.</p>
 <pre><code><b>$ ssh vsc40000@login.hpc.ugent.be</b>
 </code></pre>
 
-<p>Here, user vsc40000 wants to make a connection to the "hpcugent" <abbr title="A group of compute nodes.">cluster</abbr> at UGent via the login
-<abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> "login.hpc.ugent.be", so replace vsc40000 with your own VSC id in the above command.</p>
-<p>The first time you make a connection to the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>, you will be
-asked to verify the authenticity of the <abbr title="On HPC clusters, login nodes serve multiple functions. From a login node you can submit and monitor batch jobs, analyse computational results, run editors, plots, debuggers, compilers, do housekeeping chores as adjust shell settings, copy files and in general manage your account. You connect to these servers when want to start working on the HPC Infrastructure.">login node</abbr>. Please check
+<p>Here, user vsc40000 wants to make a connection to the "hpcugent" cluster at UGent via the login
+node "login.hpc.ugent.be", so replace vsc40000 with your own VSC id in the above command.</p>
+<p>The first time you make a connection to the login node, you will be
+asked to verify the authenticity of the login node. Please check
 <a href="../troubleshooting/#warning-message-when">Warning message when first connecting to new host</a>-first-connecting-to-new-host) on how to do this.</p>
 <p>A possible error message you can get if you previously saved your
 private key somewhere else than the default location
@@ -1042,7 +1424,7 @@ location of your private key. For example:</p>
 <pre><code><b>$ ssh -i /home/example/my_keys</b>
 </code></pre>
 
-<p><strong>Congratulations, you're on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure now!</strong>
+<p><strong>Congratulations, you're on the HPC infrastructure now!</strong>
 To find out where you have landed you can print the current working directory:</p>
 <pre><code><b>$ pwd</b>
 /user/home/gent/vsc400/vsc40000
@@ -1050,17 +1432,17 @@ To find out where you have landed you can print the current working directory:</
 
 <p>Your new private home directory is "/user/home/gent/vsc400/vsc40000". Here you can create your own
 subdirectory structure, copy and prepare your applications, compile and
-test them and submit your jobs on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.</p>
+test them and submit your jobs on the HPC.</p>
 <pre><code><b>$ cd /apps/gent/tutorials</b>
 <b>$ ls</b>
 Intro-HPC/
 </code></pre>
 
-<p>This directory currently contains all training material for the <strong><em>Introduction to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr></em></strong>. More
-relevant training material to work with the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> can always be added later in
+<p>This directory currently contains all training material for the <strong><em>Introduction to the HPC</em></strong>. More
+relevant training material to work with the HPC can always be added later in
 this directory.</p>
 <p>You can now explore the content of this directory with the "ls --l" (<strong>l</strong>ist<strong>s</strong> <strong>l</strong>ong) and the "cd" (<strong>c</strong>hange irectory) commands:</p>
-<p>As we are interested in the use of the <strong><em><abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr></em></strong>, move further to <strong><em>Intro-<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr></em></strong> and explore the
+<p>As we are interested in the use of the <strong><em>HPC</em></strong>, move further to <strong><em>Intro-HPC</em></strong> and explore the
 contents up to 2 levels deep:</p>
 <pre><code><b>$ cd Intro-HPC</b>
 <b>$ tree -L 2</b>
@@ -1082,7 +1464,7 @@ contents up to 2 levels deep:</p>
 <p>This directory contains:</p>
 <ol>
 <li>
-<p>This <strong><em><abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> Tutorial</em></strong> (in either a Mac, <abbr title="An operating system, similar to UNIX.">Linux</abbr> or      Windows version).</p>
+<p>This <strong><em>HPC Tutorial</em></strong> (in either a Mac, Linux or      Windows version).</p>
 </li>
 <li>
 <p>An <strong><em>examples</em></strong> subdirectory, containing all the examples that you need in this
@@ -1095,15 +1477,15 @@ contents up to 2 levels deep:</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Typing <code>cd ex</code> followed by <span class="keys"><kbd class="key-tab">Tab</kbd></span> (the Tab-key) will generate the <code>cd examples</code>
-command. <strong>Command-line completionn</strong> (also tab completion) is a common feature of the bash command
+command. <strong>Command-line completion</strong> (also tab completion) is a common feature of the bash command
 line interpreter, in which the program automatically fills in partially
 typed commands.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For more exhaustive tutorials about <abbr title="An operating system, similar to UNIX.">Linux</abbr> usage, see Appendix <a href="../useful_linux_commands">Useful <abbr title="An operating system, similar to UNIX.">Linux</abbr> Commands</a></p>
+<p>For more exhaustive tutorials about Linux usage, see Appendix <a href="../useful_linux_commands">Useful Linux Commands</a></p>
 </div>
-<p>The first action is to copy the contents of the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> examples directory to
+<p>The first action is to copy the contents of the HPC examples directory to
 your home directory, so that you have your own personal copy and that
 you can start using the examples. The "-r" option of the copy command
 will also copy the contents of the sub-directories "<em>recursively</em>".</p>
@@ -1115,7 +1497,7 @@ will also copy the contents of the sub-directories "<em>recursively</em>".</p>
 <b>$ ls -l</b>
 </code></pre>
 
-<p>Upon connecting you will see a login message containing your last login time stamp and a basic overview of the current <abbr title="A group of compute nodes.">cluster</abbr> utilisation.</p>
+<p>Upon connecting you will see a login message containing your last login time stamp and a basic overview of the current cluster utilisation.</p>
 <pre><code>Last login: Thu Mar 18 13:15:09 2021 from gligarha02.gastly.os
 
 STEVIN HPC-UGent infrastructure status on Thu, 18 Mar 2021 13:30:01
@@ -1127,8 +1509,8 @@ STEVIN HPC-UGent infrastructure status on Thu, 18 Mar 2021 13:30:01
     skitty    53      0     16      72     N/A       N/A
    victini    40      0     54      96     N/A       N/A
     joltik     8      0      2      10     N/A       N/A
-    kirlia    12      0      4      16     N/A       N/A
-     doduo   115      0      0     128     N/A       N/A
+     doduo   115      0     13     128     N/A       N/A
+  accelgor     8      1      0       9     N/A       N/A
 
 For a full view of the current loads and queues see:
 https://hpc.ugent.be/clusterstate/ 
@@ -1168,10 +1550,13 @@ LC_ALL=
 <p>A <strong>locale</strong> is a set of parameters that defines the user's language, country and
 any special variant preferences that the user wants to see in their user
 interface. Usually a locale identifier consists of at least a language
-identifier and a region identifier.
-<strong>Note:</strong> If you try to set a non-supported locale, then it will be automatically
+identifier and a region identifier.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you try to set a non-supported locale, then it will be automatically
 set to the default. Currently the default is <code>en_US.UFT-8</code> or <code>en_US</code>,
 depending on whether your originally (non-supported) locale was <code>UTF-8</code> or not.</p>
+</div>
 <p>Open the <code>.bashrc</code> on your local machine with your favourite editor and
 add the following lines:</p>
 <pre><code><b>$ nano ~/.bashrc</b>
@@ -1189,7 +1574,7 @@ export LANG="en_US.UTF-8"
 entering text with the arrow keys and type "i" to switch to insert mode. You can easily exit vi by entering: "<span class="keys"><kbd>ESC</kbd></span> :wq" 
 To exit vi without saving your changes, enter "<span class="keys"><kbd>ESC</kbd></span>:q!"</p>
 </div>
-<p>or alternatively (if you are not comfortable with the <abbr title="An operating system, similar to UNIX.">Linux</abbr> editors),
+<p>or alternatively (if you are not comfortable with the Linux editors),
 again on your local machine:</p>
 <pre><code><b>$ echo "export LANGUAGE=\"en_US.UTF-8\"" >> ~/.profile</b>
 <b>$ echo "export LC_ALL=\"en_US.UTF-8\"" >> ~/.profile</b>
@@ -1199,20 +1584,20 @@ again on your local machine:</p>
 
 <p>You can now log out, open a new terminal/shell on your local machine and
 reconnect to the , and you should not get these warnings anymore.</p>
-<h2 id="transfer-files-tofrom-the-hpc">Transfer Files to/from the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr><a class="headerlink" href="#transfer-files-tofrom-the-hpc" title="Permanent link">#</a></h2>
-<p>Before you can do some work, you'll have to <strong>transfer the files</strong> you need from your desktop or department to the <abbr title="A group of compute nodes.">cluster</abbr>. At the end of a job, you might want to transfer some files back.
-The preferred way to transfer files is by using an <abbr title="Secure Copy is a protocol to copy files between distinct machines. SCP or scp is used extensively on HPC clusters to stage in data from outside resources.">scp</abbr> or <abbr title="Secure File Transfer Protocol, used to copy files between distinct machines.">sftp</abbr> via the
-secure OpenSSH protocol. <abbr title="An operating system, similar to UNIX.">Linux</abbr> ships with an implementation of OpenSSH, so you
+<h2 id="transfer-files-tofrom-the-hpc">Transfer Files to/from the HPC<a class="headerlink" href="#transfer-files-tofrom-the-hpc" title="Permanent link">#</a></h2>
+<p>Before you can do some work, you'll have to <strong>transfer the files</strong> you need from your desktop or department to the cluster. At the end of a job, you might want to transfer some files back.
+The preferred way to transfer files is by using an scp or sftp via the
+secure OpenSSH protocol. Linux ships with an implementation of OpenSSH, so you
 don't need to install any third-party software to use it. Just open a
 terminal window and jump in!</p>
-<h3 id="using-scp">Using <abbr title="Secure Copy is a protocol to copy files between distinct machines. SCP or scp is used extensively on HPC clusters to stage in data from outside resources.">scp</abbr><a class="headerlink" href="#using-scp" title="Permanent link">#</a></h3>
+<h3 id="using-scp">Using scp<a class="headerlink" href="#using-scp" title="Permanent link">#</a></h3>
 <p><strong>Secure copy</strong> or <strong>SCP</strong> is a tool (command) for securely transferring files between a local
-host (= your computer) and a remote host (the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>). It is based on the
-Secure Shell (<abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr>) protocol. The <strong><abbr title="Secure Copy is a protocol to copy files between distinct machines. SCP or scp is used extensively on HPC clusters to stage in data from outside resources.">scp</abbr></strong> command is the equivalent of the <strong>cp</strong> (i.e.,
+host (= your computer) and a remote host (the HPC). It is based on the
+Secure Shell (SSH) protocol. The <strong>scp</strong> command is the equivalent of the <strong>cp</strong> (i.e.,
 <strong>c</strong>o<strong>p</strong>y) command, but can copy files to or from remote machines.</p>
 <p>It's easier to copy files directly to <code>$VSC_DATA</code> and <code>$VSC_SCRATCH</code> if
 you have symlinks to them in your home directory. See<!--- change url once deployed! --->
-<a href="localhost:8000/Gent/Linux/intro-Linux/ch_uploading_files/#symlinks-for-datascratch">the chapter titled "Uploading/downloading/editing files", section "Symlinks for data/<abbr title="Supercomputers generally have what is called scratch space: storage available for temporary use. Use the scratch filesystem when, for example you are downloading and uncompressed applications, reading and writing input/output data during a batch job, or when you work with large datasets. Scratch is generally a lot faster than the Data or Home filesystem.">scratch</abbr>" in the intro to <abbr title="An operating system, similar to UNIX.">Linux</abbr></a>
+<a href="localhost:8000/Gent/Linux/intro-Linux/uploading_files/#symlinks-for-datascratch">the chapter titled "Uploading/downloading/editing files", section "Symlinks for data/scratch" in the intro to Linux</a>
  for how to do this.</p>
 <p>Open an additional terminal window and check that you're working on your
 local machine.</p>
@@ -1220,10 +1605,10 @@ local machine.</p>
 <local-machine-name>
 </code></pre>
 
-<p>If you're still using the terminal that is connected to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>, close the
+<p>If you're still using the terminal that is connected to the HPC, close the
 connection by typing "exit" in the terminal window.</p>
 <p>For example, we will copy the (local) file "<em>localfile.txt</em>" to your
-home directory on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> <abbr title="A group of compute nodes.">cluster</abbr>. We first generate a small dummy
+home directory on the HPC cluster. We first generate a small dummy
 "<em>localfile.txt</em>", which contains the word "Hello". Use your own VSC
 account, which is something like "vsc40000". Don't forget the colon (<code>:</code>) at the
 end: if you forget it, it will just create a file named vsc40000@login.hpc.ugent.be on your
@@ -1237,7 +1622,7 @@ $ scp localfile.txt vsc40000@login.hpc.ugent.be
 localfile.txt     100%   6     0.0KB/s     00:00
 </code></pre>
 
-<p>Connect to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> via another terminal, print the working directory (to
+<p>Connect to the HPC via another terminal, print the working directory (to
 make sure you're in the home directory) and check whether the file has
 arrived:</p>
 <pre><code><b>$ pwd</b>
@@ -1250,11 +1635,11 @@ drwxrwxr-x 10
 -rw-r--r-- 1 
 <b>$ cat localfile.txt</b>
 Hello
-</cod></pre>
+</code></pre>
 
-<p>The <strong><abbr title="Secure Copy is a protocol to copy files between distinct machines. SCP or scp is used extensively on HPC clusters to stage in data from outside resources.">scp</abbr></strong> command can also be used to copy files from the <abbr title="A group of compute nodes.">cluster</abbr> to your
-local machine. Let us copy the remote file "intro-<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>-<abbr title="An operating system, similar to UNIX.">Linux</abbr>-Gent.pdf" from your "docs" 
-subdirectory on the <abbr title="A group of compute nodes.">cluster</abbr> to your local computer.</p>
+<p>The <strong>scp</strong> command can also be used to copy files from the cluster to your
+local machine. Let us copy the remote file "intro-HPC-Linux-Gent.pdf" from your "docs" 
+subdirectory on the cluster to your local computer.</p>
 <p>First, we will confirm that the file is indeed in the "docs"
 subdirectory. On the terminal on the , enter:</p>
 <pre><code><b>$ cd ~/docs</b>
@@ -1273,7 +1658,7 @@ total 899
 -rw-r--r-- 1 user staff      6 Sep 18 09:37 localfile.txt
 </code></pre>
 
-<p>The file has been copied from the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> to your local computer.</p>
+<p>The file has been copied from the HPC to your local computer.</p>
 <p>It's also possible to copy entire directories (and their contents) with
 the <code>-r</code> flag. For example, if we want to copy the local directory
 <code>dataset</code> to <code>$VSC_SCRATCH</code>, we can use the following command (assuming
@@ -1287,21 +1672,21 @@ the following error:</p>
 dataset: not a regular file
 </code></pre>
 
-<h3 id="using-sftp">Using <abbr title="Secure File Transfer Protocol, used to copy files between distinct machines.">sftp</abbr><a class="headerlink" href="#using-sftp" title="Permanent link">#</a></h3>
-<p>The <strong><abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr> File Transfer Protocol</strong> (also <strong>Secure File Transfer Protocol</strong>, or <strong>SFTP</strong>) is a network protocol that provides file access, file
+<h3 id="using-sftp">Using sftp<a class="headerlink" href="#using-sftp" title="Permanent link">#</a></h3>
+<p>The <strong>SSH File Transfer Protocol</strong> (also <strong>Secure File Transfer Protocol</strong>, or <strong>SFTP</strong>) is a network protocol that provides file access, file
 transfer and file management functionalities over any reliable data
 stream. It was designed as an extension of the Secure Shell protocol
-(<abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr>) version 2.0. This protocol assumes that it is run over a secure
-channel, such as <abbr title="Secure Shell (SSH), sometimes known as Secure Socket Shell, is a Unix-based command interface and protocol for securely getting access to a remote computer. It is widely used by network administrators to control Web and other kinds of servers remotely. SSH is actually a suite of three utilities (slogin, ssh, and scp) that are secure versions of the earlier UNIX utilities, rlogin, rsh, and rcp. SSH commands are encrypted and secure in several ways. Both ends of the client/server connection are authenticated using a digital certificate, and passwords are protected by encryption. Popular implementations include OpenSSH on Linux/Mac and Putty on Windows.">SSH</abbr>, that the server has already authenticated the
+(SSH) version 2.0. This protocol assumes that it is run over a secure
+channel, such as SSH, that the server has already authenticated the
 client, and that the identity of the client user is available to the
 protocol.</p>
-<p>The <abbr title="Secure File Transfer Protocol, used to copy files between distinct machines.">sftp</abbr> is an equivalent of the ftp command, with the difference that
+<p>The sftp is an equivalent of the ftp command, with the difference that
 it uses the secure ssh protocol to connect to the clusters.</p>
-<p>One easy way of starting a <abbr title="Secure File Transfer Protocol, used to copy files between distinct machines.">sftp</abbr> session is</p>
+<p>One easy way of starting a sftp session is</p>
 <pre><code><b>$ sftp vsc40000@login.hpc.ugent.be</b>
 </code></pre>
 
-<p>Typical and popular commands inside an <abbr title="Secure File Transfer Protocol, used to copy files between distinct machines.">sftp</abbr> session are:</p>
+<p>Typical and popular commands inside an sftp session are:</p>
 <table>
 <thead>
 <tr>
@@ -1312,19 +1697,19 @@ it uses the secure ssh protocol to connect to the clusters.</p>
 <tbody>
 <tr>
 <td align="left"><strong>cd ~/exmples/fibo</strong></td>
-<td align="left">Move to the examples/fibo subdirectory on the (i.e., the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> remote machine)</td>
+<td align="left">Move to the examples/fibo subdirectory on the (i.e., the HPC remote machine)</td>
 </tr>
 <tr>
 <td align="left"><strong>ls</strong></td>
-<td align="left">Get a list of the files in the current directory on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.</td>
+<td align="left">Get a list of the files in the current directory on the HPC.</td>
 </tr>
 <tr>
 <td align="left"><strong>get fibo.py</strong></td>
-<td align="left">Copy the file "fibo.py" from the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr></td>
+<td align="left">Copy the file "fibo.py" from the HPC</td>
 </tr>
 <tr>
-<td align="left"><strong>get tutorial/<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.pdf</strong></td>
-<td align="left">Copy the file "<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.pdf" from the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>, which is in the "tutorial" subdirectory.</td>
+<td align="left"><strong>get tutorial/HPC.pdf</strong></td>
+<td align="left">Copy the file "HPC.pdf" from the HPC, which is in the "tutorial" subdirectory.</td>
 </tr>
 <tr>
 <td align="left"><strong>lcd test</strong></td>
@@ -1340,7 +1725,7 @@ it uses the secure ssh protocol to connect to the clusters.</p>
 </tr>
 <tr>
 <td align="left"><strong>put test.py</strong></td>
-<td align="left">Copy the local file test.py to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.</td>
+<td align="left">Copy the local file test.py to the HPC.</td>
 </tr>
 <tr>
 <td align="left"><strong>put test1.py test2.py</strong></td>
@@ -1348,7 +1733,7 @@ it uses the secure ssh protocol to connect to the clusters.</p>
 </tr>
 <tr>
 <td align="left"><strong>bye</strong></td>
-<td align="left">Quit the <abbr title="Secure File Transfer Protocol, used to copy files between distinct machines.">sftp</abbr> session</td>
+<td align="left">Quit the sftp session</td>
 </tr>
 <tr>
 <td align="left"><strong>mget *.cc</strong></td>
@@ -1356,7 +1741,7 @@ it uses the secure ssh protocol to connect to the clusters.</p>
 </tr>
 <tr>
 <td align="left"><strong>mput *.h</strong></td>
-<td align="left">Copy all the local files with extension ".h" to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>.</td>
+<td align="left">Copy all the local files with extension ".h" to the HPC.</td>
 </tr>
 <tr>
 <td align="left"><a href=""></a></td>
@@ -1365,68 +1750,117 @@ it uses the secure ssh protocol to connect to the clusters.</p>
 </tbody>
 </table>
 <h3 id="using-a-gui">Using a GUI<a class="headerlink" href="#using-a-gui" title="Permanent link">#</a></h3>
-<p>If you prefer a GUI to transfer files back and forth to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>, you can
+<p>If you prefer a GUI to transfer files back and forth to the HPC, you can
 use your file browser. Open your file browser and press
 <span class="keys"><kbd>Ctrl</kbd><span>+</span><kbd>l</kbd></span></p>
 <p>This should open up a address bar where you can enter a URL.
 Alternatively, look for the "connect to server" option in your file
 browsers menu.</p>
-<p>Enter: <em><abbr title="Secure File Transfer Protocol, used to copy files between distinct machines.">sftp</abbr>://vsc40000@login.hpc.ugent.be/</em> and press enter.</p>
-<p>You should now be able to browse files on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> in your file browser.</p>
+<p>Enter: <em>sftp://vsc40000@login.hpc.ugent.be/</em> and press enter.</p>
+<p>You should now be able to browse files on the HPC in your file browser.</p>
 <h3 id="fast-file-transfer-for-large-datasets">Fast file transfer for large datasets<a class="headerlink" href="#fast-file-transfer-for-large-datasets" title="Permanent link">#</a></h3>
-<p>See <a href="#">the section on <code>rsync</code> in chapter 5 of the <abbr title="An operating system, similar to UNIX.">Linux</abbr> intro
-manual</a>.</p>
+<p>See <a href="../linux-tutorial/uploading_files/#copying-faster-with-rsync">the section on <code>rsync</code> in chapter 5 of the Linux intro manual</a>.</p>
+<h2 id="changing-login-nodes">Changing login nodes<a class="headerlink" href="#changing-login-nodes" title="Permanent link">#</a></h2>
+<p>It can be useful to have control over which login node you are on. However, when you connect to the HPC (High-Performance Computing) system, you are directed to a random login node, which might not be the one where you already have an active session. To address this, there is a way to manually switch your active login node.</p>
+<p>For instance, if you want to switch to the login node named <code>gligar07.gastly.os</code>, you can use the following command while you are connected to the <code>gligar08.gastly.os</code> login node on the HPC:
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>gligar07.gastly.os
+</code></pre></div>
+This is also possible the other way around.</p>
+<p>If you want to find out which login host you are connected to, you can use the <code>hostname</code> command.</p>
+<pre><code>$ <b>hostname</b> 
+gligar07.gastly.os
+$ <b>ssh gligar08.gastly.os</b>
 
-              
-            </article>
-            
-          </div>
+$ <b>hostname</b> 
+gligar08.gastly.os
+</code></pre>
+
+<p>Rather than always starting a new session on the HPC, you can also use a terminal multiplexer like <code>screen</code> or <code>tmux</code>.
+These can make sessions that 'survives' across disconnects.
+You can find more information on how to use these tools here (or on other online sources):</p>
+<ul>
+<li><a href="https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/">screen</a></li>
+<li><a href="https://www.howtogeek.com/671422/how-to-use-tmux-on-linux-and-why-its-better-than-screen/">tmux</a></li>
+</ul>
+
+
+
+
+
+                
+<script>
+ if (!! localStorage.getItem('select_OS')) {
+    const classes = ["headerlink", "md-nav__link"]
+    for (i in classes) {
+        var anchors = Array.from(document.getElementsByClassName(classes[i]))
+        anchors.forEach(
+            function (anch) {
+                const href = anch.href;
+                if (!!anch.href) {
+                    // Remove OS part and search query in permalinks if it exists. Useful when copying the urls.
+                    anch.href = anch.href.replace(/\/(Linux|macOS|Windows)\//i, "/").replace(/\?[^#]*/,"")
+                }
+                anch.addEventListener("click",(event) => {
+                    // Redirect to real original target. (with OS,and search query)
+                    event.target.href = href;
+                })
+            })
+    }
+}
+</script>
+
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../account/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting an HPC Account" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../account/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting an HPC Account" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              Getting an HPC Account
+              <div class="md-ellipsis">
+                Getting an HPC Account
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../running_batch_jobs/" class="md-footer__link md-footer__link--next" aria-label="Next: Running batch jobs" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../running_batch_jobs/" class="md-footer__link md-footer__link--next" aria-label="Next: Running batch jobs" rel="next">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Running batch jobs
+              <div class="md-ellipsis">
+                Running batch jobs
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1440,6 +1874,32 @@ manual</a>.</p>
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/HPCUGent" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@HPCUGent" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1448,10 +1908,17 @@ manual</a>.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "navigation.footer", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="../available_software/javascripts/populate_overview.js"></script>
       
     
   </body>

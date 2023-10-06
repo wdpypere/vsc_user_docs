@@ -8,8 +8,16 @@
       
       
       
+        <link rel="canonical" href="https://docs.hpc.ugent.be/Linux/multi_job_submission/">
+      
+      
+        <link rel="prev" href="../fine_tuning_job_specifications/">
+      
+      
+        <link rel="next" href="../compiling_your_software/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -17,13 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -36,10 +44,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -47,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,7 +87,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VSC User Documentation - Gent (Linux)" class="md-header__button md-logo" aria-label="VSC User Documentation - Gent (Linux)" data-md-component="logo">
       
@@ -100,6 +117,26 @@
       </div>
     </div>
     
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -116,7 +153,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -130,13 +171,52 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
     
+    
+      <div class="md-header__source">
+        <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+      </div>
     
   </nav>
   
@@ -171,7 +251,61 @@
     VSC User Documentation - Gent (Linux)
   </label>
   
+    <div class="md-nav__source">
+      <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
     
       
       
@@ -183,6 +317,21 @@
     <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         Introduction to HPC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
       </a>
     </li>
   
@@ -301,6 +450,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../interactive_debug/" class="md-nav__link">
+        Interactive and debug cluster
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xdmod/" class="md-nav__link">
         XDMoD portal
       </a>
@@ -344,21 +508,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        Frequently Asked Questions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -368,18 +517,19 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Advanced topics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Advanced topics
         </label>
@@ -408,7 +558,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -606,8 +756,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpu_gent/" class="md-nav__link">
-        HPC-UGent GPU clusters
+      <a href="../gpu/" class="md-nav__link">
+        GPU clusters
       </a>
     </li>
   
@@ -620,22 +770,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive_gent/" class="md-nav__link">
-        HPC-UGent interactive and debug cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crontab_gent/" class="md-nav__link">
+      <a href="../crontab/" class="md-nav__link">
         Cron scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teaching_training/" class="md-nav__link">
+        Teaching and training
       </a>
     </li>
   
@@ -661,22 +811,190 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Linux tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Linux tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/navigating/" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/manipulating_files_and_directories/" class="md-nav__link">
+        Manipulating files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/uploading_files/" class="md-nav__link">
+        Uploading files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/beyond_the_basics/" class="md-nav__link">
+        Beyond the basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/common_pitfalls/" class="md-nav__link">
+        Common pitfalls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/hpc_infrastructure/" class="md-nav__link">
+        More on the HPC infrastructure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           Software-specific Best Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Software-specific Best Practices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Software-specific Best Practices
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        AlphaFold
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -748,14 +1066,53 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../scoop/" class="md-nav__link">
-        SCOOP
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
       </a>
     </li>
   
@@ -781,18 +1138,21 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_19" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
           Appendices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Appendices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Appendices
         </label>
@@ -949,10 +1309,15 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+
+                  
+
+  
+  
 
 
 <h1 id="multi-job-submission">Multi-job submission<a class="headerlink" href="#multi-job-submission" title="Permanent link">#</a></h1>
@@ -969,13 +1334,13 @@ with (ii) different input files.</p>
 comma-separated file. The users want to run their job once for each
 instance of the parameter values.</p>
 <p>One option could be to launch a lot of separate individual small jobs
-(one for each parameter) on the <abbr title="A group of compute nodes.">cluster</abbr>, but this is not a good idea.
-The <abbr title="A group of compute nodes.">cluster</abbr> scheduler isn't meant to deal with tons of small jobs. Those
+(one for each parameter) on the cluster, but this is not a good idea.
+The cluster scheduler isn't meant to deal with tons of small jobs. Those
 huge amounts of small jobs will create a lot of overhead, and can slow
-down the whole <abbr title="A group of compute nodes.">cluster</abbr>. It would be better to bundle those jobs in
+down the whole cluster. It would be better to bundle those jobs in
 larger sets. In TORQUE, an experimental feature known as "<em>job arrays</em>"
 existed to allow the creation of multiple jobs with one <em>qsub</em> command,
-but is was not supported by <abbr title="Moab is a job scheduler, which allocates resources for jobs that are requesting resources.">Moab</abbr>, the current scheduler.</p>
+but is was not supported by Moab, the current scheduler.</p>
 <p>The "<strong>Worker framework</strong>" has been developed to address this issue.</p>
 <p>It can handle many small jobs determined by:</p>
 <dl>
@@ -1012,8 +1377,8 @@ waits a bit:</p>
 
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1"># Here you could do your calculations</span>
-<span class="nb">echo</span> <span class="s2">&quot;T: </span><span class="nv">$2</span><span class="s2">  P: </span><span class="nv">$4</span><span class="s2">  V: </span><span class="nv">$6</span><span class="s2">&quot;</span>
-sleep <span class="m">100</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;T: </span><span class="nv">$2</span><span class="s2">  P: </span><span class="nv">$4</span><span class="s2">  V: </span><span class="nv">$6</span><span class="s2">&quot;</span>
+sleep<span class="w"> </span><span class="m">100</span>
 </code></pre></div>
 <p>A job script that would run this as a job for the first parameters (p01)
 would then look like:</p>
@@ -1024,8 +1389,8 @@ would then look like:</p>
 <span class="c1">#PBS -l nodes=1:ppn=8</span>
 <span class="c1">#PBS -l walltime=01:00:00</span>
 
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
-./weather -t <span class="m">20</span> -p <span class="m">1</span>.05 -v <span class="m">4</span>.3
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
+./weather<span class="w"> </span>-t<span class="w"> </span><span class="m">20</span><span class="w"> </span>-p<span class="w"> </span><span class="m">1</span>.05<span class="w"> </span>-v<span class="w"> </span><span class="m">4</span>.3
 </code></pre></div>
 <p>When submitting this job, the calculation is performed or this
 particular instance of the parameters, i.e., temperature = 20, pressure
@@ -1037,7 +1402,7 @@ instances, e.g., he wants to run the program on 100 instances of
 temperature, pressure and volume. The 100 parameter instances can be
 stored in a comma separated value file (.csv) that can be generated
 using a spreadsheet program such as Microsoft Excel or RDBMS or just by
-hand using any text editor (do <strong>not</strong> use a word <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> such as Microsoft
+hand using any text editor (do <strong>not</strong> use a word processor such as Microsoft
 Word). The first few lines of the file "<em>data.csv</em>" would look like:</p>
 <pre><code>$ <b>more data.csv</b>
 temperature, pressure, volume
@@ -1059,11 +1424,11 @@ follows:</p>
 <span class="c1">#PBS -l nodes=1:ppn=8</span>
 <span class="c1">#PBS -l walltime=04:00:00</span>
 
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
-./weather -t <span class="nv">$temperature</span> -p <span class="nv">$pressure</span> -v <span class="nv">$volume</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
+./weather<span class="w"> </span>-t<span class="w"> </span><span class="nv">$temperature</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$pressure</span><span class="w"> </span>-v<span class="w"> </span><span class="nv">$volume</span>
 
 <span class="c1"># # This script is submitted to the cluster with the following 2 commands:</span>
-<span class="c1"># module load worker/1.6.8-intel-2018a</span>
+<span class="c1"># module load worker/1.6.12-foss-2021b</span>
 <span class="c1"># wsub -data data.csv -batch weather.pbs</span>
 </code></pre></div>
 <p>Note that:</p>
@@ -1074,21 +1439,21 @@ follows:</p>
     being specified on the first line of the "<em>data.csv</em>" file;</p>
 </li>
 <li>
-<p>the number of processors per <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> has been increased to 8 (i.e.,
+<p>the number of processors per node has been increased to 8 (i.e.,
     ppn=1 is replaced by ppn=8);</p>
 </li>
 <li>
-<p>the <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> has been increased to 4 hours (i.e., <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>=00:15:00
-    is replaced by <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>=04:00:00).</p>
+<p>the walltime has been increased to 4 hours (i.e., walltime=00:15:00
+    is replaced by walltime=04:00:00).</p>
 </li>
 </ol>
-<p>The <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> is calculated as follows: one calculation takes 15 minutes,
-so 100 calculations take 1500 minutes on one <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>. However, this job will
+<p>The walltime is calculated as follows: one calculation takes 15 minutes,
+so 100 calculations take 1500 minutes on one CPU. However, this job will
 use 8 CPUs, so the 100 calculations will be done in 1500/8 = 187.5
 minutes, i.e., 4 hours to be on the safe side.</p>
 <p>The job can now be submitted as follows (to check which <code>worker</code> module
 to use, see subsection <a href="../running_batch_jobs/#using-explicit-version-numbers">Using explicit version numbers</a>):</p>
-<pre><code>$ <b>module load worker/1.6.8-intel-2018a</b>
+<pre><code>$ <b>module load worker/1.6.12-foss-2021b</b>
 $ <b>wsub -batch weather.pbs -data data.csv</b>
 total number of work items: 41
 123456</code></pre>
@@ -1097,6 +1462,15 @@ total number of work items: 41
 program will now be run for all 100 parameter instances -- 8
 concurrently -- until all computations are done. A computation for such
 a parameter instance is called a work item in Worker parlance.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you attempt to submit a worker job on a non-default cluster, you might encounter an <code>Illegal instruction</code> error. In such cases, the solution is to use a different <code>module swap</code> command. For example, to submit a worker job to the <a href="../interactive_debug/"><code>donphan</code> debug cluster</a> from the login nodes, use:
+<pre><code>$ <b>module swap env/slurm/donphan</b>
+</code></pre>
+instead of
+<pre><code>$ <b>module swap cluster/donphan </b></code></pre>
+We recommend using a <code>module swap cluster</code> command after submitting the jobs. Additional information about this as well as more comprehensive details concerning the 'Illegal instruction' error can be accessed <a href="../troubleshooting/#multi-job-submissions-on-a-non-default-cluster">here</a>.</p>
+</div>
 <h2 id="the-worker-framework-job-arrays">The Worker framework: Job arrays<a class="headerlink" href="#the-worker-framework-job-arrays" title="Permanent link">#</a></h2>
 <p>First go to the right directory:</p>
 <pre><code>$ <b>cd ~/examples/Multi-job-submission/job_array</b></code></pre>
@@ -1106,8 +1480,8 @@ that you want to run on various input files <em>input[1-100]</em>.</p>
 <p><img alt="image" src="../img/img0702.png" style="display: block; margin: 0 auto; width: 3.22in; height: 2.36in" /></p>
 <p>The following bash script would submit these jobs all one by one:
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">for</span> i <span class="k">in</span> <span class="sb">`</span>seq <span class="m">1</span> <span class="m">100</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
-  qsub -o output <span class="nv">$i</span> -i input <span class="nv">$i</span> myprog.pbs
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">100</span><span class="sb">`</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>qsub<span class="w"> </span>-o<span class="w"> </span>output<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>-i<span class="w"> </span>input<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>myprog.pbs
 <span class="k">done</span>
 </code></pre></div></p>
 <p>This, as said before, could be disturbing for the job scheduler.</p>
@@ -1136,9 +1510,9 @@ array, where <em>range</em> is a range of numbers (e.g., <em>1-100</em> or <em>2
 <pre><code>$ <b>qsub -t 1-100 my_prog.pbs</b></code></pre>
 
 <p>The effect was that rather than 1 job, the user would actually submit
-100 jobs to the <abbr title="PBS/TORQUE queues, or &quot;classes&quot; as Moab refers to them, represent groups of computing resources with specific parameters. A queue with a 12-hour runtime or &quot;walltime&quot; would allow jobs requesting 12 hours or less to use this queue.">queue</abbr> system. This was a popular feature of TORQUE, but
+100 jobs to the queue system. This was a popular feature of TORQUE, but
 as this technique puts quite a burden on the scheduler, it is not
-supported by <abbr title="Moab is a job scheduler, which allocates resources for jobs that are requesting resources.">Moab</abbr> (the current job scheduler).</p>
+supported by Moab (the current job scheduler).</p>
 <p>To support those users who used the feature and since it offers a
 convenient workflow, the "worker framework" implements the idea of "job
 arrays" in its own way.</p>
@@ -1148,10 +1522,10 @@ arrays" in its own way.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 <span class="c1">#PBS -l nodes=1:ppn=1</span>
 <span class="c1">#PBS -l walltime=00:15:00</span>
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
 <span class="nv">INPUT_FILE</span><span class="o">=</span><span class="s2">&quot;input_</span><span class="si">${</span><span class="nv">PBS_ARRAYID</span><span class="si">}</span><span class="s2">.dat&quot;</span>
 <span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="s2">&quot;output_</span><span class="si">${</span><span class="nv">PBS_ARRAYID</span><span class="si">}</span><span class="s2">.dat&quot;</span>
-my_prog -input <span class="si">${</span><span class="nv">INPUT_FILE</span><span class="si">}</span>  -output <span class="si">${</span><span class="nv">OUTPUT_FILE</span><span class="si">}</span>
+my_prog<span class="w"> </span>-input<span class="w"> </span><span class="si">${</span><span class="nv">INPUT_FILE</span><span class="si">}</span><span class="w">  </span>-output<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_FILE</span><span class="si">}</span>
 </code></pre></div>
 <p>In our specific example, we have prefabricated 100 input files in the
 "./input" subdirectory. Each of those files contains a number of
@@ -1179,16 +1553,16 @@ be written to the <em>"./output</em>" directory in output_1.dat, output_2.dat,
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Check if the output Directory exists</span>
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;./output&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-  mkdir ./output
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;./output&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span>mkdir<span class="w"> </span>./output
 <span class="k">fi</span>
 
 <span class="c1">#   Here you could do your calculations...</span>
-<span class="nb">echo</span> <span class="s2">&quot;This is Job_array #&quot;</span> <span class="nv">$1</span>
-<span class="nb">echo</span> <span class="s2">&quot;Input File : &quot;</span> <span class="nv">$3</span>
-<span class="nb">echo</span> <span class="s2">&quot;Output File: &quot;</span> <span class="nv">$5</span>
-cat ./input/<span class="nv">$3</span> <span class="p">|</span> sed -e <span class="s2">&quot;s/input/output/g&quot;</span> <span class="p">|</span> grep -v <span class="s2">&quot;Parameter&quot;</span> &gt; ./output/<span class="nv">$5</span>
-<span class="nb">echo</span> <span class="s2">&quot;Calculations done, no results&quot;</span> &gt;&gt; ./output/<span class="nv">$5</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is Job_array #&quot;</span><span class="w"> </span><span class="nv">$1</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Input File : &quot;</span><span class="w"> </span><span class="nv">$3</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Output File: &quot;</span><span class="w"> </span><span class="nv">$5</span>
+cat<span class="w"> </span>./input/<span class="nv">$3</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/input/output/g&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;Parameter&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>./output/<span class="nv">$5</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Calculations done, no results&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>./output/<span class="nv">$5</span>
 </code></pre></div>
 <p>Using the "worker framework", a feature akin to job arrays can be used
 with minimal modifications to the job script:</p>
@@ -1197,10 +1571,10 @@ with minimal modifications to the job script:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 <span class="c1">#PBS -l nodes=1:ppn=8</span>
 <span class="c1">#PBS -l walltime=04:00:00</span>
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
 <span class="nv">INPUT_FILE</span><span class="o">=</span><span class="s2">&quot;input_</span><span class="si">${</span><span class="nv">PBS_ARRAYID</span><span class="si">}</span><span class="s2">.dat&quot;</span>
 <span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="s2">&quot;output_</span><span class="si">${</span><span class="nv">PBS_ARRAYID</span><span class="si">}</span><span class="s2">.dat&quot;</span>
-./test_set <span class="si">${</span><span class="nv">PBS_ARRAYID</span><span class="si">}</span> -input <span class="si">${</span><span class="nv">INPUT_FILE</span><span class="si">}</span>  -output <span class="si">${</span><span class="nv">OUTPUT_FILE</span><span class="si">}</span>
+./test_set<span class="w"> </span><span class="si">${</span><span class="nv">PBS_ARRAYID</span><span class="si">}</span><span class="w"> </span>-input<span class="w"> </span><span class="si">${</span><span class="nv">INPUT_FILE</span><span class="si">}</span><span class="w">  </span>-output<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_FILE</span><span class="si">}</span>
 </code></pre></div>
 <p>Note that</p>
 <ol>
@@ -1209,12 +1583,12 @@ with minimal modifications to the job script:</p>
     and</p>
 </li>
 <li>
-<p>the <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> has been modified (<abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>=00:15:00 is replaced by
-    <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>=04:00:00).</p>
+<p>the walltime has been modified (walltime=00:15:00 is replaced by
+    walltime=04:00:00).</p>
 </li>
 </ol>
 <p>The job is now submitted as follows:</p>
-<pre><code>$ <b>module load worker/1.6.8-intel-2018a</b>
+<pre><code>$ <b>module load worker/1.6.12-foss-2021b</b>
 $ <b>wsub -t 1-100 -batch test_set.pbs</b>
 total number of work items: 100
 123456</code></pre>
@@ -1272,18 +1646,18 @@ data.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Check if the input Directory exists</span>
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;./input&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-  mkdir ./input
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;./input&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span>mkdir<span class="w"> </span>./input
 <span class="k">fi</span>
 
 <span class="c1"># Just generate all dummy input files</span>
-<span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span> 
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span><span class="w"> </span>
 <span class="k">do</span>
-  <span class="nb">echo</span> <span class="s2">&quot;This is input file #</span><span class="nv">$i</span><span class="s2">&quot;</span> &gt;  ./input/input_<span class="nv">$i</span>.dat 
-  <span class="nb">echo</span> <span class="s2">&quot;Parameter #1 = </span><span class="nv">$i</span><span class="s2">&quot;</span> &gt;&gt;  ./input/input_<span class="nv">$i</span>.dat 
-  <span class="nb">echo</span> <span class="s2">&quot;Parameter #2 = 25.67&quot;</span> &gt;&gt;  ./input/input_<span class="nv">$i</span>.dat
-  <span class="nb">echo</span> <span class="s2">&quot;Parameter #3 = Batch&quot;</span> &gt;&gt;  ./input/input_<span class="nv">$i</span>.dat
-  <span class="nb">echo</span> <span class="s2">&quot;Parameter #4 = 0x562867&quot;</span> &gt;&gt;  ./input/input_<span class="nv">$i</span>.dat
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is input file #</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w">  </span>./input/input_<span class="nv">$i</span>.dat<span class="w"> </span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Parameter #1 = </span><span class="nv">$i</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w">  </span>./input/input_<span class="nv">$i</span>.dat<span class="w"> </span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Parameter #2 = 25.67&quot;</span><span class="w"> </span>&gt;&gt;<span class="w">  </span>./input/input_<span class="nv">$i</span>.dat
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Parameter #3 = Batch&quot;</span><span class="w"> </span>&gt;&gt;<span class="w">  </span>./input/input_<span class="nv">$i</span>.dat
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Parameter #4 = 0x562867&quot;</span><span class="w"> </span>&gt;&gt;<span class="w">  </span>./input/input_<span class="nv">$i</span>.dat
 <span class="k">done</span>
 </code></pre></div>
 <p style="text-align: center">map_reduce/post.sh</p>
@@ -1291,16 +1665,16 @@ data.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Check if the input Directory exists</span>
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;./output&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;The output directory does not exist!&quot;</span>
-  <span class="nb">exit</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;./output&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The output directory does not exist!&quot;</span>
+<span class="w">  </span><span class="nb">exit</span>
 <span class="k">fi</span>
 
 <span class="c1"># Just concatenate all output files</span>
-touch all_output.txt
-<span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span> 
+touch<span class="w"> </span>all_output.txt
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span><span class="w"> </span>
 <span class="k">do</span>
-  cat ./output/output_<span class="nv">$i</span>.dat &gt;&gt; all_output.txt
+<span class="w">  </span>cat<span class="w"> </span>./output/output_<span class="nv">$i</span>.dat<span class="w"> </span>&gt;&gt;<span class="w"> </span>all_output.txt
 <span class="k">done</span>
 </code></pre></div>
 <p>Then one can submit a MapReduce style job as follows:</p>
@@ -1312,13 +1686,13 @@ $ <b>cat all_output.txt</b>
 $ <b>rm -r -f ./output/</b></code></pre>
 
 <p>Note that the time taken for executing the prologue and the epilogue
-should be added to the job's total <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>.</p>
+should be added to the job's total walltime.</p>
 <h2 id="some-more-on-the-worker-framework">Some more on the Worker Framework<a class="headerlink" href="#some-more-on-the-worker-framework" title="Permanent link">#</a></h2>
 <h3 id="using-worker-efficiently">Using Worker efficiently<a class="headerlink" href="#using-worker-efficiently" title="Permanent link">#</a></h3>
-<p>The "Worker Framework" is implemented using <abbr title="MPI stands for Message-Passing Interface. It supports a parallel programming method designed for distributed memory systems, but can also be used well on shared memory systems.">MPI</abbr>, so it is not restricted
+<p>The "Worker Framework" is implemented using MPI, so it is not restricted
 to a single compute nodes, it scales well to multiple nodes. However,
 remember that jobs requesting a large number of nodes typically spend
-quite some time in the <abbr title="PBS/TORQUE queues, or &quot;classes&quot; as Moab refers to them, represent groups of computing resources with specific parameters. A queue with a 12-hour runtime or &quot;walltime&quot; would allow jobs requesting 12 hours or less to use this queue.">queue</abbr>.</p>
+quite some time in the queue.</p>
 <p>The "Worker Framework" will be effective when</p>
 <ol>
 <li>
@@ -1356,9 +1730,9 @@ modifying the script of the running example.
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 <span class="c1">#PBS -l nodes=1:ppn=8</span>
 <span class="c1">#PBS -l walltime=04:00:00</span>
-module load timedrun/1.0
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
-timedrun -t <span class="m">00</span>:20:00 weather -t <span class="nv">$temperature</span>  -p <span class="nv">$pressure</span>  -v <span class="nv">$volume</span>
+module<span class="w"> </span>load<span class="w"> </span>timedrun/1.0
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
+timedrun<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:20:00<span class="w"> </span>weather<span class="w"> </span>-t<span class="w"> </span><span class="nv">$temperature</span><span class="w">  </span>-p<span class="w"> </span><span class="nv">$pressure</span><span class="w">  </span>-v<span class="w"> </span><span class="nv">$volume</span>
 </code></pre></div></p>
 <p>Note that it is trivial to set individual time constraints for work
 items by introducing a parameter, and including the values of the latter
@@ -1367,7 +1741,7 @@ volume.</p>
 <p>Also note that "timedrun" is in fact offered in a module of its own, so
 it can be used outside the Worker framework as well.</p>
 <h3 id="resuming-a-worker-job">Resuming a Worker job<a class="headerlink" href="#resuming-a-worker-job" title="Permanent link">#</a></h3>
-<p>Unfortunately, it is not always easy to estimate the <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> for a job,
+<p>Unfortunately, it is not always easy to estimate the walltime for a job,
 and consequently, sometimes the latter is underestimated. When using the
 Worker framework, this implies that not all work items will have been
 processed. Worker makes it very easy to resume such a job without having
@@ -1379,7 +1753,7 @@ work items had ID "445948".</p>
 <p>This will submit a new job that will start to work on the work items
 that were not done yet. Note that it is possible to change almost all
 job parameters when resuming, specifically the requested resources such
-as the number of cores and the <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr>.</p>
+as the number of cores and the walltime.</p>
 <pre><code>$ <b>wresume -l walltime=1:30:00 -jobid 123456}</b></code></pre>
 
 <p>Work items may fail to complete successfully for a variety of reasons,
@@ -1442,56 +1816,84 @@ a single value.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump bac
 </ol>
 </div>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+<script>
+ if (!! localStorage.getItem('select_OS')) {
+    const classes = ["headerlink", "md-nav__link"]
+    for (i in classes) {
+        var anchors = Array.from(document.getElementsByClassName(classes[i]))
+        anchors.forEach(
+            function (anch) {
+                const href = anch.href;
+                if (!!anch.href) {
+                    // Remove OS part and search query in permalinks if it exists. Useful when copying the urls.
+                    anch.href = anch.href.replace(/\/(Linux|macOS|Windows)\//i, "/").replace(/\?[^#]*/,"")
+                }
+                anch.addEventListener("click",(event) => {
+                    // Redirect to real original target. (with OS,and search query)
+                    event.target.href = href;
+                })
+            })
+    }
+}
+</script>
+
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../fine_tuning_job_specifications/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fine-tuning Job Specifications" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../fine_tuning_job_specifications/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fine-tuning Job Specifications" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              Fine-tuning Job Specifications
+              <div class="md-ellipsis">
+                Fine-tuning Job Specifications
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../compiling_your_software/" class="md-footer__link md-footer__link--next" aria-label="Next: Compiling and testing your software on the HPC" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../compiling_your_software/" class="md-footer__link md-footer__link--next" aria-label="Next: Compiling and testing your software on the HPC" rel="next">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Compiling and testing your software on the HPC
+              <div class="md-ellipsis">
+                Compiling and testing your software on the HPC
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1505,6 +1907,32 @@ a single value.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump bac
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/HPCUGent" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@HPCUGent" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1513,10 +1941,17 @@ a single value.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump bac
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "navigation.footer", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="../available_software/javascripts/populate_overview.js"></script>
       
     
   </body>

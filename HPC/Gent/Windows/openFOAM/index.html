@@ -8,8 +8,16 @@
       
       
       
+        <link rel="canonical" href="https://docs.hpc.ugent.be/Windows/openFOAM/">
+      
+      
+        <link rel="prev" href="../mympirun/">
+      
+      
+        <link rel="next" href="../FAQ/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -17,13 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -36,10 +44,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -47,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,7 +87,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VSC User Documentation - Gent (Windows)" class="md-header__button md-logo" aria-label="VSC User Documentation - Gent (Windows)" data-md-component="logo">
       
@@ -100,6 +117,26 @@
       </div>
     </div>
     
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -116,7 +153,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -130,13 +171,52 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
     
+    
+      <div class="md-header__source">
+        <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+      </div>
     
   </nav>
   
@@ -171,7 +251,61 @@
     VSC User Documentation - Gent (Windows)
   </label>
   
+    <div class="md-nav__source">
+      <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
     
       
       
@@ -183,6 +317,21 @@
     <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         Introduction to HPC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
       </a>
     </li>
   
@@ -301,6 +450,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../interactive_debug/" class="md-nav__link">
+        Interactive and debug cluster
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xdmod/" class="md-nav__link">
         XDMoD portal
       </a>
@@ -345,39 +509,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        Frequently Asked Questions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Advanced topics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Advanced topics
         </label>
@@ -501,8 +653,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpu_gent/" class="md-nav__link">
-        HPC-UGent GPU clusters
+      <a href="../gpu/" class="md-nav__link">
+        GPU clusters
       </a>
     </li>
   
@@ -515,22 +667,173 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive_gent/" class="md-nav__link">
-        HPC-UGent interactive and debug cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crontab_gent/" class="md-nav__link">
+      <a href="../crontab/" class="md-nav__link">
         Cron scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teaching_training/" class="md-nav__link">
+        Teaching and training
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Linux tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Linux tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/navigating/" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/manipulating_files_and_directories/" class="md-nav__link">
+        Manipulating files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/uploading_files/" class="md-nav__link">
+        Uploading files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/beyond_the_basics/" class="md-nav__link">
+        Beyond the basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/common_pitfalls/" class="md-nav__link">
+        Common pitfalls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/hpc_infrastructure/" class="md-nav__link">
+        More on the HPC infrastructure
       </a>
     </li>
   
@@ -558,22 +861,37 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_14">
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           Software-specific Best Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Software-specific Best Practices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Software-specific Best Practices
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        AlphaFold
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -640,7 +958,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -796,14 +1114,53 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../scoop/" class="md-nav__link">
-        SCOOP
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
       </a>
     </li>
   
@@ -829,18 +1186,21 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_19" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
           Appendices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Appendices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Appendices
         </label>
@@ -1045,15 +1405,20 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+
+                  
+
+  
+  
 
 
 <h1 id="openfoam">OpenFOAM<a class="headerlink" href="#openfoam" title="Permanent link">#</a></h1>
 <p>In this chapter, we outline best practices for using the centrally
-provided OpenFOAM installations on the VSC <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure.</p>
+provided OpenFOAM installations on the VSC HPC infrastructure.</p>
 <h2 id="different-openfoam-releases">Different OpenFOAM releases<a class="headerlink" href="#different-openfoam-releases" title="Permanent link">#</a></h2>
 <p>There are currently three different sets of versions of OpenFOAM
 available, each with its own versioning scheme:</p>
@@ -1082,7 +1447,7 @@ are important differences between the different versions w.r.t.
 features. If the OpenFOAM version you need is not available yet, see <a href="../FAQ/#i-want-to-use-software-that-is-not-available-on-the-clusters-yet">I want to use software that is not available on the clusters yet</a>.</p>
 <h2 id="documentation-training-material">Documentation &amp; training material<a class="headerlink" href="#documentation-training-material" title="Permanent link">#</a></h2>
 <p>The best practices outlined here focus specifically on the use of
-OpenFOAM on the VSC <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure. As such, they are intended to
+OpenFOAM on the VSC HPC infrastructure. As such, they are intended to
 augment the existing OpenFOAM documentation rather than replace it. For
 more general information on using OpenFOAM, please refer to:</p>
 <ul>
@@ -1137,7 +1502,7 @@ more general information on using OpenFOAM, please refer to:</p>
 OpenFOAM, there are a couple of things to take into account.</p>
 <h3 id="picking-and-loading-an-openfoam-module">Picking and loading an <code>OpenFOAM</code> module<a class="headerlink" href="#picking-and-loading-an-openfoam-module" title="Permanent link">#</a></h3>
 <p>First of all, you need to pick and load one of the available <code>OpenFOAM</code>
-<abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr>. To get an overview of the available <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr>, run
+modules. To get an overview of the available modules, run
 '<code>module avail OpenFOAM</code>'. For example:</p>
 <pre><code>$ <b>module avail OpenFOAM</b>
 ------------------ /apps/gent/CO7/sandybridge/modules/all ------------------
@@ -1153,7 +1518,7 @@ OpenFOAM, there are a couple of things to take into account.</p>
 
 <p>To pick a module, take into account the differences between the
 different OpenFOAM versions w.r.t. features and API (see also <a href="./#different-openfoam-releases">Different OpenFOAM releases</a>). If
-multiple <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr> are available that fulfill your requirements, give
+multiple modules are available that fulfill your requirements, give
 preference to those providing a more recent OpenFOAM version, and to the
 ones that were installed with a more recent compiler toolchain; for
 example, prefer a module that includes <code>intel-2023b</code> in its name over one
@@ -1166,7 +1531,7 @@ module you have picked; for example:</p>
 <h3 id="sourcing-the-foam_bash-script">Sourcing the <code>$FOAM_BASH</code> script<a class="headerlink" href="#sourcing-the-foam_bash-script" title="Permanent link">#</a></h3>
 <p>OpenFOAM provides a script that you should <code>source</code> to further prepare
 the environment. This script will define some additional environment
-variables that are required to use OpenFOAM. The <code>OpenFOAM</code> <abbr title="HPC uses an open source software package called &quot;Environment Modules&quot; (Modules for short) which allows you to add various path definitions to your shell environment.">modules</abbr>
+variables that are required to use OpenFOAM. The <code>OpenFOAM</code> modules
 define an environment variable named <code>FOAM_BASH</code> that specifies the
 location to this script. Assuming you are using <code>bash</code> in your shell
 session or job script, you should always run the following command after
@@ -1228,19 +1593,19 @@ performed:</p>
 </ul>
 <p>Depending on the size of the domain and the desired format of the
 results, these pre- and post-processing steps can be run either
-before/after the job running the actual simulation, either on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>
+before/after the job running the actual simulation, either on the HPC
 infrastructure or elsewhere, or as a part of the job that runs the
 OpenFOAM simulation itself.</p>
 <p>Do make sure you are using the same OpenFOAM version in each of the
-steps. Meshing can be done sequentially (i.e., on a single <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>) using
+steps. Meshing can be done sequentially (i.e., on a single core) using
 for example <code>blockMesh</code>, or in parallel using more advanced meshing
 tools like <code>snappyHexMesh</code>, which is highly recommended for large cases.
 For more details, see <a href="https://cfd.direct/openfoam/user-guide/mesh/">https://cfd.direct/openfoam/user-guide/mesh/</a>.</p>
 <p>One important aspect to keep in mind for 'offline' pre-processing is
-that the domain decomposition needs to match the number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>
-cores that are used for the actual simulation, see also <a href="./#domain-decomposition-and-number-of-processor-cores">Domain decomposition and number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> cores</a>.</p>
+that the domain decomposition needs to match the number of processor
+cores that are used for the actual simulation, see also <a href="./#domain-decomposition-and-number-of-processor-cores">Domain decomposition and number of processor cores</a>.</p>
 <p>For post-processing you can either download the simulation results to a
-local workstation, or do the post-processing (interactively) on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>
+local workstation, or do the post-processing (interactively) on the HPC
 infrastructure, for example on the login nodes or using an interactive
 session on a workernode. This may be interesting to avoid the overhead
 of downloading the results locally.</p>
@@ -1249,7 +1614,7 @@ of downloading the results locally.</p>
 <a href="https://cfd.direct/openfoam/user-guide/running-applications-parallel/">https://cfd.direct/openfoam/user-guide/running-applications-parallel/</a>.</p>
 <h3 id="the-parallel-option">The <code>-parallel</code> option<a class="headerlink" href="#the-parallel-option" title="Permanent link">#</a></h3>
 <p>When running OpenFOAM in parallel, <strong>do not forget to specify the <code>-parallel</code> option</strong>, to avoid running the same OpenFOAM
-simulation $N$ times, rather than running it once using $N$ <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>
+simulation $N$ times, rather than running it once using $N$ processor
 cores.</p>
 <p>You can check whether OpenFOAM was run in parallel in the output of the
 main command: the OpenFOAM header text should only be included <em>once</em> in
@@ -1263,7 +1628,7 @@ parallel OpenFOAM simulations rather than the standard <code>mpirun</code> comma
 see <a href="../mympirun/#mympirun">Mympiprun</a> for more information on <code>mympirun</code>.</p>
 <p>See <a href="../mympirun/#basic-usage">Basic usage</a> for how to get started with <code>mympirun</code>.</p>
 <p>To pass down the environment variables required to run OpenFOAM (which
-were defined by the <code>$FOAM_BASH</code> script, see <a href="./#preparing-the-environment">Preparing the environment</a>) to each of the <abbr title="MPI stands for Message-Passing Interface. It supports a parallel programming method designed for distributed memory systems, but can also be used well on shared memory systems.">MPI</abbr>
+were defined by the <code>$FOAM_BASH</code> script, see <a href="./#preparing-the-environment">Preparing the environment</a>) to each of the MPI
 processes used in a parallel OpenFOAM execution, the
 <code>$MYMPIRUN_VARIABLESPREFIX</code> environment variable must be defined as
 follows, prior to running the OpenFOAM simulation with <code>mympirun</code>:</p>
@@ -1272,13 +1637,13 @@ follows, prior to running the OpenFOAM simulation with <code>mympirun</code>:</p
 
 <p>Whenever you are instructed to use a command like <code>mpirun -np &lt;N&gt; ...</code>,
 use <code>mympirun ...</code> instead; <code>mympirun</code> will automatically detect the
-number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> cores that are available (see also <a href="../mympirun/#controlling-number-of-processes">Controlling number of processes</a>).</p>
-<h3 id="domain-decomposition-and-number-of-processor-cores">Domain decomposition and number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> cores<a class="headerlink" href="#domain-decomposition-and-number-of-processor-cores" title="Permanent link">#</a></h3>
+number of processor cores that are available (see also <a href="../mympirun/#controlling-number-of-processes">Controlling number of processes</a>).</p>
+<h3 id="domain-decomposition-and-number-of-processor-cores">Domain decomposition and number of processor cores<a class="headerlink" href="#domain-decomposition-and-number-of-processor-cores" title="Permanent link">#</a></h3>
 <p>To run OpenFOAM in parallel, you must decompose the domain into multiple
 subdomains. Each subdomain will be processed by OpenFOAM on one
-<abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>.</p>
+processor core.</p>
 <p>Since <code>mympirun</code> will automatically use all available cores, you need to
-make sure that the number of subdomains matches the number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>
+make sure that the number of subdomains matches the number of processor
 cores that will be used by <code>mympirun</code>. If not, you may run into an error
 message like:</p>
 <pre><code>number of processor directories = 4 is not equal to the number of processors = 16
@@ -1286,7 +1651,7 @@ message like:</p>
 
 <p>In this case, the case was decomposed in 4 subdomains, while the
 OpenFOAM simulation was started with 16 processes through <code>mympirun</code>. To
-match the number of subdomains and the number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> cores used by
+match the number of subdomains and the number of processor cores used by
 <code>mympirun</code>, you should either:</p>
 <ul>
 <li>
@@ -1296,19 +1661,19 @@ match the number of subdomains and the number of <abbr title="A processing unit.
     again; or</p>
 </li>
 <li>
-<p>submit your job requesting exactly the same number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>
+<p>submit your job requesting exactly the same number of processor
     cores as there are subdomains (see the number of <code>processor*</code>
     directories that were created by <code>decomposePar</code>)</p>
 </li>
 </ul>
 <p>See <a href="../mympirun/#controlling-number-of-processes">Controlling number of processes</a> to control the number of process <code>mympirun</code> will start.</p>
-<p>This is interesting if you require more <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> per <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr> than is
+<p>This is interesting if you require more memory per core than is
 available by default. Note that the decomposition method being used
 (which is specified in <code>system/decomposeParDict</code>) has significant impact
 on the performance of a parallel OpenFOAM simulation. Good decomposition
 methods (like <code>metis</code> or <code>scotch</code>) try to limit communication overhead
-by minimising the number of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> boundaries.</p>
-<p>To visualise the <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> domains, use the following command:</p>
+by minimising the number of processor boundaries.</p>
+<p>To visualise the processor domains, use the following command:</p>
 <pre><code>$ <b>mympirun foamToVTK -parallel -constant -time 0 -excludePatches '(".*.")'</b>
 </code></pre>
 
@@ -1352,10 +1717,10 @@ consider using the local disk of the workernode as working directory
 <code>$VSC_SCRATCH</code> filesystem. **Certainly do not use a subdirectory in <code>$VSC_HOME</code> or <code>$VSC_DATA</code>, since these shared filesystems are too slow
 for these type of workloads.</p>
 <p>For large parallel OpenFOAM simulations on the UGent Tier-2 clusters, consider
-using the alternative shared <abbr title="Supercomputers generally have what is called scratch space: storage available for temporary use. Use the scratch filesystem when, for example you are downloading and uncompressed applications, reading and writing input/output data during a batch job, or when you work with large datasets. Scratch is generally a lot faster than the Data or Home filesystem.">scratch</abbr> filesystem <code>$VSC_SCRATCH_ARCANINE</code>
+using the alternative shared scratch filesystem <code>$VSC_SCRATCH_ARCANINE</code>
 (see <a href="../running_jobs_with_input_output_data/#pre-defined-user-directories">Pre-defined user directories</a>).</p>
 <p>These guidelines are especially important for large-scale OpenFOAM
-simulations that involve more than a couple of dozen of <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> cores.</p>
+simulations that involve more than a couple of dozen of processor cores.</p>
 <h2 id="using-own-solvers-with-openfoam">Using own solvers with OpenFOAM<a class="headerlink" href="#using-own-solvers-with-openfoam" title="Permanent link">#</a></h2>
 <p>See <a href="https://cfd.direct/openfoam/user-guide/compiling-applications/">https://cfd.direct/openfoam/user-guide/compiling-applications/</a>.</p>
 <h2 id="example-openfoam-job-script">Example OpenFOAM job script<a class="headerlink" href="#example-openfoam-job-script" title="Permanent link">#</a></h2>
@@ -1366,99 +1731,127 @@ simulations that involve more than a couple of dozen of <abbr title="A processin
 <span class="c1">#PBS -l walltime=1:0:0</span>
 <span class="c1">#PBS -l nodes=1:ppn=4</span>
 <span class="c1"># check for more recent OpenFOAM modules with &#39;module avail OpenFOAM&#39;</span>
-module load OpenFOAM/6-intel-2018a
-<span class="nb">source</span> <span class="nv">$FOAM_BASH</span>
+module<span class="w"> </span>load<span class="w"> </span>OpenFOAM/6-intel-2018a
+<span class="nb">source</span><span class="w"> </span><span class="nv">$FOAM_BASH</span>
 <span class="c1"># purposely not specifying a particular version to use most recent mympirun</span>
-module load vsc-mympirun
+module<span class="w"> </span>load<span class="w"> </span>vsc-mympirun
 <span class="c1"># let mympirun pass down relevant environment variables to MPI processes</span>
-<span class="nb">export</span> <span class="nv">MYMPIRUN_VARIABLESPREFIX</span><span class="o">=</span>WM_PROJECT,FOAM,MPI
+<span class="nb">export</span><span class="w"> </span><span class="nv">MYMPIRUN_VARIABLESPREFIX</span><span class="o">=</span>WM_PROJECT,FOAM,MPI
 <span class="c1"># set up working directory</span>
 <span class="c1"># (uncomment one line defining $WORKDIR below)</span>
 <span class="c1">#export WORKDIR=$VSC_SCRATCH/$PBS_JOBID  # for small multi-node jobs</span>
 <span class="c1">#export WORKDIR=$VSC_SCRATCH_ARCANINE/$PBS_JOBID  # for large multi-node jobs (not on available victini)</span>
-<span class="nb">export</span> <span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$VSC_SCRATCH_NODE</span>/<span class="nv">$PBS_JOBID</span>  <span class="c1"># for single-node jobs</span>
-mkdir -p <span class="nv">$WORKDIR</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$VSC_SCRATCH_NODE</span>/<span class="nv">$PBS_JOBID</span><span class="w">  </span><span class="c1"># for single-node jobs</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$WORKDIR</span>
 <span class="c1"># damBreak tutorial, see also https://cfd.direct/openfoam/user-guide/dambreak</span>
-cp -r <span class="nv">$FOAM_TUTORIALS</span>/multiphase/interFoam/laminar/damBreak/damBreak <span class="nv">$WORKDIR</span>
-<span class="nb">cd</span> <span class="nv">$WORKDIR</span>/damBreak
-<span class="nb">echo</span> <span class="s2">&quot;working directory: </span><span class="nv">$PWD</span><span class="s2">&quot;</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$FOAM_TUTORIALS</span>/multiphase/interFoam/laminar/damBreak/damBreak<span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>/damBreak
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;working directory: </span><span class="nv">$PWD</span><span class="s2">&quot;</span>
 <span class="c1"># pre-processing: generate mesh</span>
-<span class="nb">echo</span> <span class="s2">&quot;start blockMesh: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-blockMesh <span class="p">&amp;</span>&gt; blockMesh.out
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;start blockMesh: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+blockMesh<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>blockMesh.out
 <span class="c1"># pre-processing: decompose domain for parallel processing</span>
-<span class="nb">echo</span> <span class="s2">&quot;start decomposePar: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-decomposePar <span class="p">&amp;</span>&gt; decomposePar.out
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;start decomposePar: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+decomposePar<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>decomposePar.out
 <span class="c1"># run OpenFOAM simulation in parallel</span>
 <span class="c1"># note:</span>
 <span class="c1">#  * the -parallel option is strictly required to actually run in parallel!</span>
 <span class="c1">#    without it, the simulation is run N times on a single core...</span>
 <span class="c1">#  * mympirun will use all available cores in the job by default,</span>
 <span class="c1">#    you need to make sure this matches the number of subdomains!</span>
-<span class="nb">echo</span> <span class="s2">&quot;start interFoam: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-mympirun --output<span class="o">=</span>interFoam.out interFoam -parallel
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;start interFoam: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+mympirun<span class="w"> </span>--output<span class="o">=</span>interFoam.out<span class="w"> </span>interFoam<span class="w"> </span>-parallel
 <span class="c1"># post-processing: reassemble decomposed domain</span>
-<span class="nb">echo</span> <span class="s2">&quot;start reconstructPar: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-reconstructPar <span class="p">&amp;</span>&gt; reconstructPar.out
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;start reconstructPar: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+reconstructPar<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>reconstructPar.out
 <span class="c1"># copy back results, i.e. all time step directories: 0, 0.05, ..., 1.0 and inputs</span>
-<span class="nb">export</span> <span class="nv">RESULTS_DIR</span><span class="o">=</span><span class="nv">$VSC_DATA</span>/results/<span class="nv">$PBS_JOBID</span>
-mkdir -p <span class="nv">$RESULTS_DIR</span>
-cp -a *.out <span class="o">[</span><span class="m">0</span>-9.<span class="o">]</span>* constant system <span class="nv">$RESULTS_DIR</span>
-<span class="nb">echo</span> <span class="s2">&quot;results copied to </span><span class="nv">$RESULTS_DIR</span><span class="s2"> at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">RESULTS_DIR</span><span class="o">=</span><span class="nv">$VSC_DATA</span>/results/<span class="nv">$PBS_JOBID</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$RESULTS_DIR</span>
+cp<span class="w"> </span>-a<span class="w"> </span>*.out<span class="w"> </span><span class="o">[</span><span class="m">0</span>-9.<span class="o">]</span>*<span class="w"> </span>constant<span class="w"> </span>system<span class="w"> </span><span class="nv">$RESULTS_DIR</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;results copied to </span><span class="nv">$RESULTS_DIR</span><span class="s2"> at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
 <span class="c1"># clean up working directory</span>
-<span class="nb">cd</span> <span class="nv">$HOME</span>
-rm -rf <span class="nv">$WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="nv">$WORKDIR</span>
 </code></pre></div></p>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+<script>
+ if (!! localStorage.getItem('select_OS')) {
+    const classes = ["headerlink", "md-nav__link"]
+    for (i in classes) {
+        var anchors = Array.from(document.getElementsByClassName(classes[i]))
+        anchors.forEach(
+            function (anch) {
+                const href = anch.href;
+                if (!!anch.href) {
+                    // Remove OS part and search query in permalinks if it exists. Useful when copying the urls.
+                    anch.href = anch.href.replace(/\/(Linux|macOS|Windows)\//i, "/").replace(/\?[^#]*/,"")
+                }
+                anch.addEventListener("click",(event) => {
+                    // Redirect to real original target. (with OS,and search query)
+                    event.target.href = href;
+                })
+            })
+    }
+}
+</script>
+
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../mympirun/" class="md-footer__link md-footer__link--prev" aria-label="Previous: mympirun" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../mympirun/" class="md-footer__link md-footer__link--prev" aria-label="Previous: mympirun" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              mympirun
+              <div class="md-ellipsis">
+                mympirun
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../scoop/" class="md-footer__link md-footer__link--next" aria-label="Next: SCOOP" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../FAQ/" class="md-footer__link md-footer__link--next" aria-label="Next: Frequently Asked Questions" rel="next">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              SCOOP
+              <div class="md-ellipsis">
+                Frequently Asked Questions
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1472,6 +1865,32 @@ rm -rf <span class="nv">$WORKDIR</span>
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/HPCUGent" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@HPCUGent" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1480,10 +1899,17 @@ rm -rf <span class="nv">$WORKDIR</span>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "navigation.footer", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="../available_software/javascripts/populate_overview.js"></script>
       
     
   </body>

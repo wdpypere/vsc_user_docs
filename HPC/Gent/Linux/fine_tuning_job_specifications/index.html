@@ -8,8 +8,16 @@
       
       
       
+        <link rel="canonical" href="https://docs.hpc.ugent.be/Linux/fine_tuning_job_specifications/">
+      
+      
+        <link rel="prev" href="../sites/hpc_policies/">
+      
+      
+        <link rel="next" href="../multi_job_submission/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -17,13 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+
     
     
     
@@ -36,10 +44,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -47,12 +58,16 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,7 +87,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VSC User Documentation - Gent (Linux)" class="md-header__button md-logo" aria-label="VSC User Documentation - Gent (Linux)" data-md-component="logo">
       
@@ -100,6 +117,26 @@
       </div>
     </div>
     
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -116,7 +153,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -130,13 +171,52 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
     
+    
+      <div class="md-header__source">
+        <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+      </div>
     
   </nav>
   
@@ -171,7 +251,61 @@
     VSC User Documentation - Gent (Linux)
   </label>
   
+    <div class="md-nav__source">
+      <!-- Original file https://github.com/squidfunk/mkdocs-material/blob/master/material/partials/source.html -->
+<!-- More information see https://squidfunk.github.io/mkdocs-material/customization/ -->
+<!-- This is code FOR OS PICKER NOT FOR INTENTED PURPOSE AS REPO LINK -->
+<div class="md-source">
+  <label for="picker">Your OS:</label>
+  <select name="picker" id="picker" style="border: none; background-color: var(--md-primary-fg-color); color: inherit">
+    <option value="" disabled selected>Choose OS</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows">Windows</option>
+    <option value="macOS">macOS</option>
+  </select>
+</div>
+
+<script>
+  {
+    const elements = document.querySelectorAll("#picker");
+    const store_OS = localStorage.getItem("select_OS");
+    // Get url before OS part.
+    const osmatch = window.location.href.match(/^(.*?)\/(Linux|macOS|Windows)\//i);
+
+    elements.forEach(e => {
+      e.addEventListener("change", (event) => {
+        if (event.target.value){
+          // Save new OS pick.
+          localStorage.setItem("select_OS", JSON.stringify([osmatch[1], event.target.value]));
+          // Redirect to new OS page.
+          window.location.href = window.location.href.replace(/Linux|MacOS|Windows/i,event.target.value);
+        }
+      });
+      if (store_OS) {
+        // There is a stored OS, so set select to this option.
+        e.value = JSON.parse(store_OS)[1];
+      }
+    })
+  }
+</script>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
     
       
       
@@ -183,6 +317,21 @@
     <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         Introduction to HPC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
       </a>
     </li>
   
@@ -301,6 +450,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../interactive_debug/" class="md-nav__link">
+        Interactive and debug cluster
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xdmod/" class="md-nav__link">
         XDMoD portal
       </a>
@@ -344,21 +508,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
-        Frequently Asked Questions
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -368,18 +517,19 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Advanced topics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced topics" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Advanced topics
         </label>
@@ -394,7 +544,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -454,7 +604,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setting-the-memory-parameter" class="md-nav__link">
+  <a href="#pbs_mem" class="md-nav__link">
     Setting the memory parameter
   </a>
   
@@ -673,8 +823,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpu_gent/" class="md-nav__link">
-        HPC-UGent GPU clusters
+      <a href="../gpu/" class="md-nav__link">
+        GPU clusters
       </a>
     </li>
   
@@ -687,22 +837,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive_gent/" class="md-nav__link">
-        HPC-UGent interactive and debug cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../crontab_gent/" class="md-nav__link">
+      <a href="../crontab/" class="md-nav__link">
         Cron scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teaching_training/" class="md-nav__link">
+        Teaching and training
       </a>
     </li>
   
@@ -728,22 +878,190 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Linux tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Linux tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/navigating/" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/manipulating_files_and_directories/" class="md-nav__link">
+        Manipulating files and directories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/uploading_files/" class="md-nav__link">
+        Uploading files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/beyond_the_basics/" class="md-nav__link">
+        Beyond the basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/common_pitfalls/" class="md-nav__link">
+        Common pitfalls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-tutorial/hpc_infrastructure/" class="md-nav__link">
+        More on the HPC infrastructure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           Software-specific Best Practices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Software-specific Best Practices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Software-specific Best Practices
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alphafold/" class="md-nav__link">
+        AlphaFold
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -815,14 +1133,53 @@
 
             
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_18" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../scoop/" class="md-nav__link">
-        SCOOP
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
       </a>
     </li>
   
@@ -848,18 +1205,21 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_19" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
           Appendices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Appendices" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Appendices
         </label>
@@ -969,7 +1329,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setting-the-memory-parameter" class="md-nav__link">
+  <a href="#pbs_mem" class="md-nav__link">
     Setting the memory parameter
   </a>
   
@@ -1083,62 +1443,67 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+
+                  
+
+  
+  
 
 
 <h1 id="fine-tuning-job-specifications">Fine-tuning Job Specifications<a class="headerlink" href="#fine-tuning-job-specifications" title="Permanent link">#</a></h1>
-<p>As <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> system administrators, we often observe that the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> resources are not
+<p>As HPC system administrators, we often observe that the HPC resources are not
 optimally (or wisely) used. For example, we regularly notice that
-several cores on a computing <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> are not utilised, due to the fact that
-one sequential program uses only one <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr> on the <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr>. Or users run I/O
+several cores on a computing node are not utilised, due to the fact that
+one sequential program uses only one core on the node. Or users run I/O
 intensive applications on nodes with "slow" network connections.</p>
 <p>Users often tend to run their jobs without specifying specific PBS Job
 parameters. As such, their job will automatically use the default
 parameters, which are not necessarily (or rarely) the optimal ones. This
-can slow down the run time of your application, but also block <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> resources
+can slow down the run time of your application, but also block HPC resources
 for other users.</p>
 <p>Specifying the "optimal" Job Parameters requires some knowledge of your
 application (e.g., how many parallel threads does my application uses,
-is there a lot of inter-process communication, how much <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> does my
-application need) and also some knowledge about the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> infrastructure
-(e.g., what kind of multi-<abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr> processors are available, which nodes
-have <abbr title="A high speed switched fabric computer network communications link used in HPC.">InfiniBand</abbr>).</p>
-<p>There are plenty of monitoring tools on <abbr title="An operating system, similar to UNIX.">Linux</abbr> available to the user,
-which are useful to analyse your individual application. The <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> environment
-as a whole often requires different techniques, <abbr title="A measure of some property, activity or performance of a computer sub-system. These metrics are visualised by graphs in, e.g., Ganglia.">metrics</abbr> and time goals,
+is there a lot of inter-process communication, how much memory does my
+application need) and also some knowledge about the HPC infrastructure
+(e.g., what kind of multi-core processors are available, which nodes
+have InfiniBand).</p>
+<p>There are plenty of monitoring tools on Linux available to the user,
+which are useful to analyse your individual application. The HPC environment
+as a whole often requires different techniques, metrics and time goals,
 which are not discussed here. We will focus on tools that can help to
 optimise your Job Specifications.</p>
 <p>Determining the optimal computer resource specifications can be broken
 down into different parts. The first is actually determining which
-<abbr title="A measure of some property, activity or performance of a computer sub-system. These metrics are visualised by graphs in, e.g., Ganglia.">metrics</abbr> are needed and then collecting that data from the hosts. Some of
-the most commonly tracked <abbr title="A measure of some property, activity or performance of a computer sub-system. These metrics are visualised by graphs in, e.g., Ganglia.">metrics</abbr> are <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> usage, <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> consumption,
+metrics are needed and then collecting that data from the hosts. Some of
+the most commonly tracked metrics are CPU usage, memory consumption,
 network bandwidth, and disk I/O stats. These provide different
 indications of how well a system is performing, and may indicate where
 there are potential problems or performance bottlenecks. Once the data
 have actually been acquired, the second task is analysing the data and
 adapting your PBS Job Specifications.</p>
 <p>Another different task is to monitor the behaviour of an application at
-run time and detect anomalies or unexpected behaviour. <abbr title="An operating system, similar to UNIX.">Linux</abbr> provides a
+run time and detect anomalies or unexpected behaviour. Linux provides a
 large number of utilities to monitor the performance of its components.</p>
 <p>This chapter shows you how to measure:</p>
 <ol>
 <li>Walltime</li>
 <li>Memory usage</li>
-<li><abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> usage</li>
+<li>CPU usage</li>
 <li>Disk (storage) needs</li>
 <li>Network bottlenecks</li>
 </ol>
-<p>First, we allocate a <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr> and move to our relevant directory:</p>
+<p>First, we allocate a compute node and move to our relevant directory:</p>
 <pre><code>$ <b>qsub -I</b>
 $ <b>cd ~/examples/Fine-tuning-Job-Specifications</b></code></pre>
 
 <h2 id="specifying-walltime">Specifying Walltime<a class="headerlink" href="#specifying-walltime" title="Permanent link">#</a></h2>
 <p>One of the most important and also easiest parameters to measure is the
 duration of your program. This information is needed to specify the
-<em><abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr></em>.</p>
+<em>walltime</em>.</p>
 <p>The <em>time</em> utility <strong>executes</strong> and <strong>times</strong> your application. You can just add the time
 command in front of your normal command line, including your command
 line options. After your executable has finished, <strong>time</strong> writes the total time
@@ -1154,28 +1519,28 @@ sys 0m0.002s</code></pre>
 <p>It is a good practice to correctly estimate and specify the run time
 (duration) of an application. Of course, a margin of 10% to 20% can be
 taken to be on the safe side.</p>
-<p>It is also wise to check the <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> on different compute nodes or to
-select the "slowest" <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr> for your <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> tests. Your estimate
+<p>It is also wise to check the walltime on different compute nodes or to
+select the "slowest" compute node for your walltime tests. Your estimate
 should appropriate in case your application will run on the "slowest"
 (oldest) compute nodes.</p>
-<p>The <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> can be specified in a job scripts as:</p>
+<p>The walltime can be specified in a job scripts as:</p>
 <pre><code>#PBS -l walltime=3:00:00:00</code></pre>
 
 <p>or on the command line</p>
 <pre><code>$ <b>qsub -l walltime=3:00:00:00</b></code></pre>
 
-<p>It is recommended to always specify the <abbr title="Walltime is the length of time specified in the job script for which the job will run on a batch system, you can visualise walltime as the time measured by a wall mounted clock (or your digital wristwatch). This is a computational resource.">walltime</abbr> for a job.</p>
-<h2 id="specifying-memory-requirements">Specifying <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> requirements<a class="headerlink" href="#specifying-memory-requirements" title="Permanent link">#</a></h2>
-<p>In many situations, it is useful to monitor the amount of <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> an
+<p>It is recommended to always specify the walltime for a job.</p>
+<h2 id="specifying-memory-requirements">Specifying memory requirements<a class="headerlink" href="#specifying-memory-requirements" title="Permanent link">#</a></h2>
+<p>In many situations, it is useful to monitor the amount of memory an
 application is using. You need this information to determine the
-characteristics of the required <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr>, where that application
-should run on. Estimating the amount of <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> an application will use
+characteristics of the required compute node, where that application
+should run on. Estimating the amount of memory an application will use
 during execution is often non-trivial, especially when one uses
 third-party software.</p>
 <h3 id="available-memory-on-the-machine">Available Memory on the machine<a class="headerlink" href="#available-memory-on-the-machine" title="Permanent link">#</a></h3>
-<p>The first point is to be aware of the available free <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> in your
+<p>The first point is to be aware of the available free memory in your
 computer. The "<em>free</em>" command displays the total amount of free and
-used physical and swap <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> in the system, as well as the buffers used
+used physical and swap memory in the system, as well as the buffers used
 by the kernel. We also use the options "-m" to see the results expressed
 in Mega-Bytes and the "-t" option to get totals.</p>
 <pre><code>$ <b>free -m -t</b>
@@ -1185,27 +1550,27 @@ Mem:            16049   4772  11277       0      107     161
 Swap:           16002   4185  11816
 Total:          32052   8957  23094</code></pre>
 
-<p>Important is to note the total amount of <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> available in the machine
-(i.e., 16 GB in this example) and the amount of used and free <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr>
+<p>Important is to note the total amount of memory available in the machine
+(i.e., 16 GB in this example) and the amount of used and free memory
 (i.e., 4.7 GB is used and another 11.2 GB is free here).</p>
 <p>It is not a good practice to use swap-space for your computational
 applications. A lot of "swapping" can increase the execution time of
 your application tremendously.</p>
-<p>On the UGent clusters, there is no <abbr title="A quantity of virtual memory available for use by batch jobs. Swap is a consumable resource provided by nodes and consumed by jobs.">swap space</abbr> available for jobs, you
-can only use physical <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr>, even though "<em>free</em>" will show swap.</p>
-<h3 id="checking-the-memory-consumption">Checking the <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> consumption<a class="headerlink" href="#checking-the-memory-consumption" title="Permanent link">#</a></h3>
-<p>To monitor the <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> consumption of a running application, you can use the "<em>top</em>" or the "<em>htop</em>" command.</p>
+<p>On the UGent clusters, there is no swap space available for jobs, you
+can only use physical memory, even though "<em>free</em>" will show swap.</p>
+<h3 id="checking-the-memory-consumption">Checking the memory consumption<a class="headerlink" href="#checking-the-memory-consumption" title="Permanent link">#</a></h3>
+<p>To monitor the memory consumption of a running application, you can use the "<em>top</em>" or the "<em>htop</em>" command.</p>
 <dl>
 <dt>top</dt>
 <dd>
-<p>provides an ongoing look at <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> activity in real time. It
-displays a listing of the most <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>-intensive tasks on the system,
+<p>provides an ongoing look at processor activity in real time. It
+displays a listing of the most CPU-intensive tasks on the system,
 and can provide an interactive interface for manipulating processes.
-It can sort the tasks by <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> usage, <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> usage and run time.</p>
+It can sort the tasks by memory usage, CPU usage and run time.</p>
 </dd>
 <dt>htop</dt>
 <dd>
-<p>is similar to top, but shows the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>-utilisation for all the CPUs in
+<p>is similar to top, but shows the CPU-utilisation for all the CPUs in
 the machine and allows to scroll the list vertically and
 horizontally to see all processes and their full command lines.</p>
 </dd>
@@ -1213,11 +1578,11 @@ horizontally to see all processes and their full command lines.</p>
 <pre><code>$ <b>top</b>
 $ <b>htot</b></code></pre>
 
-<h3 id="setting-the-memory-parameter">Setting the <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> parameter<a class="headerlink" href="#setting-the-memory-parameter" title="Permanent link">#</a></h3>
-<p>Once you gathered a good idea of the overall <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> consumption of your
+<h3 id="pbs_mem">Setting the memory parameter<a class="headerlink" href="#pbs_mem" title="Permanent link">#</a></h3>
+<p>Once you gathered a good idea of the overall memory consumption of your
 application, you can define it in your job script. It is wise to foresee
 a margin of about 10%.</p>
-<p>The maximum amount of physical <abbr title="A quantity of physical memory (RAM). Memory is provided by compute nodes. It is required as a constraint or consumed as a consumable resource by jobs. Within Moab, memory is tracked and reported in megabytes (MB).">memory</abbr> used by the job per <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> can be
+<p>The maximum amount of physical memory used by the job per node can be
 specified in a job script as:</p>
 <pre><code>#PBS -l mem=4gb</code></pre>
 
@@ -1226,12 +1591,12 @@ specified in a job script as:</p>
 
 <h2 id="specifying-processors-requirements">Specifying processors requirements<a class="headerlink" href="#specifying-processors-requirements" title="Permanent link">#</a></h2>
 <p>Users are encouraged to fully utilise all the available cores on a
-certain <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr>. Once the required numbers of cores and nodes are
-decently specified, it is also good practice to monitor the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>
+certain compute node. Once the required numbers of cores and nodes are
+decently specified, it is also good practice to monitor the CPU
 utilisation on these cores and to make sure that all the assigned nodes
 are working at full load.</p>
 <h3 id="number-of-processors">Number of processors<a class="headerlink" href="#number-of-processors" title="Permanent link">#</a></h3>
-<p>The number of <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr> and nodes that a user shall request fully depends on
+<p>The number of core and nodes that a user shall request fully depends on
 the architecture of the application. Developers design their
 applications with a strategy for parallelisation in mind. The
 application can be designed for a certain fixed number or for a
@@ -1239,8 +1604,8 @@ configurable number of nodes and cores. It is wise to target a specific
 set of compute nodes (e.g., Westmere, Harpertown) for your computing
 work and then to configure your software to nicely fill up all
 processors on these compute nodes.</p>
-<p>The <em>/proc/cpuinfo</em> stores info about your <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> architecture like number
-of CPUs, threads, cores, information about <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> caches, <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> family, model
+<p>The <em>/proc/cpuinfo</em> stores info about your CPU architecture like number
+of CPUs, threads, cores, information about CPU caches, CPU family, model
 and much more. So, if you want to detect how many cores are available on
 a specific machine:</p>
 <pre><code>$ <b>less /proc/cpuinfo</b>
@@ -1269,27 +1634,27 @@ processor : 7</code></pre>
 these commands on one of the workernodes. This is most easily achieved
 in an interactive job, see the chapter on Running interactive jobs.</p>
 <p>In order to specify the number of nodes and the number of processors per
-<abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> in your job script, use:</p>
+node in your job script, use:</p>
 <pre><code>#PBS -l nodes=N:ppn=M</code></pre>
 
 <p>or with equivalent parameters on the command line</p>
 <pre><code>$ <b>qsub -l nodes=N:ppn=M</b></code></pre>
 
 <p>This specifies the number of nodes (nodes=N) and the number of
-processors per <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> (ppn=M) that the job should use. PBS treats a
-<abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr> as a <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>, so a system with eight cores per compute
-<abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> can have ppn=8 as its maximum ppn request.</p>
+processors per node (ppn=M) that the job should use. PBS treats a
+processor core as a processor, so a system with eight cores per compute
+node can have ppn=8 as its maximum ppn request.</p>
 <p>You can also use this statement in your job script:</p>
 <pre><code>#PBS -l nodes=N:ppn=all</code></pre>
 
-<p>to request all cores of a <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr>, or</p>
+<p>to request all cores of a node, or</p>
 <pre><code>#PBS -l nodes=N:ppn=half</code></pre>
 
 <p>to request half of them.</p>
 <p>Note that unless a job has some inherent parallelism of its own through
-something like <abbr title="MPI stands for Message-Passing Interface. It supports a parallel programming method designed for distributed memory systems, but can also be used well on shared memory systems.">MPI</abbr> or OpenMP, requesting more than a single <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> on
-a single <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> is usually wasteful and can impact the job start time.</p>
-<h3 id="monitoring-the-cpu-utilisation">Monitoring the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>-utilisation<a class="headerlink" href="#monitoring-the-cpu-utilisation" title="Permanent link">#</a></h3>
+something like MPI or OpenMP, requesting more than a single processor on
+a single node is usually wasteful and can impact the job start time.</p>
+<h3 id="monitoring-the-cpu-utilisation">Monitoring the CPU-utilisation<a class="headerlink" href="#monitoring-the-cpu-utilisation" title="Permanent link">#</a></h3>
 <p>This could also be monitored with the <em><strong>htop</strong></em> command:</p>
 <pre><code>$ <b>htop</b></code></pre>
 <div class="highlight"><pre><span></span><code>  1  [|||   11.0%]   5  [||     3.0%]     9  [||     3.0%]   13 [       0.0%]
@@ -1308,46 +1673,46 @@ a single <abbr title="A node attribute is a non-quantitative aspect of a node. A
 <p>The advantage of htop is that it shows you the cpu utilisation for all
 processors as well as the details per application. A nice exercise is to
 start 4 instances of the "cpu_eat" program in 4 different terminals, and
-inspect the cpu utilisation per <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> with monitor and htop.</p>
-<p>If <em><strong>htop</strong></em> reports that your program is taking 75% <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> on a certain <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>,
+inspect the cpu utilisation per processor with monitor and htop.</p>
+<p>If <em><strong>htop</strong></em> reports that your program is taking 75% CPU on a certain processor,
 it means that 75% of the samples taken by top found your process active
-on the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>. The rest of the time your application was in a wait. (It is
-important to remember that a <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> is a discrete state machine. It really
+on the CPU. The rest of the time your application was in a wait. (It is
+important to remember that a CPU is a discrete state machine. It really
 can be at only 100%, executing an instruction, or at 0%, waiting for
-something to do. There is no such thing as using 45% of a <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>. The <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>
+something to do. There is no such thing as using 45% of a CPU. The CPU
 percentage is a function of time.) However, it is likely that your
-application's rest periods include waiting to be dispatched on a <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> and
+application's rest periods include waiting to be dispatched on a CPU and
 not on external devices. That part of the wait percentage is then very
-relevant to understanding your overall <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> usage pattern.</p>
+relevant to understanding your overall CPU usage pattern.</p>
 <h3 id="fine-tuning-your-executable-andor-job-script">Fine-tuning your executable and/or job script<a class="headerlink" href="#fine-tuning-your-executable-andor-job-script" title="Permanent link">#</a></h3>
 <p>It is good practice to perform a number of run time stress tests, and to
-check the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> utilisation of your nodes. We (and all other users of the
-<abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>) would appreciate that you use the maximum of the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> resources that
-are assigned to you and make sure that there are no CPUs in your <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr>
+check the CPU utilisation of your nodes. We (and all other users of the
+HPC) would appreciate that you use the maximum of the CPU resources that
+are assigned to you and make sure that there are no CPUs in your node
 who are not utilised without reasons.</p>
 <p>But how can you maximise?</p>
 <ol>
 <li>Configure your software. (e.g., to exactly use the available amount
-    of processors in a <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr>)</li>
+    of processors in a node)</li>
 <li>Develop your parallel program in a smart way.</li>
-<li>Demand a specific type of <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr> (e.g., Harpertown, Westmere),
+<li>Demand a specific type of compute node (e.g., Harpertown, Westmere),
     which have a specific number of cores.</li>
 <li>Correct your request for CPUs in your job script.</li>
 </ol>
 <h2 id="the-system-load">The system load<a class="headerlink" href="#the-system-load" title="Permanent link">#</a></h2>
-<p>On top of the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> utilisation, it is also important to check the <strong>system load</strong>.
+<p>On top of the CPU utilisation, it is also important to check the <strong>system load</strong>.
 The system <strong>load</strong> is a measure of the amount of computational work that a computer
 system performs.</p>
 <p>The system load is the number of applications running or waiting to run
-on the <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr>. In a system with for example four CPUs, a load
+on the compute node. In a system with for example four CPUs, a load
 average of 3.61 would indicate that there were, on average, 3.61
-processes ready to run, and each one could be scheduled into a <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>.</p>
-<p>The load averages differ from <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> percentage in two significant ways:</p>
+processes ready to run, and each one could be scheduled into a CPU.</p>
+<p>The load averages differ from CPU percentage in two significant ways:</p>
 <ol>
 <li>"<em>load averages</em>" measure the trend of processes waiting to be run
-    (and not only an instantaneous snapshot, as does <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> percentage);
+    (and not only an instantaneous snapshot, as does CPU percentage);
     and</li>
-<li>"<em>load averages</em>" include all demand for all resources, e.g., <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>
+<li>"<em>load averages</em>" include all demand for all resources, e.g., CPU
     and also I/O and network (and not only how much was active at the
     time of measurement).</li>
 </ol>
@@ -1360,21 +1725,21 @@ average matching the number of CPUs</strong>. Your load should not exceed the nu
 of cores available. E.g., if there are four CPUs on a machine and the
 reported one-minute load average is 4.00, the machine has been utilising
 its processors perfectly for the last 60 seconds. The "100% utilisation"
-mark is 1.0 on a single-<abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr> system, 2.0 on a dual-<abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>, 4.0 on a
-quad-<abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>, etc. The optimal load shall be between 0.7 and 1.0 per
-<abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>.</p>
+mark is 1.0 on a single-core system, 2.0 on a dual-core, 4.0 on a
+quad-core, etc. The optimal load shall be between 0.7 and 1.0 per
+processor.</p>
 <p>In general, the intuitive idea of load averages is the higher they rise
 above the number of processors, the more processes are waiting and doing
 nothing, and the lower they fall below the number of processors, the
-more untapped <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> capacity there is.</p>
+more untapped CPU capacity there is.</p>
 <p><em>Load averages</em> do include any processes or threads waiting on I/O,
-networking, databases or anything else not demanding the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr>. This means
+networking, databases or anything else not demanding the CPU. This means
 that the optimal <em>number of applications</em> running on a system at the
-same time, might be more than one per <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr>.</p>
+same time, might be more than one per processor.</p>
 <p>The "<strong>optimal number of applications</strong>" running on one machine at the same time depends on the type of
 the applications that you are running.</p>
 <ol>
-<li>When you are running <strong>computational intensive applications</strong>, one application per <abbr title="A processing unit. A processor is a consumable resource. A processor can be a CPU or a (GP)GPU.">processor</abbr> will generate
+<li>When you are running <strong>computational intensive applications</strong>, one application per processor will generate
     the optimal load.</li>
 <li>For <strong>I/O intensive applications</strong> (e.g., applications which perform a lot of disk-I/O), a higher
     number of applications can generate the optimal load. While some
@@ -1383,10 +1748,10 @@ the applications that you are running.</p>
 </ol>
 <p>The optimal number of applications on a machine could be empirically
 calculated by performing a number of stress tests, whilst checking the
-highest throughput. There is however no manner in the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> at the moment to
-specify the maximum number of applications that shall run per <abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>
-dynamically. The <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> scheduler will not launch more than one process per
-<abbr title="An individual compute unit inside a CPU. A CPU typically contains one or more cores.">core</abbr>.</p>
+highest throughput. There is however no manner in the HPC at the moment to
+specify the maximum number of applications that shall run per core
+dynamically. The HPC scheduler will not launch more than one process per
+core.</p>
 <p>The manner how the cores are spread out over CPUs does not matter for
 what regards the load. Two quad-cores perform similar to four
 dual-cores, and again perform similar to eight single-cores. It's all
@@ -1411,18 +1776,18 @@ $ <b>uptime</b>
 <p>You can also read it in the <strong>htop</strong> command.</p>
 <h3 id="fine-tuning-your-executable-andor-job-script_1">Fine-tuning your executable and/or job script<a class="headerlink" href="#fine-tuning-your-executable-andor-job-script_1" title="Permanent link">#</a></h3>
 <p>It is good practice to perform a number of run time stress tests, and to
-check the system load of your nodes. We (and all other users of the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr>)
-would appreciate that you use the maximum of the <abbr title="A central processing unit. A CPU is a consumable resource. A compute node typically contains one or more CPUs">CPU</abbr> resources that are
-assigned to you and make sure that there are no CPUs in your <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr> who
+check the system load of your nodes. We (and all other users of the HPC)
+would appreciate that you use the maximum of the CPU resources that are
+assigned to you and make sure that there are no CPUs in your node who
 are not utilised without reasons.</p>
 <p>But how can you maximise?</p>
 <ol>
 <li>Profile your software to improve its performance.</li>
 <li>Configure your software (e.g., to exactly use the available amount
-    of processors in a <abbr title="A node attribute is a non-quantitative aspect of a node. Attributes typically describe the node itself or possibly aspects of various node resources such as processors or memory. While it is probably not optimal to aggregate node and resource attributes together in this manner, it is common practice. Common node attributes include processor architecture, operating system, and processor speed. Jobs often specify that resources be allocated from nodes possessing certain node attributes.">node</abbr>).</li>
+    of processors in a node).</li>
 <li>Develop your parallel program in a smart way, so that it fully
     utilises the available processors.</li>
-<li>Demand a specific type of <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr> (e.g., Harpertown, Westmere),
+<li>Demand a specific type of compute node (e.g., Harpertown, Westmere),
     which have a specific number of cores.</li>
 <li>Correct your request for CPUs in your job script.</li>
 </ol>
@@ -1431,11 +1796,11 @@ are not utilised without reasons.</p>
 <h3 id="monitoring-file-sizes-during-execution">Monitoring File sizes during execution<a class="headerlink" href="#monitoring-file-sizes-during-execution" title="Permanent link">#</a></h3>
 <p>Some programs generate intermediate or output files, the size of which
 may also be a useful metric.</p>
-<p>Remember that your available disk space on the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> online storage is
+<p>Remember that your available disk space on the HPC online storage is
 limited, and that you have environment variables which point to these
 directories available (i.e., <em>$VSC_DATA</em>, <em>$VSC_SCRATCH</em> and
 <em>$VSC_DATA</em>). On top of those, you can also access some temporary
-storage (i.e., the /tmp directory) on the <abbr title="The computational units on which batch or interactive jobs are processed. A compute node is pretty much comparable to a single personal computer. It contains one or more sockets, each holding a single CPU. Some nodes also contain one or more GPGPUs. The compute node is equipped with memory (RAM) that is accessible by all its CPUs.">compute node</abbr>, which is defined
+storage (i.e., the /tmp directory) on the compute node, which is defined
 by the <em>$VSC_SCRATCH_NODE</em> environment variable.</p>
 <p>It is important to be aware of the sizes of the file that will be
 generated, as the available disk space for each user is limited. We
@@ -1454,7 +1819,7 @@ quota and tools to find which files consumed the "quota".</p>
 <li>Make sure your programs clean up their temporary files after
     execution.</li>
 <li>Move your output results to your own computer regularly.</li>
-<li>Anyone can request more disk space to the <abbr title="High Performance Computing, high performance computing and multiple-task computing on a supercomputer.">HPC</abbr> staff, but you will have
+<li>Anyone can request more disk space to the HPC staff, but you will have
     to duly justify your request.</li>
 </ol>
 <h2 id="specifying-network-requirements">Specifying network requirements<a class="headerlink" href="#specifying-network-requirements" title="Permanent link">#</a></h2>
@@ -1464,7 +1829,7 @@ limited green bars in the htop screen, it is mostly an indication that
 they lose a lot of time with inter-process communication.</p>
 <p>Whenever your application utilises a lot of inter-process communication
 (as is the case in most parallel programs), we strongly recommend to
-request nodes with an "<abbr title="A high speed switched fabric computer network communications link used in HPC.">InfiniBand</abbr>" network. The <abbr title="A high speed switched fabric computer network communications link used in HPC.">InfiniBand</abbr> is a
+request nodes with an "InfiniBand" network. The InfiniBand is a
 specialised high bandwidth, low latency network that enables large
 parallel jobs to run as efficiently as possible.</p>
 <p>The parameter to add in your job script would be:</p>
@@ -1474,56 +1839,84 @@ parallel jobs to run as efficiently as possible.</p>
 network, he can specify:</p>
 <pre><code>#PBS -l gbe</code></pre>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+<script>
+ if (!! localStorage.getItem('select_OS')) {
+    const classes = ["headerlink", "md-nav__link"]
+    for (i in classes) {
+        var anchors = Array.from(document.getElementsByClassName(classes[i]))
+        anchors.forEach(
+            function (anch) {
+                const href = anch.href;
+                if (!!anch.href) {
+                    // Remove OS part and search query in permalinks if it exists. Useful when copying the urls.
+                    anch.href = anch.href.replace(/\/(Linux|macOS|Windows)\//i, "/").replace(/\?[^#]*/,"")
+                }
+                anch.addEventListener("click",(event) => {
+                    // Redirect to real original target. (with OS,and search query)
+                    event.target.href = href;
+                })
+            })
+    }
+}
+</script>
+
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        <a href="../FAQ/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frequently Asked Questions" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+          
+          <a href="../sites/hpc_policies/" class="md-footer__link md-footer__link--prev" aria-label="Previous: HPC Policies" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Previous
               </span>
-              Frequently Asked Questions
+              <div class="md-ellipsis">
+                HPC Policies
+              </div>
             </div>
-          </div>
-        </a>
-      
-      
+          </a>
         
-        <a href="../multi_job_submission/" class="md-footer__link md-footer__link--next" aria-label="Next: Multi-job submission" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
+        
+          
+          <a href="../multi_job_submission/" class="md-footer__link md-footer__link--next" aria-label="Next: Multi-job submission" rel="next">
+            <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
-              Multi-job submission
+              <div class="md-ellipsis">
+                Multi-job submission
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1537,6 +1930,32 @@ network, he can specify:</p>
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/HPCUGent" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@HPCUGent" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1545,10 +1964,17 @@ network, he can specify:</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "navigation.tracking", "navigation.footer", "toc.follow", "navigation.sections", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      
+        <script src="../available_software/javascripts/populate_overview.js"></script>
       
     
   </body>
