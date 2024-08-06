@@ -864,11 +864,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting-jobs" class="md-nav__link">
-    Troubleshooting jobs
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
   </a>
   
-    <nav class="md-nav" aria-label="Troubleshooting jobs">
+    <nav class="md-nav" aria-label="Troubleshooting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -934,6 +934,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-a-no-space-left-on-device-error-while-i-still-have-storage-space-left" class="md-nav__link">
+    Why do I get a "No space left on device" error, while I still have storage space left?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -985,6 +992,20 @@
           <li class="md-nav__item">
   <a href="#vo-how-does-it-work" class="md-nav__link">
     VO: how does it work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-home-directory-is-almost-full-and-i-dont-know-why" class="md-nav__link">
+    My home directory is (almost) full, and I don't know why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-cant-i-use-the-sudo-command" class="md-nav__link">
+    Why can't I use the sudo command?
   </a>
   
 </li>
@@ -1158,11 +1179,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting-jobs" class="md-nav__link">
-    Troubleshooting jobs
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
   </a>
   
-    <nav class="md-nav" aria-label="Troubleshooting jobs">
+    <nav class="md-nav" aria-label="Troubleshooting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1228,6 +1249,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-a-no-space-left-on-device-error-while-i-still-have-storage-space-left" class="md-nav__link">
+    Why do I get a "No space left on device" error, while I still have storage space left?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1279,6 +1307,20 @@
           <li class="md-nav__item">
   <a href="#vo-how-does-it-work" class="md-nav__link">
     VO: how does it work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-home-directory-is-almost-full-and-i-dont-know-why" class="md-nav__link">
+    My home directory is (almost) full, and I don't know why
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-cant-i-use-the-sudo-command" class="md-nav__link">
+    Why can't I use the sudo command?
   </a>
   
 </li>
@@ -1358,7 +1400,7 @@ Use the command <code>module spider [module]</code> to find the specifics on the
 <p>It is possible to use the modules without specifying a version or toolchain. However,
 this will probably cause incompatible modules to be loaded. Don't do it if you use multiple modules.
 Even if it works now, as more modules get installed on the HPC, your job can suddenly break.</p>
-<h2 id="troubleshooting-jobs">Troubleshooting jobs<a class="headerlink" href="#troubleshooting-jobs" title="Permanent link">#</a></h2>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
 <h3 id="my-modules-dont-work-together">My modules don't work together<a class="headerlink" href="#my-modules-dont-work-together" title="Permanent link">#</a></h3>
 <p>When incompatible modules are loaded, you might encounter an error like this:</p>
 <div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span>lmod_error<span class="w"> </span><span class="o">}}</span>
@@ -1460,6 +1502,21 @@ running jobs will finish before their requested walltime expires, and
 new jobs by may be submitted by other users that are assigned a higher
 priority than your job(s). You can use the <code>showstart</code> command. For more
 information, see .</p>
+<h3 id="why-do-i-get-a-no-space-left-on-device-error-while-i-still-have-storage-space-left">Why do I get a "No space left on device" error, while I still have storage space left?<a class="headerlink" href="#why-do-i-get-a-no-space-left-on-device-error-while-i-still-have-storage-space-left" title="Permanent link">#</a></h3>
+<p>When trying to create files, errors like this can occur:</p>
+<div class="highlight"><pre><span></span><code>No<span class="w"> </span>space<span class="w"> </span>left<span class="w"> </span>on<span class="w"> </span>device
+</code></pre></div>
+<p>The error "<code>No space left on device</code>" can mean two different things:</p>
+<ul>
+<li>all available <em>storage quota</em> on the file system in question has been used;</li>
+<li>the <em>inode limit</em> has been reached on that file system.</li>
+</ul>
+<p>An <em>inode</em> can be seen as a "file slot", meaning that when the limit is reached, no more additional files can be created.
+There is a standard inode limit in place that will be increased if needed. 
+The number of inodes used per file system can be checked on <a href="https://account.vscentrum.be">the VSC account page</a>.</p>
+<p>Possible solutions to this problem include cleaning up unused files and directories or 
+<a href="../linux-tutorial/manipulating_files_and_directories/?h=zip#zipping-gzipgunzip-zipunzip">compressing directories with a lot of files into zip- or tar-files</a>.</p>
+<p>If the problem persists, feel free to <a href="./#i-have-another-questionproblem">contact support</a>.</p>
 <h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">#</a></h2>
 <h3 id="can-i-share-my-account-with-someone-else">Can I share my account with someone else?<a class="headerlink" href="#can-i-share-my-account-with-someone-else" title="Permanent link">#</a></h3>
 <p><strong>NO.</strong> You are not allowed to share your VSC account with anyone else, it is
@@ -1532,6 +1589,27 @@ You will also find how to hide the warning.</p>
 It's possible to leave a VO and join another one. However, it's not
 recommended to keep switching between VO's (to supervise groups, for example).</p>
 <p>See also: <a href="../running_jobs_with_input_output_data/#virtual-organisations">Virtual Organisations</a>.</p>
+<h3 id="my-home-directory-is-almost-full-and-i-dont-know-why">My home directory is (almost) full, and I don't know why<a class="headerlink" href="#my-home-directory-is-almost-full-and-i-dont-know-why" title="Permanent link">#</a></h3>
+<p>Your home directory might be full without looking like it due to hidden files.
+Hidden files and subdirectories have a name starting with a dot and do not show up when running <code>ls</code>.
+If you want to check where the storage in your home directory is used, you can make use of the <a href="https://docs.hpc.ugent.be/Linux/running_jobs_with_input_output_data/#check-your-quota"><code>du</code> command</a> to find out what the largest files and subdirectories are:</p>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-h<span class="w"> </span>--max-depth<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nv">$VSC_HOME</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>egrep<span class="w"> </span><span class="s1">&#39;[0-9]{3}M|[0-9]G&#39;</span>
+</code></pre></div>
+<p>The <code>du</code> command returns the size of every file and subdirectory in the $VSC_HOME directory. This output is then piped into an <a href="https://docs.hpc.ugent.be/Linux/linux-tutorial/beyond_the_basics/?h=grep#searching-file-contents-grep"><code>egrep</code></a> to filter the lines to the ones that matter the most.</p>
+<p>The <code>egrep</code> command will only let entries that match with the specified regular expression <code>[0-9]{3}M|[0-9]G</code> through, which corresponds with files that consume more than 100 MB.</p>
+<h3 id="why-cant-i-use-the-sudo-command">Why can't I use the <code>sudo</code> command?<a class="headerlink" href="#why-cant-i-use-the-sudo-command" title="Permanent link">#</a></h3>
+<p>When you attempt to use sudo, you will be prompted for a password. 
+However, you cannot enter a valid password because this feature is reserved exclusively for HPC administrators.</p>
+<p><code>sudo</code> is used to execute a command with administrator rights, which would allow you to make system-wide changes.
+You are only able to run commands that make changes to the directories that your VSC account has access to,
+like your home directory, your personal directories like $VSC_DATA and $VSC_SCRATCH, 
+or shared VO/group directories like $VSC_DATA_VO and $VSC_SCRATCH_VO.</p>
+<p>A lot of tasks can be performed without <code>sudo</code>, including installing software in your own account.</p>
+<p><strong>Installing software</strong></p>
+<ul>
+<li>If you know how to install the software without using <code>sudo</code>, you are welcome to proceed with the installation.</li>
+<li>If you are unsure how to install the software, you can submit a <a href="https://www.ugent.be/hpc/en/support/software-installation-request">software installation request</a>, and the HPC-UGent support team will handle the installation for you.</li>
+</ul>
 <h3 id="i-have-another-questionproblem">I have another question/problem<a class="headerlink" href="#i-have-another-questionproblem" title="Permanent link">#</a></h3>
 <p>Who can I contact?</p>
 <ul>

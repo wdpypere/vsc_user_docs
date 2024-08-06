@@ -1074,7 +1074,7 @@ software programs
 compiled for CentOS Linux release 7.8.2003 (Core). It also means that you first have to install all the
 required external software packages on the UAntwerpen-HPC.</p>
 <p>Most commonly used compilers are already pre-installed on the UAntwerpen-HPC and can be
-used straight away. Also many popular external software packages, which
+used straight away. Also, many popular external software packages, which
 are regularly used in the scientific community, are also pre-installed.</p>
 <h2 id="check-the-pre-installed-software-on-the-uantwerpen-hpc">Check the pre-installed software on the UAntwerpen-HPC<a class="headerlink" href="#check-the-pre-installed-software-on-the-uantwerpen-hpc" title="Permanent link">#</a></h2>
 <p>In order to check all the available modules and their version numbers,
@@ -1216,9 +1216,11 @@ int<span class="w"> </span>main<span class="o">(</span><span class="w"> </span>i
 <p>We first need to compile this C-file into an executable with the
 gcc-compiler.</p>
 <p>First, check the command line options for <em>"gcc" (GNU C-Compiler)</em>, then
-we compile and list the contents of the directory again:</p>
+we compile. the <code>O2</code> option enables a moderate level of optimization when compiling the code. 
+It instructs the compiler to optimize the code for better performance without significantly increasing compilation time.
+Finally, list the contents of the directory again:</p>
 <pre><code>$ <b>gcc -help</b>
-$ <b>gcc -o hello hello.c</b>
+$ <b>gcc -O2 -o hello hello.c</b>
 $ <b>ls -l</b>
 total 512
 -rwxrwxr-x 1 vsc20167 7116 Sep 16 11:43 hello*
@@ -1237,7 +1239,7 @@ features, etc. It is good practice to remove all warnings from a
 compilation process, even if they seem unimportant so that a code change
 that produces a warning does not go unnoticed.</p>
 <p>Let's test this program on the local compute node, which is at your
-disposal after the "qsub --I" command:</p>
+disposal after the <code>qsub --I</code> command:</p>
 <pre><code>$ <b>./hello</b>
 Hello #0
 Hello #1
