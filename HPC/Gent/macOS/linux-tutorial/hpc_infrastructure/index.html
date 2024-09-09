@@ -541,6 +541,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../torque_frontend_via_jobcli/" class="md-nav__link">
+        Torque frontend via jobcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../fine_tuning_job_specifications/" class="md-nav__link">
         Fine-tuning Job Specifications
       </a>
@@ -1009,6 +1023,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../jupyter/" class="md-nav__link">
+        Jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../MATLAB/" class="md-nav__link">
         MATLAB
       </a>
@@ -1039,6 +1067,20 @@
     <li class="md-nav__item">
       <a href="../../openFOAM/" class="md-nav__link">
         OpenFOAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting_up_python_virtual_environments/" class="md-nav__link">
+        Python virtual environments
       </a>
     </li>
   
@@ -1293,11 +1335,10 @@ scratch filesystems, which you can share with other members in the VO.</p>
 <p>Space is limited on the cluster's storage. To check your quota, see section
 <a href="../../running_jobs_with_input_output_data/#pre-defined-quotas">Pre-defined quota</a>.</p>
 <p>To figure out where your quota is being spent, the <code>du</code> (isk sage)
-command can come in useful:</p>
-<pre><code>$ <b>du -sh test</b>
+command can come in useful:
+<div class="highlight"><pre><span></span><code>$ du -sh test
 59M test
-</code></pre>
-
+</code></pre></div></p>
 <p>Do <em>not</em> (frequently) run <code>du</code> on directories where large amounts of
 data are stored, since that will:</p>
 <ol>
@@ -1342,11 +1383,12 @@ Python, and prints the numbers to a <em>unique</em> output file in
 <ul>
 <li>How many modules are available for Python version 3.6.4?</li>
 <li>How many modules get loaded when you load the <code>Python/3.6.4-intel-2018a</code> module?</li>
-<li>Which <code>cluster</code> modules are available?</li>
-</ul>
-<!-- -->
-<ul>
-<li>What's the full path to your personal home/data/scratch directories?</li>
+<li>
+<p>Which <code>cluster</code> modules are available?</p>
+</li>
+<li>
+<p>What's the full path to your personal home/data/scratch directories?</p>
+</li>
 <li>Determine how large your personal directories are.</li>
 <li>What's the difference between the size reported by <code>du -sh $HOME</code> and by <code>ls -ld $HOME</code>?</li>
 </ul>

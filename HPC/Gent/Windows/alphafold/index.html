@@ -541,6 +541,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../torque_frontend_via_jobcli/" class="md-nav__link">
+        Torque frontend via jobcli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../fine_tuning_job_specifications/" class="md-nav__link">
         Fine-tuning Job Specifications
       </a>
@@ -1059,6 +1073,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../jupyter/" class="md-nav__link">
+        Jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../MATLAB/" class="md-nav__link">
         MATLAB
       </a>
@@ -1089,6 +1117,20 @@
     <li class="md-nav__item">
       <a href="../openFOAM/" class="md-nav__link">
         OpenFOAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting_up_python_virtual_environments/" class="md-nav__link">
+        Python virtual environments
       </a>
     </li>
   
@@ -1456,8 +1498,8 @@ See <a href="http://localhost:8000/HPC/Gent/running_jobs_with_input_output_data/
 <p>Do not forget to replace <code>20230310</code> with a more up to date version if available.</p>
 </div>
 <h3 id="running-alphafold">Running AlphaFold<a class="headerlink" href="#running-alphafold" title="Permanent link">#</a></h3>
-<p>AlphaFold provides run script called <a href="https://raw.githubusercontent.com/deepmind/alphafold/main/run_alphafold.py">run_alphafold.py</a></p>
-<p>A symbolic link named <em>alphafold</em> that points to the this script is included,
+<p>AlphaFold provides a script called <a href="https://raw.githubusercontent.com/deepmind/alphafold/main/run_alphafold.py">run_alphafold.py</a></p>
+<p>A symbolic link named <em>alphafold</em> that points to this script is included,
 so you can just use <code>alphafold</code> instead of <code>run_alphafold.py</code> or <code>python run_alphafold.py</code> after loading the AlphaFold module.</p>
 <p>The <code>run_alphafold.py</code> script has also been slightly modified such that defining the <code>$ALPHAFOLD_DATA_DIR</code> (see <a href="./#setting-up-the-environment">above</a>) is sufficient to pick up all the data provided in that location,
 so you don't need to use options like <code>--data_dir</code> to specify the location of the data.</p>
@@ -1503,7 +1545,7 @@ For the corresponding jobscripts, they are available <a href="./example-jobscrip
 <h2 id="example-scenario">Example scenario<a class="headerlink" href="#example-scenario" title="Permanent link">#</a></h2>
 <p>The following example comes from the official <a href="https://github.com/deepmind/alphafold/blob/main/README.md#examples">Examples section</a> in the Alphafold <a href="https://github.com/deepmind/alphafold/blob/main/README.md">README</a>.
 The run command is slightly different (see above: <a href="./running-alphafold">Running AlphaFold</a>).</p>
-<p>Do not forget to setup the environment (see above: <a href="./setting-up-the-environment">Setting up the environment</a>).</p>
+<p>Do not forget to set up the environment (see above: <a href="./setting-up-the-environment">Setting up the environment</a>).</p>
 <h3 id="folding-a-monomer">Folding a monomer<a class="headerlink" href="#folding-a-monomer" title="Permanent link">#</a></h3>
 <p>Say we have a monomer with the sequence <code>&lt;SEQUENCE&gt;</code>.
 Create a file <code>monomer.fasta</code> with the following content:
@@ -1527,18 +1569,17 @@ Create a file <code>monomer.fasta</code> with the following content:
 <p>The main difference between using a GPU or CPU in a job script is what module to load.
 For running AlphaFold on GPU, use an AlphaFold module that mentions <code>CUDA</code> (or <code>cuda</code>),
 for example <code>AlphaFold/2.3.1-foss-2022a-CUDA-11.7.0</code>.</p>
-<p>To run the jobs cripts you need to create a file named <code>T1050.fasta</code> with the following content:</p>
+<p>To run the job scripts you need to create a file named <code>T1050.fasta</code> with the following content:</p>
 <p><div class="highlight"><pre><span></span><code>&gt;T1050 A7LXT1, Bacteroides Ovatus, 779 residues|
 MASQSYLFKHLEVSDGLSNNSVNTIYKDRDGFMWFGTTTGLNRYDGYTFKIYQHAENEPGSLPDNYITDIVEMPDGRFWINTARGYVLFDKERDYFITDVTGFMKNLESWGVPEQVFVDREGNTWLSVAGEGCYRYKEGGKRLFFSYTEHSLPEYGVTQMAECSDGILLIYNTGLLVCLDRATLAIKWQSDEIKKYIPGGKTIELSLFVDRDNCIWAYSLMGIWAYDCGTKSWRTDLTGIWSSRPDVIIHAVAQDIEGRIWVGKDYDGIDVLEKETGKVTSLVAHDDNGRSLPHNTIYDLYADRDGVMWVGTYKKGVSYYSESIFKFNMYEWGDITCIEQADEDRLWLGTNDHGILLWNRSTGKAEPFWRDAEGQLPNPVVSMLKSKDGKLWVGTFNGGLYCMNGSQVRSYKEGTGNALASNNVWALVEDDKGRIWIASLGGGLQCLEPLSGTFETYTSNNSALLENNVTSLCWVDDNTLFFGTASQGVGTMDMRTREIKKIQGQSDSMKLSNDAVNHVYKDSRGLVWIATREGLNVYDTRRHMFLDLFPVVEAKGNFIAAITEDQERNMWVSTSRKVIRVTVASDGKGSYLFDSRAYNSEDGLQNCDFNQRSIKTLHNGIIAIGGLYGVNIFAPDHIRYNKMLPNVMFTGLSLFDEAVKVGQSYGGRVLIEKELNDVENVEFDYKQNIFSVSFASDNYNLPEKTQYMYKLEGFNNDWLTLPVGVHNVTFTNLAPGKYVLRVKAINSDGYVGIKEATLGIVVNPPFKLAAALQHHHHHH
 </code></pre></div>
-<sub>source: <a href="https://www.predictioncenter.org/casp14/target.cgi?target=T1050&amp;view=sequence">https://www.predictioncenter.org/casp14/target.cgi?target=T1050&amp;view=sequence</a></sub></p>
+source: <a href="https://www.predictioncenter.org/casp14/target.cgi?target=T1050&amp;view=sequence">https://www.predictioncenter.org/casp14/target.cgi?target=T1050&amp;view=sequence</a></p>
 <h3 id="job-script-for-running-alphafold-on-gpu">Job script for running AlphaFold on GPU<a class="headerlink" href="#job-script-for-running-alphafold-on-gpu" title="Permanent link">#</a></h3>
 <p>Job script that runs AlphaFold on GPU using 1 V100 GPU + 8 cores.</p>
 <p>Swap to the <code>joltik</code> GPU before submitting it:</p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>swap<span class="w"> </span>cluster/joltik
 </code></pre></div>
-<p><center>-- AlphaFold-gpu-joltik.sh --</center></p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<div class="highlight"><span class="filename">AlphaFold-gpu-joltik.sh</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N AlphaFold-gpu-joltik</span>
 <span class="c1">#PBS -l nodes=1:ppn=8,gpus=1</span>
 <span class="c1">#PBS -l walltime=10:0:0</span>
@@ -1561,8 +1602,7 @@ alphafold<span class="w"> </span>--fasta_paths<span class="o">=</span>T1050.fast
 </code></pre></div>
 <h3 id="job-script-for-running-alphafold-cpu-only">Job script for running AlphaFold CPU-only<a class="headerlink" href="#job-script-for-running-alphafold-cpu-only" title="Permanent link">#</a></h3>
 <p>Jobscript that runs AlphaFold on CPU using 24 cores on one node.</p>
-<p><center>-- AlphaFold-cpu-doduo.sh --</center></p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<div class="highlight"><span class="filename">AlphaFold-cpu-doduo.sh</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N AlphaFold-cpu-doduo</span>
 <span class="c1">#PBS -l nodes=1:ppn=24</span>
 <span class="c1">#PBS -l walltime=72:0:0</span>
