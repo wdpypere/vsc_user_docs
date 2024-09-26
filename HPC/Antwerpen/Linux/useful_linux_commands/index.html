@@ -783,6 +783,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../setting_up_python_virtual_environments/" class="md-nav__link">
         Python virtual environments
       </a>
@@ -1249,8 +1263,7 @@ $ info ls
 </code></pre></div>
 <p>(You can exit the last two "manuals" by using the "q" key.) For more
 exhaustive tutorials about Linux usage, please refer to the following
-sites: <a href="http://www.linux.org/lessons/">http://www.linux.org/lessons/</a>
-<a href="http://linux.about.com/od/nwb_guide/a/gdenwb06.htm">http://linux.about.com/od/nwb_guide/a/gdenwb06.htm</a></p>
+site: <a href="https://www.geeksforgeeks.org/linux-tutorial/">https://www.geeksforgeeks.org/linux-tutorial/</a></p>
 <h2 id="how-to-get-started-with-shell-scripts">How to get started with shell scripts<a class="headerlink" href="#how-to-get-started-with-shell-scripts" title="Permanent link">#</a></h2>
 <p>In a shell script, you will put the commands you would normally type at
 your shell prompt in the same order. This will enable you to execute all
@@ -1284,7 +1297,7 @@ editing, and name it "foo", and edit it with your favourite editor</p>
 <div class="highlight"><pre><span></span><code>$ vi foo
 </code></pre></div>
 <p>or use the following commands:</p>
-<div class="highlight"><pre><span></span><code>echo &quot;echo Hello! This is my hostname:&quot; &gt; foo
+<div class="highlight"><pre><span></span><code>echo &quot;echo &#39;Hello! This is my hostname:&#39;&quot; &gt; foo
 echo hostname &gt;&gt; foo
 </code></pre></div>
 <p>The easiest ways to run a script is by starting the interpreter and pass
@@ -1309,7 +1322,9 @@ use bash as an interpreter, we get the following path:</p>
 /bin/bash
 </code></pre></div>
 <p>We edit our script and change it with this information:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash echo \&quot;Hello! This is my hostname:\&quot; hostname</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello! This is my hostname:&quot;</span>
+hostname
 </code></pre></div>
 <p>Note that the "shebang" must be the first line of your script! Now the
 operating system knows which program should be started to run the
